@@ -4,14 +4,13 @@ const MyPosts = () => {
   return (
     <div>
       <div>
-        My post
-        <div>New post</div>
-      </div>
-      <div>
-        <div className={style.item}>Post 1</div>
-        <div>Post 2</div>
-        < Post message="Hi!"/>
-        < Post message="How are you?"/>
+        My posts
+        <div>
+          <input type="text" />
+          <input type="button" value="add post" />
+        </div>
+        <Post message="Hi Danya" likes="20"/>
+        <Post message="I love you" likes="0"/>
       </div>
     </div>
   );

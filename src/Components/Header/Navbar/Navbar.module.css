@@ -1,0 +1,22 @@
+
+.nav {
+  grid-area: nav;
+  background-color: rgb(185, 215, 77);
+}
+.item {
+  color: color;
+  font-size: 25px;
+}
+.link{
+  text-decoration: none;
+  color: aliceblue;
+}
+.link:hover {
+  color: red;
+}
+.item.active {
+  color: red;
+}
+.link:target {
+  color: blue;
+}

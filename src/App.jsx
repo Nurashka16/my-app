@@ -1,9 +1,9 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
-import Navbar from "./Components/Navbar/Navbar";
+import Navbar from "./Components/Header/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link} from "react-router-dom";
 
 const App = () => {
   return (
@@ -13,8 +13,8 @@ const App = () => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/dialogs" element={<Dialogs />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="dialogs" element={<Dialogs />} />
           </Routes>
         </div>
       </div>
