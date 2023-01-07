@@ -1,0 +1,17 @@
+.dialogs {
+   display: grid;
+   grid-template: 1fr / 1fr 3fr 1fr;
+   grid-template-areas: 
+   "name message";
+   padding: 20px;
+}
+.dialogs_items {
+   padding: 10px;
+   grid-area: name;
+   background-color: aquamarine;
+}
+.messages {
+   padding: 10px;
+   grid-area: message;
+   background-color: rgb(124, 154, 76);
+}

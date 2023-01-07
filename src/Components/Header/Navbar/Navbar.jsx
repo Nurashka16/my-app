@@ -5,16 +5,27 @@ const Navbar = () => {
   return (
     <nav className={style.nav}>
       <div className={style.item}>
-        <CostumLink to="/Profile">Profile</CostumLink>
+        <CostumLink className={style.link} to="/profile">Profile</CostumLink>
       </div>
-      <div className={`${style.item} ${style.active}`}>
-        <CostumLink className={style.link} to="/Dialogs">
+      <div className={style.item}>
+        <CostumLink className={style.link} to="/dialogs/*">
           Message
         </CostumLink>
       </div>
-      <div className={style.item}>New</div>
-      <div className={style.item}>Music</div>
-      <div className={style.item}>Settings</div>
+      <div className={style.item}>
+        <CostumLink className={style.link} to="/new">New</CostumLink>
+      </div>
+      <div className={style.item}>
+        <CostumLink className={style.link} to="/music">Music</CostumLink>
+      </div>
+      <div className={style.item}>
+        <CostumLink className={style.link} to="/settings">Settings</CostumLink>
+      </div>
+      <div className={style.item}>
+        <CostumLink className={style.link} to="/friends">
+          Friends
+        </CostumLink>
+      </div>
     </nav>
   );
 };
