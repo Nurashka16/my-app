@@ -1,4 +1,4 @@
-import MyPosts from "./MyPosts/MyPosts";
+import MyPostsContainer from "./MyPosts/MyPostContainer";
 import style from "./Profile.module.css";
 const Profile = (props) => {
   return (
@@ -11,11 +11,7 @@ const Profile = (props) => {
         <div className={style.imgText}>ava + desc</div>
       </div>
       <div className={style.content}>
-        <MyPosts 
-        posts={props.profilePage.posts} 
-        newPostText={props.profilePage.newPostText}
-        dispatch={props.dispatch}
-        />
+        <MyPostsContainer />
       </div>
     </div>
   );

@@ -1,17 +1,27 @@
-import React from 'react';
+import React from "react";
 import style from "./BlockMess.module.css";
-const BlockMess = () => {
-   let newMessElement = React.createRef();
-   let addMess = () => {
-      let text = newMessElement.current.value;
-      alert(text);
-   }
+const BlockMess = (props) => {
+  let newMessageBody = props.newMessageBody;
+  let onNewMessageChange = (e) => {
+    let body = e.target.value;
+    props.updateNewMessageCreator(body);
+  };
+  let onSendMessageClick = () => {
+    props.sendMessageCreator();
+  };
   return (
     <div className={style.blockMess}>
-      <textarea ref={newMessElement} className={style.textArea}></textarea>
-      <button onClick={addMess} className={style.button}>Add message</button>
+      <textarea
+      value={newMessageBody}
+        onChange={onNewMessageChange}
+        placeholder="Enter Your Message"
+        className={style.textArea}
+      ></textarea>
+      <button onClick={onSendMessageClick} className={style.button}>
+        Send
+      </button>
     </div>
-  )
-}
+  );
+};
 
 export default BlockMess;

@@ -2,11 +2,9 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Header/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
-import Dialogs from "./Components/Dialogs/Dialogs";
-import Friends from "./Components/Header/Navbar/Friends/Friends";
-import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import UserName from "./Components/Dialogs/UserName/UserName";
-import { addPost } from "./redux/state";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
+import { FriendsContainer } from "./Components/Friends/FriendsContainer";
 
 const App = (props) => {
   return (
@@ -16,20 +14,9 @@ const App = (props) => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route
-              path="/profile"
-              element={
-                <Profile
-                  profilePage={props.state.profilePage}
-                  dispatch={props.dispatch}
-                />
-              }
-            />
-            <Route
-              path="/dialogs/*"
-              element={<Dialogs state={props.state.dialogsPage} />}
-            />
-            <Route path="/friends" element={<Friends />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/dialogs/*" element={<DialogsContainer />} />
+            <Route path="/friends/*" element={<FriendsContainer />} />
           </Routes>
         </div>
       </div>
