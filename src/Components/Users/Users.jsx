@@ -4,11 +4,16 @@ import axios from "axios";
 
 class Users extends React.Component {
   componentDidMount() {
+    const page = 2;
     axios
-      .get("https://jsonplaceholder.typicode.com/photos")
+      .get(
+        `http://127.0.0.1:5298/Users/Get?page=${this.props.currentPage}
+        &pageSize=${this.props.pageSize}`
+      )
       .then((response) => {
-        const users = response.data.slice(0, 20);
-        this.props.setUsers(users);
+        //const users = response.data.slice(0, 20);
+        console.log(response.data);
+        this.props.setUsers(response.data.data);
       });
   }
   render() {
@@ -17,15 +22,20 @@ class Users extends React.Component {
     for (let i = 1; i <= pageCount; i++) {
       pages.push(i);
     }
-    console.log(pages);
+    let setCurrentPageHandler = (page) => {
+      this.props.setCurrentPage(page);
+    };
     return (
       <div>
         <div className="style.pages">
           {pages.map((p) => {
             return (
-              <span className={this.props.currentPage === p && style.selectedPage}>
+              <button
+                onClick={() => setCurrentPageHandler(p)}
+                className={this.props.currentPage === p && style.selectedPage}
+              >
                 {p}
-              </span>
+              </button>
             );
           })}
         </div>
@@ -34,10 +44,13 @@ class Users extends React.Component {
             <div className={style.user} key={u.id}>
               <span>
                 <div>
-                  <img src={u.thumbnailUrl} className={style.photo} />
+                  <img
+                    src="https://flomaster.club/uploads/posts/2022-06/1655430966_4-flomaster-club-p-portreti-lyudei-krasivo-10.jpg"
+                    className={style.photo}
+                  />
                 </div>
                 <div>
-                  {u.followed ? (
+                  {u.follow ? (
                     <button
                       onClick={() => {
                         this.props.follow(u.id);
