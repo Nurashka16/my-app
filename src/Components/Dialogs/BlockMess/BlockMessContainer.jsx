@@ -3,29 +3,25 @@ import {
   sendMessageCreator,
   updateNewMessageCreator,
 } from "../../../redux/dialogs-reducer";
-import StoreContext from "../../../StoreContext";
 import BlockMess from "./BlockMess";
+import { connect } from "react-redux";
 
-const BlockMessContainer = (props) => {
 
-  return (
-    <StoreContext.Consumer> 
-      {(store) => {
-        let onNewMessageChange = (body) => {
-          store.dispatch(updateNewMessageCreator(body));
-        };
-        let onSendMessageClick = () => {
-          store.dispatch(sendMessageCreator());
-        };
-        return <BlockMess
-            updateNewMessageCreator={onNewMessageChange}
-            sendMessageCreator={onSendMessageClick}
-            newMessageBody={store.getState().newMessageBody}
-          />
-      }
+let mapStateToProps = (state) => {
+  return {
+    dialogsPage: state.dialogsPage
+  }
+}
+let mapDispatchToProps = (dispatch) => {
+  return {
+    sendMessage: () => {
+      dispatch(sendMessageCreator());
+    },
+    updateNewMessageBody: (body) => {
+      dispatch(updateNewMessageCreator(body));
     }
-    </StoreContext.Consumer>
-  );
-};
+  }
+}
+const BlockMessContainer = connect(mapStateToProps, mapDispatchToProps)(BlockMess);
 
 export default BlockMessContainer;

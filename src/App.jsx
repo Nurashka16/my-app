@@ -4,7 +4,9 @@ import Navbar from "./Components/Header/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
-import { FriendsContainer } from "./Components/Friends/FriendsContainer";
+import {FriendsContainer} from "./Components/Friends/FriendsContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
+import { MusicsContainer } from "./Components/Music/MusicsContainer";
 
 const App = (props) => {
   return (
@@ -16,6 +18,8 @@ const App = (props) => {
           <Routes>
             <Route path="/profile" element={<Profile />} />
             <Route path="/dialogs/*" element={<DialogsContainer />} />
+            <Route path="/users" element={<UsersContainer />} />
+            <Route path="/music" element={<MusicsContainer />} />
             <Route path="/friends/*" element={<FriendsContainer />} />
           </Routes>
         </div>

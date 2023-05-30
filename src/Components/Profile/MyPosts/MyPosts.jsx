@@ -10,7 +10,7 @@ const MyPosts = (props) => {
   let onPostChange = () => {
     let text = newPostElement.current.value;
     props.updateNewPost(text);
-  }
+  };
   let messagesItems = props.posts.map((m) => (
     <Post key={m.id} id={m.id} message={m.message} number={m.number} />
   ));
@@ -20,7 +20,12 @@ const MyPosts = (props) => {
       <div className={style.postBlock}>
         <div className={style.title}>My post</div>
         <div className={style.areaBlock}>
-          <textarea onChange={onPostChange} value={props.newPostText} ref={newPostElement} className={style.textArea}/>
+          <textarea
+            onChange={onPostChange}
+            value={props.newPostText}
+            ref={newPostElement}
+            className={style.textArea}
+          />
           <button onClick={addPost} className={style.button}>
             add post
           </button>

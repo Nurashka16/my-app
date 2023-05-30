@@ -4,15 +4,15 @@ const BlockMess = (props) => {
   let newMessageBody = props.newMessageBody;
   let onNewMessageChange = (e) => {
     let body = e.target.value;
-    props.updateNewMessageCreator(body);
+    props.updateNewMessageBody(body);
   };
   let onSendMessageClick = () => {
-    props.sendMessageCreator();
+    props.sendMessage();
   };
   return (
     <div className={style.blockMess}>
       <textarea
-      value={newMessageBody}
+      value={props.dialogsPage.newMessageBody}
         onChange={onNewMessageChange}
         placeholder="Enter Your Message"
         className={style.textArea}

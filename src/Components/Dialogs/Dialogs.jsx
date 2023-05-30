@@ -3,10 +3,10 @@ import Message from "./Message/Message.jsx";
 import style from "./Dialogs.module.css";
 import BlockMessContainer from "./BlockMess/BlockMessContainer.jsx";
 const Dialogs = (props) => {
-  let dialogsItem = props.dialogs.map((d) => (
+  let dialogsItem = props.dialogsPage.dialogs.map((d) => (
     <UserName key={d.id} id={d.id} name={d.name} />
   ));
-  let messagesItems = props.messages.map((m) => (
+  let messagesItems = props.dialogsPage.messages.map((m) => (
     <Message key={m.id} id={m.id} message={m.message} />
   ));
   return (

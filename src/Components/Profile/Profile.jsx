@@ -1,4 +1,4 @@
-import MyPostsContainer from "./MyPosts/MyPostContainer";
+import {MyPostsContainer} from "./MyPosts/MyPostContainer";
 import style from "./Profile.module.css";
 const Profile = (props) => {
   return (
