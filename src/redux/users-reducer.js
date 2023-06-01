@@ -4,10 +4,10 @@ const SET_USERS = "SET-USERS";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
 
 let initialState = {
-  users: [ ],
+  users: [],
   pageSize: 4,
   totalCount: 20,
-  currentPage: 5,
+  currentPage: 1,
 };
 
 const usersReducer = (state = initialState, action) => {
@@ -32,15 +32,13 @@ const usersReducer = (state = initialState, action) => {
           return u;
         }),
       };
-    case SET_USERS: 
-    return {
-      ...state,
-      users: [...action.users],
-    };
-        /*let stateCopy = {...state};
+    case SET_USERS: {
+      return { ...state, users: action.users };
+    }
+    /*let stateCopy = {...state};
         return stateCopy.users.push();*/
     case SET_CURRENT_PAGE:
-      return{...state, currentPage: action.page,};
+      return { ...state, currentPage: action.page };
     default:
       return state;
   }
