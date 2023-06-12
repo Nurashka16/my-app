@@ -1,7 +1,12 @@
+
 import style from "./Users.module.css";
 
-const Users = () => {
-
+const Users = (props) => {
+  let pageCount = Math.ceil(props.totalCount / props.pageSize);
+  let pages = [];
+  for (let i = 1; i <= pageCount; i++) {
+    pages.push(i);
+  }
   return (
     <div>
       <div className="style.pages">
@@ -11,7 +16,7 @@ const Users = () => {
               onClick={(e) => {
                 props.onPageChanged(p);
               }}
-              className={props.currentPage === p && style.selectedPage}
+              className={props.currentPage === p ? style.selectedPage : ''}
             >
               {p}
             </button>
@@ -32,7 +37,7 @@ const Users = () => {
                 {u.follow ? (
                   <button
                     onClick={() => {
-                     props.follow(u.id);
+                     props.follow(u.id);  
                     }}
                   >
                     follow
