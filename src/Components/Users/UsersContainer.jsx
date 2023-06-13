@@ -1,4 +1,6 @@
 import { connect } from "react-redux";
+import style from "./Users.module.css";
+import Preloader from "../Preloader/preloader";
 import {
   follow,
   setUsers,
@@ -9,7 +11,7 @@ import {
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
-import style from "./Users.module.css";
+import { NavLink } from "react-router-dom";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -42,22 +44,17 @@ class UsersContainer extends React.Component {
   render() {
     return (
       <>
-        {this.props.isFetching ? (
-          <img
-            className={style.load}
-            src="https://phonoteka.org/uploads/posts/2022-01/thumbs/1643171694_4-phonoteka-org-p-fon-zagruzki-5.jpg"
+        {Preloader(this.props.isFetching)}
+          <Users
+            onPageChanged={this.onPageChanged}
+            follow={this.props.follow}
+            unfollow={this.props.unfollow}
+            users={this.props.users}
+            currentPage={this.props.currentPage}
+            pageSize={this.props.pageSize}
+            totalCount={this.props.totalCount}
+            isFetching={this.props.isFetching}
           />
-        ) : null}
-        <Users
-          onPageChanged={this.onPageChanged}
-          follow={this.props.follow}
-          unfollow={this.props.unfollow}
-          users={this.props.users}
-          currentPage={this.props.currentPage}
-          pageSize={this.props.pageSize}
-          totalCount={this.props.totalCount}
-          isFetching={this.props.isFetching}
-        />
       </>
     );
   }

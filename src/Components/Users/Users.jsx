@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 import style from "./Users.module.css";
 
 const Users = (props) => {
@@ -16,7 +16,7 @@ const Users = (props) => {
               onClick={(e) => {
                 props.onPageChanged(p);
               }}
-              className={props.currentPage === p ? style.selectedPage : ''}
+              className={props.currentPage === p ? style.selectedPage : ""}
             >
               {p}
             </button>
@@ -25,43 +25,46 @@ const Users = (props) => {
       </div>
       <div>
         {props.users.map((u) => (
-          <div className={style.user} key={u.id}>
-            <span>
-              <div>
-                <img
-                  src="https://flomaster.club/uploads/posts/2022-06/1655430966_4-flomaster-club-p-portreti-lyudei-krasivo-10.jpg"
-                  className={style.photo}
-                />
-              </div>
-              <div>
-                {u.follow ? (
-                  <button
-                    onClick={() => {
-                     props.follow(u.id);  
-                    }}
-                  >
-                    follow
-                  </button>
-                ) : (
-                  <button
-                    onClick={() => {
-                      props.unfollow(u.id);
-                    }}
-                  >
-                    unfollow
-                  </button>
-                )}
-              </div>
-            </span>
-            <span>
+          <NavLink className={style.link} 
+            to={"/profile/"+ (u.id)}>
+            <div className={style.user} key={u.id}>
               <span>
-                <div className={style.text}>{u.firstName}</div>
+                <div>
+                  <img
+                    src="https://flomaster.club/uploads/posts/2022-06/1655430966_4-flomaster-club-p-portreti-lyudei-krasivo-10.jpg"
+                    className={style.photo}
+                  />
+                </div>
+                <div>
+                  {u.follow ? (
+                    <button
+                      onClick={() => {
+                        props.follow(u.id);
+                      }}
+                    >
+                      follow
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        props.unfollow(u.id);
+                      }}
+                    >
+                      unfollow
+                    </button>
+                  )}
+                </div>
               </span>
               <span>
-                <div>Москва</div>
+                <span>
+                  <div className={style.text}>Имя: {u.firstName}</div>
+                </span>
+                <span>
+                  <div> Город: Москва</div>
+                </span>
               </span>
-            </span>
-          </div>
+            </div>
+          </NavLink>
         ))}
       </div>
     </div>

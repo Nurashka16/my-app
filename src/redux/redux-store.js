@@ -14,4 +14,6 @@ let reducers = combineReducers( {
    musicPage: musicReducer,
 });
 let store = createStore(reducers);
+window.store = store;
+
 export default store;
