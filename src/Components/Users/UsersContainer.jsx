@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import {
-  followAC,
-  setUsersAC,
-  unfollowAC,
-  setCurrentPageAC,
-  setIsFetchingAC,
+  follow,
+  setUsers,
+  unfollow,
+  setCurrentPage,
+  setIsFetching,
 } from "../../redux/users-reducer";
 import React from "react";
 import axios from "axios";
@@ -24,7 +24,6 @@ class UsersContainer extends React.Component {
         this.props.setIsFetching(false);
         this.props.setUsers(response.data.data);
       });
-      
   }
 
   onPageChanged = (page) => {
@@ -48,7 +47,7 @@ class UsersContainer extends React.Component {
             className={style.load}
             src="https://phonoteka.org/uploads/posts/2022-01/thumbs/1643171694_4-phonoteka-org-p-fon-zagruzki-5.jpg"
           />
-        ) : null }
+        ) : null}
         <Users
           onPageChanged={this.onPageChanged}
           follow={this.props.follow}
@@ -73,24 +72,11 @@ let mapStateToProps = (state) => {
     isFetching: state.usersPage.isFetching,
   };
 };
-let mapDispatchToProps = (dispatch) => {
-  return {
-    follow: (userId) => {
-      dispatch(followAC(userId));
-    },
-    unfollow: (userId) => {
-      dispatch(unfollowAC(userId));
-    },
-    setUsers: (users) => {
-      dispatch(setUsersAC(users));
-    },
-    setCurrentPage: (page) => {
-      dispatch(setCurrentPageAC(page));
-    },
-    setIsFetching: (value) => {
-      dispatch(setIsFetchingAC(value));
-    }
-  };
-};
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer);
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setIsFetching,
+})(UsersContainer);
