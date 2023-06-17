@@ -2,6 +2,9 @@ import { MyPostsContainer } from "./MyPosts/MyPostContainer";
 import Preloader from "../Preloader/preloader";
 import style from "./Profile.module.css";
 const Profile = (props) => {
+  if (!props.user) {
+    <Preloader/>
+  }
   return (
     <div>
       {!props.user ? (
