@@ -1,26 +1,32 @@
 import { connect } from "react-redux";
 import Profile from "./Profile";
 import { setUser } from "../../redux/profile-reducer";
+import axios from "axios";
+import React from "react";
 
-class ProfileContainer extends React.Component {
-  /*componentDidMount() {/*
-    this.props.setIsFetching(true);*//*
+export class ProfileContainer extends React.Component {
+  componentDidMount() {
+    /*this.props.setIsFetching(true);*/
     axios
       .get(
-        `http://127.0.0.1:5298/Users/Get?page=1
+        `http://127.0.0.1:5298/Users/Get?page=19
           &pageSize=1`
       )
-      .then((response) => {/*
-        this.props.setIsFetching(false);*//*
-        console.log(response);
+      .then((response) => {
+        console.log(response.data.data);
         this.props.setUser(response.data.data);
       });
-  }*/
+  }
   render() {
-    <Profile profilePage={this.profilePage} />;
+    return (
+      <Profile profilePage={this.props.profilePage} user={this.props.user} />
+    );
   }
 }
 let mapStateToProps = (state) => {
-  profilePage: state.profilePage;
+  return {
+    profilePage: state.profilePage,
+    user: state.profilePage.user,
+  };
 };
-export default connect(mapStateToProps, setUser)(ProfileContainer);
+export default connect(mapStateToProps, { setUser })(ProfileContainer);
