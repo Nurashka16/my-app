@@ -2,6 +2,7 @@ const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER = "SET_USER";
 const IS_FETCHING = "IS_FETCHING";
+const CLEAR_STATE = "CLEAR_STATE";
 
 let initialState = {
   posts: [
@@ -46,6 +47,11 @@ const profileReducer = (state = initialState, action) => {
     case IS_FETCHING: {
       return { ...state, value: action.value };
     }
+    case CLEAR_STATE: {
+      return {
+        ...state, user: null 
+      }
+    }
     default:
       return state;
   }
@@ -55,6 +61,8 @@ export const addPostCreator = () => ({ type: ADD_POST });
 export const updateNewPostTextCreator = (text) => ({
   type: UPDATE_NEW_POST_TEXT,
   newText: text,
+});
+export const clearState = () => ({type: CLEAR_STATE,
 });
 export const setUser = (user) => ({ type: SET_USER, user });
 export const toggleIsFetching = (value) => ({

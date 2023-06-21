@@ -7,6 +7,7 @@ import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
 import {FriendsContainer} from "./Components/Friends/FriendsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import { MusicsContainer } from "./Components/Music/MusicsContainer";
+import New from "./Components/New/New";
 
 const App = (props) => {
   return (
@@ -20,6 +21,7 @@ const App = (props) => {
             <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/music" element={<MusicsContainer />} />
+            <Route path="/new/:id" element={<New />} />
             <Route path="/friends/*" element={<FriendsContainer />} />
           </Routes>
         </div>

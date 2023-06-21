@@ -11,7 +11,7 @@ import {
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
@@ -45,16 +45,16 @@ class UsersContainer extends React.Component {
     return (
       <>
         {Preloader(this.props.isFetching)}
-          <Users
-            onPageChanged={this.onPageChanged}
-            follow={this.props.follow}
-            unfollow={this.props.unfollow}
-            users={this.props.users}
-            currentPage={this.props.currentPage}
-            pageSize={this.props.pageSize}
-            totalCount={this.props.totalCount}
-            isFetching={this.props.isFetching}
-          />
+        <Users
+          onPageChanged={this.onPageChanged}
+          follow={this.props.follow}
+          unfollow={this.props.unfollow}
+          users={this.props.users}
+          currentPage={this.props.currentPage}
+          pageSize={this.props.pageSize}
+          totalCount={this.props.totalCount}
+          isFetching={this.props.isFetching}
+        />
       </>
     );
   }
