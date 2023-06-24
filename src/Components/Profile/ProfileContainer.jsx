@@ -22,15 +22,14 @@ export class ProfileContainer extends React.Component {
     this.props.getStatus(userId);
 }
 */
+  
   componentDidMount() {
-    // this.props.toggleIsFetching(true);
     axios
       .get(
         `http://127.0.0.1:5298/Users/Get?page=19
           &pageSize=1`
       )
       .then((response) => {
-        // this.props.toggleIsFetching(false);
         this.props.setUser(response.data.data);
       });
   }
@@ -52,6 +51,6 @@ let mapStateToProps = (state) => {
     isFetching: state.profilePage.isFetching,
   };
 };
-export default connect(mapStateToProps, { setUser,clearState, toggleIsFetching })(
+export default connect(mapStateToProps, { setUser, toggleIsFetching })(
   ProfileContainer
 );
