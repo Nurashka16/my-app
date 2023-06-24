@@ -9,6 +9,9 @@ import UsersContainer from "./Components/Users/UsersContainer";
 import { MusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
 
+/*              <Route path="/user" element={null}/>
+              <Route path="/myAcc" element={null}/>
+*/
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -17,7 +20,7 @@ const App = (props) => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile/*" element={<ProfileContainer />} />
+            <Route path="/profile/*" element={<ProfileContainer />}></Route>
             <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/music" element={<MusicsContainer />} />

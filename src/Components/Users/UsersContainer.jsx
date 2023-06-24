@@ -29,12 +29,12 @@ class UsersContainer extends React.Component {
   }
 
   onPageChanged = (page) => {
+    console.log(page);
     this.props.setIsFetching(true);
     this.props.setCurrentPage(page);
     axios
       .get(
-        `http://127.0.0.1:5298/Users/Get?page=${page}
-      &pageSize=${this.props.pageSize}`
+        `http://127.0.0.1:5298/Users/Get?page=1&pageSize=20` 
       )
       .then((response) => {
         this.props.setIsFetching(false);
