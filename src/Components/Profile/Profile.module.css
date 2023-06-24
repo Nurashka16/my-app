@@ -1,4 +1,16 @@
-
-.content img {
-  width: 150px;
+.img {
+  width: 1400px;
+  height: 500px;
+}
+.content {
+  padding-left: 20px ;
+}
+.imgText {
+  padding: 20px;
+  font-size: 40px;
+  color: white;
+}
+.user {
+  width: 400px;
+  height: 300px;
 }

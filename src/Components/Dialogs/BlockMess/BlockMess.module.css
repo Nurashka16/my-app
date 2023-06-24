@@ -1,0 +1,15 @@
+.blockMess {
+display: flex;
+height: 30px;
+flex: 0 1 90%;
+}
+.textArea {
+flex: 0 1 80%;
+font-size: 20px;
+
+}
+.button {
+   color: green;
+   background-color: antiquewhite;
+   flex: 0 1 20%;
+}

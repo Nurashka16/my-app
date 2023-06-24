@@ -1,20 +1,34 @@
-import MyPosts from "./MyPosts/MyPosts";
+import { MyPostsContainer } from "./MyPosts/MyPostContainer";
+import Preloader from "../Preloader/preloader";
 import style from "./Profile.module.css";
-const Profile = () => {
+
+
+
+const Profile = (props) => {
   return (
-    <div className={style.content}>
-      <div>
-        <img src="https://cdn.maximonline.ru/39/1a/96/391a969dcabca3f6dcd9fa14951cea15/1000x600_21_5b89cd16b926c4e447a68435cfc867df@1200x830_0xac120005_1647304151528085193.jpg"></img>
-      </div>
-      <img src="https://7oom.ru/wp-content/uploads/peizaji-01.jpg"></img>
-      <div>ava + desc</div>
-      <div>
-        My post
-        <div>New post</div>
-      </div>
-      <div>
-      <MyPosts />
-        <div>Post 2</div>
+    <div>
+      {!props.user ? (
+        <div>
+            {Preloader(true)}
+          <img
+            className={style.img}
+            src="https://7oom.ru/wp-content/uploads/peizaji-01.jpg"
+          />
+          <div className={style.imgText}>ava + desc</div>
+        </div>
+      ) : (
+        <div>
+          <div>{props.user[0].firstName} {props.user[0].lastName}</div>
+          <div>Город: Москва</div>
+          <img
+            className={style.user}
+            src="https://cdn-static.ntv.ru/home/news/20141208/putin1_vs.jpg"
+            alt=""
+          />
+        </div>
+      )}
+      <div className={style.content}>
+        <MyPostsContainer />
       </div>
     </div>
   );

@@ -1,0 +1,46 @@
+.profile {
+margin: 50px;
+border: solid black 5px;
+height: 300px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+}
+.frame {
+
+}
+.img {
+   height: 200px;
+   width: 200px;
+   border-radius: 10%;
+}
+.info {
+   height: 200px;
+   width: 400px;
+}
+.title {
+display: flex;
+align-items: center;
+column-gap: 10px;
+}
+.name {
+   font-size: 30px;
+}
+.age {
+   font-size: 25px;
+   font-weight: 700;
+}
+.block_connect {
+display: flex;
+height: 100px;
+column-gap: 20px;
+}
+.write{
+font-size: 25px;
+color: green;
+font-weight: 700;
+}
+.call{
+   font-size: 25px;
+   color: red;
+}

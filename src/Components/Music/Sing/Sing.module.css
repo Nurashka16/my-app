@@ -1,0 +1,28 @@
+.img {
+   height: 100px;
+   width: 120px;
+   border-radius: 5%;
+}
+.block {
+   display: flex;
+   flex-direction: row;
+   margin: 20px 0;
+   align-items: center;
+}
+.title {
+   margin: 0 0 0 20px;
+}
+.name {
+   margin: 0 0 20px 0;
+   color: black;
+   font-size: 30px;
+}
+.author {
+   color: gray;
+   font-size: 20px;
+}
+.length {
+   margin: 0 0 0 30px;
+   color: rgb(192, 123, 123);
+   
+}
