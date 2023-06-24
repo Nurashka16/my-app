@@ -34,7 +34,7 @@ class UsersContainer extends React.Component {
     this.props.setCurrentPage(page);
     axios
       .get(
-        `http://127.0.0.1:5298/Users/Get?page=1&pageSize=20` 
+        `http://127.0.0.1:5298/Users/Get?page=${page}&pageSize=4` 
       )
       .then((response) => {
         this.props.setIsFetching(false);

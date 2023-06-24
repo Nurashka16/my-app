@@ -1,28 +1,12 @@
-import { connect } from "react-redux";
-import Profile from "./Profile";
-import { setUser, toggleIsFetching, clearState } from "../../redux/profile-reducer";
+/*import { connect } from "react-redux";
+  import Profile from "./Profile";
+import { setUser } from "../../redux/profile-reducer";
 import axios from "axios";
-import { useParams} from 'react-router-dom';
 import React from "react";
-/*
-function withRouter(child) {
-  return(props)=> {
-    const match  = {params: useParams()};
-    return <Children {...props}  match = {match}/>
-  }
-}*/
+
 export class ProfileContainer extends React.Component {
-  /*redirectToMainUser() {
-    let userId = this.props.match.params.userId;
-    // let userId = this.props.router.params.userId;
-    if(!userId) {
-        userId = 20; //Пишем Ваш id
-    }
-    this.props.getUserProfile(userId);
-    this.props.getStatus(userId);
-}
-*/
-  
+  withRouter() {
+  }
   componentDidMount() {
     axios
       .get(
@@ -33,10 +17,6 @@ export class ProfileContainer extends React.Component {
         this.props.setUser(response.data.data);
       });
   }
-/*
-  componentWillUnmount() {
-    this.props.clearState();
-  }*/
   render() {
     return (
       <Profile profilePage={this.props.profilePage} 
@@ -51,6 +31,7 @@ let mapStateToProps = (state) => {
     isFetching: state.profilePage.isFetching,
   };
 };
+
 export default connect(mapStateToProps, { setUser, toggleIsFetching })(
   ProfileContainer
-);
+);*/

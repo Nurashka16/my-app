@@ -1,7 +1,7 @@
 import { MyPostsContainer } from "./MyPosts/MyPostContainer";
 import Preloader from "../Preloader/preloader";
 import style from "./Profile.module.css";
-
+//{Preloader(true)}
 
 
 const Profile = (props) => {
@@ -9,7 +9,6 @@ const Profile = (props) => {
     <div>
       {!props.user ? (
         <div>
-            {Preloader(true)}
           <img
             className={style.img}
             src="https://7oom.ru/wp-content/uploads/peizaji-01.jpg"
