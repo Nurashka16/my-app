@@ -19,6 +19,7 @@ let initialState = {
   ],
   newPostText: "danya kaka",
   user: null,
+  id: 'de3d08e0-e04c-40dc-8552-ffcf19bb15ec',
   isFetching: false,
 };
 
@@ -42,6 +43,7 @@ const profileReducer = (state = initialState, action) => {
       return stateCopy;
     }
     case SET_USER: {
+      console.log(action.user);
       return { ...state, user: action.user };
     }
     case IS_FETCHING: {

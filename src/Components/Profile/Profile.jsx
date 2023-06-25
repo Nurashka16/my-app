@@ -17,7 +17,7 @@ const Profile = (props) => {
         </div>
       ) : (
         <div>
-          <div>{props.user[0].firstName} {props.user[0].lastName}</div>
+          <div>{props.user.firstName} {props.user.lastName}</div>
           <div>Город: Москва</div>
           <img
             className={style.user}

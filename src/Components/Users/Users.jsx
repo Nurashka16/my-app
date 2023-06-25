@@ -25,7 +25,7 @@ const Users = (props) => {
       </div>
       <div>
         {props.users.map((u) => (
-          <NavLink className={style.link} 
+          <NavLink className={style.link} key={u.id} 
             to={"/profile/"+ (u.id)}>
             <div className={style.user} key={u.id}>
               <span>

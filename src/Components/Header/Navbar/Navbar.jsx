@@ -5,7 +5,8 @@ const Navbar = () => {
   return (
     <nav className={style.nav}>
       <div className={style.item}>
-        <CostumLink className={style.link} to="/profile">
+        <CostumLink className={style.link} 
+        to="/profile/de3d08e0-e04c-40dc-8552-ffcf19bb15ec">
           Profile
         </CostumLink>
       </div>

@@ -9,6 +9,9 @@ import UsersContainer from "./Components/Users/UsersContainer";
 import { MusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
 import { ProfileContainer2 } from "./Components/Profile/ProfileContainer2";
+import ProfileContainer3 from "./Components/Profile/ProfileContainer3";
+import { MyProfileCont } from "./Components/Profile/ProfileContainer3";
+import { HighProfileContainer } from "./Components/Profile/ProfileContainer2";
 
 /*              <Route path="/user" element={null}/>
 */
@@ -20,7 +23,9 @@ const App = (props) => {
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route path="/profile/:id" element={<ProfileContainer2   />}/>
+            <Route path="/profile" element={<HighProfileContainer  />}>
+              <Route path=":id" element={<HighProfileContainer  />}/>
+            </Route>
             <Route path="/dialogs/*" element={<DialogsContainer />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/music" element={<MusicsContainer />} />

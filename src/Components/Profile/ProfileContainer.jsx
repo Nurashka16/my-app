@@ -32,6 +32,7 @@ let mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setUser, toggleIsFetching })(
+export My connect(mapStateToProps, { setUser, toggleIsFetching })(
   ProfileContainer
-);*/
+);
+*/
