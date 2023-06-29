@@ -2,14 +2,10 @@ import React from "react";
 import style from "./Sing.module.css";
 
 export const Sing = (props) => {
-  let playingMusic = () => {
-    props.playingMusic();
-  }
-  console.log(props);
   return (
     <div className={style.block}>
       <div>
-        <img className={style.img} onClick={playingMusic} src={props.url}/>
+        <img className={style.img} src={props.url}/>
       </div>
       <div className={style.title}>
         <div className={style.name}>

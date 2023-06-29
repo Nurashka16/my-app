@@ -9,11 +9,7 @@ const Profile = (props) => {
     <div>
       {!props.user ? (
         <div>
-          <img
-            className={style.img}
-            src="https://7oom.ru/wp-content/uploads/peizaji-01.jpg"
-          />
-          <div className={style.imgText}>ava + desc</div>
+          {Preloader(true)}
         </div>
       ) : (
         <div>

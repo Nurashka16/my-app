@@ -1,0 +1,7 @@
+.act {
+   width: 20%;
+   height: 150px;
+   border: solid gray 2px;
+   display: flex;
+   justify-content: center;
+}

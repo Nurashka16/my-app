@@ -10,7 +10,6 @@ let initialState = {
       author: "Ledy Gaga",
       musicLength: "3:41",
       play: false,
-
     },
     {
       id: 2,
@@ -45,30 +44,19 @@ let initialState = {
       play: false,
     },
   ],
-  musicActual: null
+  musicActual: null,
 };
 
 function musicReducer(state = initialState, action) {
   switch (action.type) {
     case PLAY: {
-      let actual = state.musicActual;
-      let stateCopy = {...state};
-      if (actual == null) {
-        actual = state.musics.find((m) => m.id == action.musicId);
-        actual.play = true;
-      } else {
-       stateCopy.musicActual.play = false;
-       actual = state.musics.find((m) => m.id == action.musicId);
-       actual.play = true;
-      }
-      stateCopy.musicActual = actual;
-      return stateCopy;
+      return { ...state, musicActual: action.sing };
     }
     default:
       return state;
   }
 }
 
-export const playAC = (musicId) => ({ type: PLAY, musicId });
+export const playAC = (sing) => ({ type: PLAY, sing });
 
 export default musicReducer;
