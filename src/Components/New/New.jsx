@@ -3,10 +3,8 @@ import { useParams } from 'react-router-dom';
 import axios from "axios";
 //прорисовка id из url
 const New = () => {
-   const {id} = useParams();
-   console.log(id);
   return (
-    <div>{id}
+    <div>123
     </div>
 
   )

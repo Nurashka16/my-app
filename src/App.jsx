@@ -3,31 +3,31 @@ import Header from "./Components/Header/Header";
 import Navbar from "./Components/Header/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
-import {FriendsContainer} from "./Components/Friends/FriendsContainer";
+import { FriendsContainer } from "./Components/Friends/FriendsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
-import { HighProfileContainer } from "./Components/Profile/ProfileContainer2";
+import { HighProfileContainer } from "./Components/Profile/ProfileContainer";
 
-/*              <Route path="/user" element={null}/>
-*/
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
-        <Navbar />
-        <div className="app-wrapper-content">
-          <Routes>
-            <Route path="/profile" element={<HighProfileContainer  />}>
-              <Route path=":id" element={<HighProfileContainer  />}/>
-            </Route>
-            <Route path="/dialogs/*" element={<DialogsContainer />} />
-            <Route path="/users" element={<UsersContainer />} />
-            <Route path="/music" element={<HighMusicsContainer />} />
-            <Route path="/new/:id" element={<New />} />
-            <Route path="/friends/*" element={<FriendsContainer />} />
-          </Routes>
+        <Header className="header" />
+        <div className="container">
+          <Navbar />
+          <div className="app-wrapper-content">
+            <Routes>
+              <Route path="/" element={<New />} />
+              <Route path="/profile" element={<HighProfileContainer />}>
+                <Route path=":id" element={<HighProfileContainer />} />
+              </Route>
+              <Route path="/dialogs/*" element={<DialogsContainer />} />
+              <Route path="/users" element={<UsersContainer />} />
+              <Route path="/music" element={<HighMusicsContainer />} />
+              <Route path="/friends/*" element={<FriendsContainer />} />
+            </Routes>
+          </div>
         </div>
       </div>
     </BrowserRouter>

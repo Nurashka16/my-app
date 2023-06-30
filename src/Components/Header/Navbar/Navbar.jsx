@@ -7,7 +7,12 @@ const Navbar = () => {
       <div className={style.item}>
         <CostumLink className={style.link} 
         to="/profile/de3d08e0-e04c-40dc-8552-ffcf19bb15ec">
-          Profile
+          Профиль
+        </CostumLink>
+      </div>
+      <div className={style.item}>
+        <CostumLink className={style.link} to="/new">
+          Новости
         </CostumLink>
       </div>
       <div className={style.item}>
@@ -18,11 +23,6 @@ const Navbar = () => {
       <div className={style.item}>
         <CostumLink className={style.link} to="/users">
           Users
-        </CostumLink>
-      </div>
-      <div className={style.item}>
-        <CostumLink className={style.link} to="/new">
-          New
         </CostumLink>
       </div>
       <div className={style.item}>
