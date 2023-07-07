@@ -1,17 +1,22 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import axios from "axios";
+import style from "./New.module.css";
+
 //прорисовка id из url
 const New = () => {
   return (
-    <div>123
+    <div className={style.container}>
+      <div className={style.status}>
+          <img src="" alt="" />
+      </div>
+      <div className={style.record}>
+        record
+      </div>
+      <div className={style.news}>
+        news
+      </div>
     </div>
 
   )
-}
-//прорисовка id по запросу
-const New2 = () => {
-
 }
 
 export default New;

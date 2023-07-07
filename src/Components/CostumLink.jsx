@@ -6,7 +6,7 @@ const CostumLink = ({ children, to, ...props }) => {
     <Link
       to={to}
       {...props}
-      style={{ color: isMatch ? "red" : "white" }} >
+      style={{ color: isMatch ? "red" : "" }} >
       {children}
     </Link>
   );

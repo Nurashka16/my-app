@@ -1,16 +1,15 @@
-
+.container {
+  width: 35%;
+}
 .nav {
-  grid-area: nav;
-  background-color: rgb(185, 215, 77);
   padding: 20px;
 }
 .item {
-  color: color;
   font-size: 25px;
 }
 .link{
   text-decoration: none;
-  color: aliceblue;
+  color: black;
 }
 .link:hover {
   color: red;
