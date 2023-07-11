@@ -1,5 +1,5 @@
 import style from "./Navbar.module.css";
-import CostumLink from "../../CostumLink";
+import CostumLink from "./../CostumLink";
 import Footer from "./Footer/Footer.jsx";
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/recommendation">
+          <CostumLink className={style.link} to="/authorization">
             Рекомендация
           </CostumLink>
         </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
           </CostumLink>
         </div>
       </nav>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

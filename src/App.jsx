@@ -1,6 +1,6 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
-import Navbar from "./Components/Header/Navbar/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
 import { FriendsContainer } from "./Components/Friends/FriendsContainer";
@@ -8,6 +8,11 @@ import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
 import { HighProfileContainer } from "./Components/Profile/ProfileContainer";
+import Authorization from "./Components/Authorization/Authorization";
+
+// надо добавить условие с 2 блоками. 1ый обязательный, при
+// auto-state= undefined, появляется блок авторизации. А после
+// заполнения, открывается APP
 
 const App = () => {
   return (

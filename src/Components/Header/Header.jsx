@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import style from "./Header.module.css";
 const Header = (props) => {
   return (

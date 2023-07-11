@@ -1,5 +1,5 @@
 import React from "react";
-import CostumLink from "../../../CostumLink";
+import CostumLink from "../../CostumLink";
 import style from "./Footer.module.css";
 
 const Footer = (props) => {
