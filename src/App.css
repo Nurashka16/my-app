@@ -7,10 +7,10 @@
 .container {
   display: flex;
   justify-content: space-between;
-  width: 55%;
+  width: 57%;
 }
 .app-wrapper-content {
   grid-area: content;
   background-color: #ebedf0 ;
-  flex: 0 1 65%;
+  flex: 0 1 67%;
 }

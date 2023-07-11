@@ -1,0 +1,24 @@
+.title {
+   width: 250px;
+ }
+ .title_content {
+   display: flex;
+   align-items: center;
+ }
+ .title_text {
+   display: flex;
+   align-items: center;
+   color: rgb(0, 0, 0);
+   font-size: 20px;
+   height: 50px;
+   font-weight: 700;
+   margin-right: 5px;
+   letter-spacing: 0.8px;
+ }
+ 
+ .title_icon {
+   display: flex;
+   height: 50px;
+   align-items: center;
+   margin-top: 6px;
+ }
