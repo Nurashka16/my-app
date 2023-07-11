@@ -1,15 +1,11 @@
 import style from "./Header.module.css";
+import Logo from "./Logotype/Logo";
+
 const Header = (props) => {
   return (
     <div className={style.header}>
       <div className={style.container}>
-        <div className={style.logo}>
-          <img
-            className={style.logo_img}
-            src="https://img.freepik.com/premium-vector/modern-badge-vkontakte-icon_578229-170.jpg"
-          />
-          <div className={style.logo_text}>ВКОНТАКТЕ</div>
-        </div>
+        <Logo/>
         <div className={style.menu}>
           <div className={style.menu_container}>
             <div className={style.menu_text}>Новости</div>
