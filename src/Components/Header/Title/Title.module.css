@@ -1,5 +1,6 @@
 .title {
    width: 250px;
+   cursor: pointer;
  }
  .title_content {
    display: flex;

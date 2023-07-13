@@ -20,7 +20,7 @@ const Navbar = () => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/authorization">
+          <CostumLink className={style.link} to="/friends">
             Рекомендация
           </CostumLink>
         </div>

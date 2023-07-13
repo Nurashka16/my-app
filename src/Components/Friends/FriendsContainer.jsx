@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Friends from "./Friends";
+import { closeBlock, openBlock} from "../../redux/friends-reducer";
 
 
 let mapStateToProps = (state) => {
@@ -9,4 +10,6 @@ let mapStateToProps = (state) => {
   }
 }
 
-export const FriendsContainer = connect(mapStateToProps)(Friends);
+export const FriendsContainer = connect(mapStateToProps, {
+  closeBlock, openBlock
+})(Friends);
