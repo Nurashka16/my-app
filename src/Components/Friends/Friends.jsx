@@ -1,13 +1,20 @@
 import Friend from "./Friend/Friend";
 import style from "./Friends.module.css";
+import Burger from "../menuBurger/Burger";
+
+
 let Friends = (props) => {
+  let block = props.friendsPage.block;
   let profileItem = props.friendsPage.profile.map((m) => (
-    <Friend key={m.id} id={m.id} url={m.url} name={m.name}
-    age={m.age} />
+    <Friend key={m.id} id={m.id} url={m.url} name={m.name} age={m.age} />
   ));
+
   return (
     <div className={style.container}>
-      <div className={style.title}>All Friends:</div>
+      <div className={style.title}>
+        All Friends:
+        {block ? "true" : <Burger/>}
+      </div>
       {profileItem}
     </div>
   );
