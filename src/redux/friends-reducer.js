@@ -27,11 +27,13 @@ let initialState = {
 function friendsReducer(state = initialState, action) {
   switch (action.type) {
     case OPEN_BLOCK:
+      console.log("open");
       return {
         ...state,
         block: true,
       };
     case CLOSE_BLOCK: {
+      console.log("close");
       return {
         ...state,
         block: false,

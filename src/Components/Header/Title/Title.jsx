@@ -9,16 +9,20 @@ const Title = () => {
         <div className={style.title_icon}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="#2e8dec"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
+            height="20"
+            width="24"
+            viewBox="-4 -4 24 20"
+            id="dropdown_outline_16"
+            x="140"
           >
-            <path
-              fillRule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            />
+            <g fill="none" fill-rule="evenodd">
+              <path d="M0 0h16v12H0z" />
+              <path
+                d="M8 6.778l3.773-3.107a.75.75 0 11.954 1.158l-4.25 3.5a.75.75 0 01-.954 0l-4.25-3.5a.75.75 0 01.954-1.158z"
+                fill="#2e8dec"
+                fill-rule="nonzero"
+              />
+            </g>
           </svg>
         </div>
       </div>

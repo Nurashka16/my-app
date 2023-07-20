@@ -1,6 +1,9 @@
 .title {
-   width: 250px;
+   width: 285px;
    cursor: pointer;
+   display: flex;
+   align-self: flex-start;
+   margin-left: 10px;
  }
  .title_content {
    display: flex;
@@ -12,14 +15,18 @@
    color: rgb(0, 0, 0);
    font-size: 20px;
    height: 50px;
-   font-weight: 700;
-   margin-right: 5px;
-   letter-spacing: 0.8px;
+   font-weight: 650;
+
+   letter-spacing: 0.2px;
+
  }
  
  .title_icon {
    display: flex;
    height: 50px;
    align-items: center;
-   margin-top: 6px;
+   margin-top: 3px;
+ }
+ .title_icon svg {
+  display: inline-block;
  }

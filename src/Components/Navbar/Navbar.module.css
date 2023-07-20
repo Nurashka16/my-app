@@ -1,8 +1,8 @@
 .container {
-  width: 35%;
+  width: 265px;
 }
 .nav {
-  padding: 20px;
+  /*padding: 20px;*/
 }
 .item {
   font-size: 25px;

@@ -7,9 +7,17 @@ const Header = () => {
   return (
     <div className={style.header}>
       <div className={style.container}>
-        <Logotype/>
-        <Title/>
-        <Search/>
+        <div className={style.logotype}>
+          <Logotype />
+        </div>
+        <div className={style.header_components}>
+          <div className={style.title}>
+            <Title />
+          </div>
+          <div className={style.search}>
+            <Search />
+          </div>
+        </div>
       </div>
     </div>
   );

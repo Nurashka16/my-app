@@ -18,9 +18,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header className="header" />
-        <div className="container">
-          <Navbar />
+        <Header />
+        <div className="app_container">
+          <div className="app_navbar"><Navbar /></div>
           <div className="app-wrapper-content">
             <Routes>
               <Route path="/" element={<New />} />

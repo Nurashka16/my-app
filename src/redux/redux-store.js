@@ -5,7 +5,7 @@ import musicReducer from "./music-reducer";
 import profileReducer from "./profile-reducer";
 import usersReducer from "./users-reducer";
 import autoReducer from "./auto-reducer";
-
+import headerReducer from "./header-reducer";
 
 let reducers = combineReducers( {
    profilePage: profileReducer,
@@ -14,6 +14,7 @@ let reducers = combineReducers( {
    usersPage: usersReducer,
    musicPage: musicReducer,
    autoPage: autoReducer,
+   headerPage: headerReducer,
 });
 let store = createStore(reducers);
 window.store = store;
