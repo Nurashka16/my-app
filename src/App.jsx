@@ -8,7 +8,7 @@ import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
 import { HighProfileContainer } from "./Components/Profile/ProfileContainer";
-import Authorization from "./Components/Authorization/Authorization";
+import Authorization from "./Components/Entrance/Entrance";
 
 // надо добавить условие с 2 блоками. 1ый обязательный, при
 // auto-state= undefined, появляется блок авторизации. А после
@@ -20,7 +20,9 @@ const App = () => {
       <div className="app-wrapper">
         <Header />
         <div className="app_container">
-          <div className="app_navbar"><Navbar /></div>
+          <div className="app_navbar">
+            <Navbar />
+          </div>
           <div className="app-wrapper-content">
             <Routes>
               <Route path="/" element={<New />} />

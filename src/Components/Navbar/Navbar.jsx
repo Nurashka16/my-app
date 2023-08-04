@@ -40,7 +40,7 @@ const Navbar = () => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/grups">
+          <CostumLink className={style.link} to="/groups">
             Сообщества
           </CostumLink>
         </div>

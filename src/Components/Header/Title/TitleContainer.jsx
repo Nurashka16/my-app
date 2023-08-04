@@ -7,8 +7,10 @@ import { closeBlock, openBlock } from '../../../redux/header-reducer';
 let mapStateToProps = (state) => {
    return {
       block: state.headerPage.block,
+      elemsBurger: state.headerPage.elemsBurger,
     }
 }
 export const TitleContainer = connect(mapStateToProps, {
    closeBlock, openBlock
  })(Title);
+ 

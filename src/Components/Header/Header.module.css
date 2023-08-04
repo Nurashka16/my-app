@@ -20,6 +20,10 @@
 .logotype {
   width: 260px;
   display: flex;
+  text-transform: none;
+}
+.logotype_link {
+  text-decoration: none;
 }
 .header_components {
   display: flex;

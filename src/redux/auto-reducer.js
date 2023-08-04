@@ -1,7 +1,7 @@
 const SET_USER = "SET_USER";
 
 let initialState = {
-   data: "1",
+   data: "",
 };
 
 const autoReducer = (state = initialState, action) => {

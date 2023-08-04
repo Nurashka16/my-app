@@ -1,18 +1,18 @@
 .logo{
-  margin-left: 22px;
   text-decoration: none;
 }
 .logo:hover {
   color: red;
 }
 .logo_content {
-   height: 50px;
-   width: 260px;
+   height: 56px;
+   width: 160px;
    display: flex;
+   padding-left: 10px;
  }
  .logo_img {
   width: 30px;
-  height: 50px;
+  height: 56px;
   display: flex;
   align-items: center;
   margin-right: 1px;
@@ -26,4 +26,6 @@
    font-size: 22px;
    padding-bottom: 7px;
    color: rgb(0, 0, 0);
+  text-decoration: none;
+  border: none;
  }

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Logotype = () => {
   return (
-    <NavLink className={style.logo} to={"/"}>
+    <div className={style.logo} >
       <div className={style.logo_content}>
         <div className={style.logo_img}>
           <svg
@@ -23,7 +23,7 @@ const Logotype = () => {
         </div>
         <div className={style.logo_text}>вконтакте</div>
       </div>
-    </NavLink>
+    </div>
   );
 };
 /*
