@@ -2,7 +2,12 @@ import React from "react";
 import style from "./Record.module.css";
 import { NavLink } from "react-router-dom";
 
-function Record() {
+function Record(props) {
+
+  const onChangeHandler = (e) => 
+  (props.setUserData({...props.authPage,
+     [e.target.name]: e.target.value}))
+
   return (
     <div className={style.wrapper}>
       <div className={style.container}>
@@ -12,13 +17,13 @@ function Record() {
             <label className={style.text} for="fname">
               Имя:
             </label>
-            <input className={style.input} type="text" />
+            <input name="firstName" className={style.input} type="text" onChange={onChangeHandler}/>
           </div>
           <div className={style.item}>
             <label className={style.text} for="fname">
               Фамилия:
             </label>
-            <input className={style.input} type="text" />
+            <input name="lastName" className={style.input} type="text" onChange={onChangeHandler}/>
           </div>
           <div className={style.item}>
             <label className={style.text} for="fname">
@@ -32,9 +37,17 @@ function Record() {
             </label>
             <input className={style.input} type="text" />
           </div>
+          <div className={style.item}>
+            <label className={style.text} for="fname">
+              Аватар:
+            </label>
+            <input className={style.input} type="text" />
+          </div>
         </form>
         <div className={style.register}>
-            <input className={style.btn_register} type="submit" value="Регистрация" />  
+            <input className={style.btn_register}
+            onClick={()=> console.log(2)}
+            type="submit" value="Регистрация" />  
         </div>
         <div className={style.description}>
           Уже есть аккаунт?

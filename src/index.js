@@ -7,9 +7,9 @@ import "./index.css";
 import Entrance from "./Components/Entrance/Entrance";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-let user = store.getState().autoPage.data;
-function isAuto(data) {
-  if (!data) {
+let user = store.getState().authPage.data;
+function isAuto(info) {
+  if (!info) {
     return <Entrance />;
   } else return <App />;
 }
