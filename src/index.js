@@ -5,16 +5,18 @@ import store from "./redux/redux-store";
 import { Provider } from "react-redux";
 import "./index.css";
 import Entrance from "./Components/Entrance/Entrance";
+import Router from "./Components/Router/Router";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-let user = store.getState().authPage.data;
-function isAuto(info) {
-  if (!info) {
-    return <Entrance />;
-  } else return <App />;
-}
+const isAuth = store.getState().authPage.isAuth;
+console.log(isAuth);
+
+//const isAuth2 = useSelector(state => store.authPage.isAuth)
+
 root.render(
   <React.StrictMode>
-    <Provider store={store}>{isAuto(user)}</Provider>
+    <Provider store={store}>
+      <Router />
+    </Provider>
   </React.StrictMode>
 );

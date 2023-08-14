@@ -7,7 +7,7 @@ import RecordContainer from "../Record/RecordContainer";
 
 //настроить header чтобы он мог работать без других комп
 
-const Entrance = () => {
+const Entrance = (props) => {
   return (
     <BrowserRouter>
       <Routes>

@@ -1,13 +1,13 @@
 import { connect } from "react-redux";
 import style from "./Users.module.css";
-import Preloader from "../Preloader/preloader";
+import Preloader from "../../Preloader/preloader";
 import {
   follow,
   setUsers,
   unfollow,
   setCurrentPage,
   setIsFetching,
-} from "../../redux/users-reducer";
+} from "../../../redux/users-reducer";
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
@@ -32,9 +32,7 @@ class UsersContainer extends React.Component {
     this.props.setIsFetching(true);
     this.props.setCurrentPage(page);
     axios
-      .get(
-        `http://127.0.0.1:5298/Users/Get?page=${page}&pageSize=4` 
-      )
+      .get(`http://127.0.0.1:5298/Users/Get?page=${page}&pageSize=4`)
       .then((response) => {
         this.props.setIsFetching(false);
         this.props.setUsers(response.data.data);

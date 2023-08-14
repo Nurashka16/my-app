@@ -1,32 +1,45 @@
 const SET_USER_DATA = "SET_USER_DATA";
+const UPDATE_TEXT_INPUT = "UPDATE_TEXT_INPUT";
 
-let initialState = {
-  info: "",
-  firstName: null,
-  lastName: null,
-  email: null,
-  password: null,
-  avatar: null,
+const initialState = {
+  token: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  avatar: "",
+  id: "",
+  isAuth: false,
+  /*"https://thypix.com/wp-content/uploads/2021/10/grey-anime-profile-picture-thypix-45-700x700.jpg"*/
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_DATA: {
-      console.log(action);
+    console.log("work");
       return {
         ...state,
-        data: action.data,
+        ...action.userData,
+        isAuth : true,
       };
     }
-
+    case UPDATE_TEXT_INPUT: {
+      return {
+        ...state,
+        ...action.obj
+      }
+      
+    };
     default:
       return state;
   }
 };
-export const setUserData = (firstName, lastName, email, password,
-   avatar) => ({
-  type: SET_USER_DATA,
-  data: { firstName, lastName, email, password, avatar },
+export const setUserData = (userData) => ({
+  type: SET_USER_DATA, userData
 });
+export const updateTextInput = (obj) => ({
+  type: UPDATE_TEXT_INPUT,
+  obj ,
+})
 
 export default authReducer;
