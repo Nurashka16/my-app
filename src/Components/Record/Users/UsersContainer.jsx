@@ -7,35 +7,31 @@ import {
   unfollow,
   setCurrentPage,
   setIsFetching,
+  inProgressOfSwitching
 } from "../../../redux/users-reducer";
 import React from "react";
 import axios from "axios";
 import Users from "./Users";
 import { NavLink, Outlet, useParams } from "react-router-dom";
+import UsersAPI from "../../../API/UsersAPI";
 
 class UsersContainer extends React.Component {
   componentDidMount() {
     this.props.setIsFetching(true);
-    axios
-      .get(
-        `http://127.0.0.1:5298/Users/Get?page=
-        ${this.props.currentPage}
-        &pageSize=${this.props.pageSize}`
-      )
+    UsersAPI.getUsers(this.props.currentPage, this.props.pageSize)
       .then((response) => {
         this.props.setIsFetching(false);
-        this.props.setUsers(response.data.data);
+        this.props.setUsers(response.data);
       });
   }
 
   onPageChanged = (page) => {
     this.props.setIsFetching(true);
     this.props.setCurrentPage(page);
-    axios
-      .get(`http://127.0.0.1:5298/Users/Get?page=${page}&pageSize=4`)
+    UsersAPI.getUsers(page, this.props.pageSize)
       .then((response) => {
         this.props.setIsFetching(false);
-        this.props.setUsers(response.data.data);
+        this.props.setUsers(response.data);
       });
   };
   render() {
@@ -51,6 +47,8 @@ class UsersContainer extends React.Component {
           pageSize={this.props.pageSize}
           totalCount={this.props.totalCount}
           isFetching={this.props.isFetching}
+          inProgressOfSwitching={this.props.inProgressOfSwitching}
+          followingInProgress={this.props.followingInProgress}
         />
       </>
     );
@@ -64,6 +62,7 @@ let mapStateToProps = (state) => {
     totalCount: state.usersPage.totalCount,
     currentPage: state.usersPage.currentPage,
     isFetching: state.usersPage.isFetching,
+    followingInProgress: state.usersPage.followingInProgress,
   };
 };
 
@@ -72,5 +71,5 @@ export default connect(mapStateToProps, {
   unfollow,
   setUsers,
   setCurrentPage,
-  setIsFetching,
+  setIsFetching,   inProgressOfSwitching
 })(UsersContainer);

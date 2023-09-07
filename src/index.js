@@ -9,7 +9,6 @@ import Router from "./Components/Router/Router";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const isAuth = store.getState().authPage.isAuth;
-console.log(isAuth);
 
 //const isAuth2 = useSelector(state => store.authPage.isAuth)
 

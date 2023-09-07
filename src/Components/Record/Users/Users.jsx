@@ -1,14 +1,36 @@
 import { NavLink } from "react-router-dom";
 import style from "./Users.module.css";
 import axios from "axios";
+import UsersAPI from "../../../API/UsersAPI";
 
 const Users = (props) => {
-  console.log(props);
   let pageCount = Math.ceil(props.totalCount / props.pageSize);
   let pages = [];
   for (let i = 1; i <= pageCount; i++) {
     pages.push(i);
   }
+
+  const onClickFollowingHandler = (userId, follow) => {
+    props.inProgressOfSwitching(true, userId);
+    UsersAPI.isFollowed(userId.value, follow)
+      .then((response) => {
+        follow ? props.unfollow(userId) : props.follow(userId);
+        props.inProgressOfSwitching(false, userId);
+      })
+      .catch((response) => {
+        console.log("ошибка в unfollow");
+      });
+  };
+
+  const followButton = (userId, follow) => (
+    <button
+      disabled={props.followingInProgress.some((id) => id == userId)}
+      onClick={() => onClickFollowingHandler(userId, follow)}
+    >
+      {follow ? "Подписан" : "Не подписан"}
+    </button>
+  );
+
   return (
     <div>
       <div className="style.pages">
@@ -26,7 +48,7 @@ const Users = (props) => {
         })}
       </div>
       <div>
-        {props.users.map((u) => 
+        {props.users.map((u) => (
           <div className={style.user} key={u.id}>
             <span>
               <div>
@@ -42,41 +64,7 @@ const Users = (props) => {
                 </NavLink>
               </div>
             </span>
-            <div>
-              {u.follow ? (
-                <button
-                  onClick={() => {
-                    console.log(1);
-                    /*axios
-                      .post(`http://127.0.0.1:5298/Users/${u.id}`, {})
-                      .then((response) => {
-                        props.follow(u.id);
-                      })
-                      .catch((response) => {
-                        console.log();
-                      });*/
-                  }}
-                >
-                  follow
-                </button>
-              ) : (
-                <button
-                  onClick={() => {
-                    console.log(2);
-                    /*axios
-                      .post(`http://127.0.0.1:5298/Users/${u.id}`, {})
-                      .then((response) => {
-                        props.unfollow(u.id);
-                      })
-                      .catch((response) => {
-                        console.log();
-                      });*/
-                  }}
-                >
-                  unfollow
-                </button>
-              )}
-            </div>
+            <div>{followButton(u.id, !u.follow)}</div>
             <span>
               <span>
                 <div className={style.text}>Имя: {u.firstName}</div>
@@ -86,7 +74,7 @@ const Users = (props) => {
               </span>
             </span>
           </div>
-        )}
+        ))}
       </div>
     </div>
   );

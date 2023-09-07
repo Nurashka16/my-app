@@ -3,13 +3,13 @@ const UPDATE_TEXT_INPUT = "UPDATE_TEXT_INPUT";
 
 const initialState = {
   token: "",
-  firstName: "",
-  lastName: "",
-  email: "",
-  password: "",
+  firstName: "мисми",
+  lastName: "мипа",
+  email: "авр",
+  password: "авр",
   avatar: "",
-  id: "",
-  isAuth: false,
+  id: "вап",
+  isAuth: true, // todo переделать
   /*"https://thypix.com/wp-content/uploads/2021/10/grey-anime-profile-picture-thypix-45-700x700.jpg"*/
 };
 
