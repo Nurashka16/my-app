@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
 import style from "./Users.module.css";
-import axios from "axios";
-import UsersAPI from "../../../API/UsersAPI";
+
 
 const Users = (props) => {
   let pageCount = Math.ceil(props.totalCount / props.pageSize);
@@ -10,22 +9,10 @@ const Users = (props) => {
     pages.push(i);
   }
 
-  const onClickFollowingHandler = (userId, follow) => {
-    props.inProgressOfSwitching(true, userId);
-    UsersAPI.isFollowed(userId.value, follow)
-      .then((response) => {
-        follow ? props.unfollow(userId) : props.follow(userId);
-        props.inProgressOfSwitching(false, userId);
-      })
-      .catch((response) => {
-        console.log("ошибка в unfollow");
-      });
-  };
-
   const followButton = (userId, follow) => (
     <button
       disabled={props.followingInProgress.some((id) => id == userId)}
-      onClick={() => onClickFollowingHandler(userId, follow)}
+      onClick={() => props.setFollow(userId, follow)}
     >
       {follow ? "Подписан" : "Не подписан"}
     </button>
