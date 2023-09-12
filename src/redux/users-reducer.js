@@ -81,6 +81,7 @@ export const getUsers = (currentPage, pageSize) => (dispatch) => {
 };
 
 export const setFollow = (userId, boolean) => (dispatch) => {
+
   dispatch(inProgressOfSwitching(true, userId));
   UsersAPI.isFollowed(userId.value, boolean)
     .then((response) => { 

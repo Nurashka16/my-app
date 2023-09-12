@@ -1,9 +1,6 @@
 import { connect } from "react-redux";
 import Preloader from "../../Preloader/preloader";
 import {
-  follow,
-  unfollow,
-  inProgressOfSwitching,
   getUsers,
   setFollow,
 } from "../../../redux/users-reducer";

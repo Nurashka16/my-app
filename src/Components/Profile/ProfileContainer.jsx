@@ -1,32 +1,15 @@
 import { useParams } from 'react-router-dom';
 import { connect } from "react-redux";
 import Profile from "./Profile";
-import { setUser } from "../../redux/profile-reducer";
-import axios from "axios";
+import { setProfile } from "../../redux/profile-reducer";
 import { useEffect } from 'react';
-import React from "react";
 
 
 
-const mapStateToProps = (state) => {
-   return {
-     profilePage: state.profilePage,
-     user: state.profilePage.user
-   };
- };
-
-export const LowProfileContainer = (props) => {
-   console.log(props);
+export const ProfileContainer = (props) => {
    const {id} = useParams();
    useEffect(() => {
-      axios
-      .get(
-        `http://127.0.0.1:5298/Users/Get/${id}`
-      )
-      .then((response) => {
-        console.log(response);
-        props.setUser(response.data);
-      });
+    setProfile(id)
    }, [id])
 
    return (
@@ -35,4 +18,12 @@ export const LowProfileContainer = (props) => {
     );
 };
 
-export const HighProfileContainer = connect(mapStateToProps, { setUser })(LowProfileContainer);
+const mapStateToProps = (state) => {
+  return {
+    profilePage: state.profilePage,
+    user: state.profilePage.user
+  };
+};
+
+
+export default connect(mapStateToProps, { setProfile })(ProfileContainer);

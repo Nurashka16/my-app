@@ -1,3 +1,5 @@
+import ProfileApi from "../API/ProfileApi";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const SET_USER = "SET_USER";
@@ -19,7 +21,7 @@ let initialState = {
   ],
   newPostText: "danya kaka",
   user: null,
-  id: 'de3d08e0-e04c-40dc-8552-ffcf19bb15ec',
+  id: "de3d08e0-e04c-40dc-8552-ffcf19bb15ec",
   isFetching: false,
 };
 
@@ -51,8 +53,9 @@ const profileReducer = (state = initialState, action) => {
     }
     case CLEAR_STATE: {
       return {
-        ...state, user: null 
-      }
+        ...state,
+        user: null,
+      };
     }
     default:
       return state;
@@ -64,11 +67,22 @@ export const updateNewPostTextCreator = (text) => ({
   type: UPDATE_NEW_POST_TEXT,
   newText: text,
 });
-export const clearState = () => ({type: CLEAR_STATE,
-});
+export const clearState = () => ({ type: CLEAR_STATE });
 export const setUser = (user) => ({ type: SET_USER, user });
 export const toggleIsFetching = (value) => ({
-  type: IS_FETCHING, value
+  type: IS_FETCHING,
+  value,
 });
+
+export const setProfile = (id) => (dispatch) => {
+  ProfileApi.getProfile(id)
+    .then((response) => {
+      console.log(response);
+      dispatch(setUser(response.data));
+    })
+    .catch((response) => {
+      console.log("ошибка в getProfile");
+    });
+};
 
 export default profileReducer;

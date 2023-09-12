@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
+import ProfileContainerCopy from "./Components/Profile/ProfileContainer copy";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
 import { FriendsContainer } from "./Components/Friends/FriendsContainer";
@@ -9,6 +10,7 @@ import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
 import { HighProfileContainer } from "./Components/Profile/ProfileContainer";
 import Authorization from "./Components/Entrance/Entrance";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 // надо добавить условие с 2 блоками. 1ый обязательный, при
 // auto-state= undefined, появляется блок авторизации. А после
@@ -26,8 +28,8 @@ const App = () => {
           <div className="app-wrapper-content">
             <Routes>
               <Route path="/" element={<New />} />
-              <Route path="/profile" element={<HighProfileContainer />}>
-                <Route path=":id" element={<HighProfileContainer />} />
+              <Route path="/profile" element={<ProfileContainer />}>
+                <Route path=":id" element={<ProfileContainer />} />
               </Route>
               <Route path="/dialogs/*" element={<DialogsContainer />} />
               <Route path="/users" element={<UsersContainer />} />
