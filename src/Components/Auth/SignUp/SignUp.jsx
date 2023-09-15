@@ -1,9 +1,9 @@
 import React from "react";
-import style from "./Record.module.css";
+import style from "./SignUp.module.css";
 import { NavLink } from "react-router-dom";
 
 function Record(props) {
-  const lists = props.listToFill.map((el) => {
+  const lists = props.inputFields.map((el) => {
     return (
       <div className={style.item} key={el.id}>
         <label className={style.text}>{el.text}</label>
@@ -27,7 +27,7 @@ function Record(props) {
         <div className={style.register}>
           <input
             className={style.btn_register}
-            onClick={e =>props.register()}
+            onClick={(e) =>props.register()}
             type="button"
             value="Регистрация"
           />

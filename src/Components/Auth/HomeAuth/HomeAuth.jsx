@@ -1,9 +1,9 @@
 import React from "react";
-import Logotype from "../Header/Logotype/Logotype";
-import style from "./Home.module.css";
+import Logotype from "../../Header/Logotype/Logotype";
+import style from "./HomeAuth.module.css";
 import { NavLink } from "react-router-dom";
 
-const Home = (props) => {
+const HomeAuth = (props) => {
   return (
     <div className={style.wrapper}>
       <header className={style.header}>
@@ -44,7 +44,7 @@ const Home = (props) => {
               далеко от компьютера.
             </div>
             <button className={style.sign_btn}>
-              <NavLink to={"/login"} className={style.login_link}>
+              <NavLink to={"/signIn"} className={style.login_link}>
                 Войти по телефону или почте
               </NavLink>
             </button>
@@ -52,7 +52,7 @@ const Home = (props) => {
         </div>
         <div className={style.content}>
           <div className={style.register}>
-            <NavLink to={"/record"} className={style.register_link}>
+            <NavLink to={"/signUp"} className={style.register_link}>
               Зарегистрироваться
             </NavLink>
           </div>
@@ -76,4 +76,4 @@ const Home = (props) => {
   );
 };
 
-export default Home;
+export default HomeAuth;

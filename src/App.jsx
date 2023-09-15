@@ -5,11 +5,11 @@ import ProfileContainerCopy from "./Components/Profile/ProfileContainer copy";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
 import { FriendsContainer } from "./Components/Friends/FriendsContainer";
-import UsersContainer from "./Components/Record/Users/UsersContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
 import New from "./Components/New/New";
 import { HighProfileContainer } from "./Components/Profile/ProfileContainer";
-import Authorization from "./Components/Entrance/Entrance";
+import Authorization from "./Components/Auth/RouterAuth/RouterAuth";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 // надо добавить условие с 2 блоками. 1ый обязательный, при

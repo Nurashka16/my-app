@@ -1,12 +1,8 @@
 //вынести за пределы record
 
-
 import { connect } from "react-redux";
-import Preloader from "../../Preloader/preloader";
-import {
-  getUsers,
-  setFollow,
-} from "../../../redux/users-reducer";
+import Preloader from "../Preloader/preloader";
+import { getUsers, setFollow } from "../../redux/users-reducer";
 import React from "react";
 import Users from "./Users";
 
@@ -24,7 +20,6 @@ class UsersContainer extends React.Component {
         <Users
           setFollow={this.props.setFollow}
           onPageChanged={this.onPageChanged}
-
           users={this.props.users}
           currentPage={this.props.currentPage}
           pageSize={this.props.pageSize}

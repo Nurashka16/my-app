@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Login.module.css";
+import style from "./SignIn.module.css";
 import { NavLink } from "react-router-dom";
 
 const Login = (props) => {
@@ -46,7 +46,7 @@ const Login = (props) => {
                 type="text"
                 className={style.email_input}
                 value={props.email}
-                onChange={(e) => props.emailChanges(e.target.value)}
+                onChange={(e) => props.changeEmail(e.target.value)}
                 name=""
                 id=""
               />
@@ -55,7 +55,7 @@ const Login = (props) => {
               <div className={style.description}>Пароль</div>
               <input
                 value={props.password}
-                onChange={(e) => props.passwordChanges(e.target.value)}
+                onChange={(e) => props.changePassword(e.target.value)}
                 type="text"
                 className={style.password_input}
                 name=""
@@ -64,9 +64,12 @@ const Login = (props) => {
             </div>
           </form>
           <div className={style.footer}>
-            <div className={style.btn_login} 
-            onClick={(e)=> props.signIn(props.email, props.password)}
-            >Войти</div>
+            <div
+              className={style.btn_login}
+              onClick={(e) => props.signIn(props.email, props.password)}
+            >
+              Войти
+            </div>
             <NavLink to={"/"} className={style.btn_exit}>
               Вернуться назад
             </NavLink>
