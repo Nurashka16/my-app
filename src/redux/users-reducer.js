@@ -81,7 +81,6 @@ export const getUsers = (currentPage, pageSize) => (dispatch) => {
 };
 
 export const setFollow = (userId, boolean) => (dispatch) => {
-
   dispatch(inProgressOfSwitching(true, userId));
   UsersAPI.isFollowed(userId.value, boolean)
     .then((response) => { 
@@ -89,7 +88,7 @@ export const setFollow = (userId, boolean) => (dispatch) => {
     dispatch(inProgressOfSwitching(false, userId));
     })
     .catch((response) => {
-      console.log("ошибка в unfollow");
+      console.log("ошибка в follow");
     });
 };
 

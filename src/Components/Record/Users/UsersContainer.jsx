@@ -1,3 +1,6 @@
+//вынести за пределы record
+
+
 import { connect } from "react-redux";
 import Preloader from "../../Preloader/preloader";
 import {

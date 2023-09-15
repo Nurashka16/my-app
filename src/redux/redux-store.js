@@ -7,6 +7,7 @@ import usersReducer from "./users-reducer";
 import authReducer from "./auth-reducer";
 import headerReducer from "./header-reducer";
 import thunkMiddleware from "redux-thunk";
+import loginReducer from "./login-reducer";
 
 let reducers = combineReducers( {
    profilePage: profileReducer,
@@ -16,6 +17,7 @@ let reducers = combineReducers( {
    musicPage: musicReducer,
    authPage: authReducer,
    headerPage: headerReducer,
+   loginPage: loginReducer,
 });
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 window.store = store;

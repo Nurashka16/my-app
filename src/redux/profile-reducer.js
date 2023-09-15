@@ -20,8 +20,8 @@ let initialState = {
     },
   ],
   newPostText: "danya kaka",
-  user: null,
-  id: "de3d08e0-e04c-40dc-8552-ffcf19bb15ec",
+  user: "",
+  id: "",
   isFetching: false,
 };
 

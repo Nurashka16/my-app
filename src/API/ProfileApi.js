@@ -13,4 +13,4 @@ const ProfileApi = {
     });
    }
 }
-export default ProfileApi
+export default ProfileApi;

@@ -5,7 +5,7 @@ const instance = axios.create ({
 })
 
 const UsersAPI = {
-  getUsers(currentPage = 2, pageSize = 3) {
+  getUsers(currentPage = 4, pageSize = 3) {//не работает по default
     return instance
       .get(`Get?page=
         ${currentPage}

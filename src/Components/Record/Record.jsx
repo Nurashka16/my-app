@@ -35,7 +35,7 @@ function Record(props) {
         </form>
         <div className={style.description}>
           Уже есть аккаунт?
-          <NavLink to={"/"} className={style.btn_sign}>
+          <NavLink to={"/login"} className={style.btn_sign}>
             Войти
           </NavLink>
         </div>
