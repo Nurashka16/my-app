@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 const HomeAuth = (props) => {
   return (
     <div className={style.wrapper}>
-      <header className={style.header}>
+      <header className={style.page-header}>
         <div className={style.content}>
           <div className={style.logotype}>
             <Logotype />
