@@ -1,4 +1,4 @@
-export const signUpSelector = state => (
+export const signUpPageSelector = state => (
    {
       firstName: state.authPage.firstName,
       lastName: state.authPage.lastName,

@@ -1,8 +1,8 @@
 import React from "react";
-import style from "./SignUp.module.css";
+import style from "./SignUpPage.module.css";
 import { NavLink } from "react-router-dom";
 
-function Record(props) {
+function SignUpPage(props) {
   const lists = props.inputFields.map((el) => {
     return (
       <div className={style.item} key={el.id}>
@@ -44,4 +44,4 @@ function Record(props) {
   );
 }
 
-export default Record;
+export default SignUpPage;

@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "./SignIn";
+import SignInPage from "./SignInPage";
 import { connect } from "react-redux";
 import {
   changeEmail,
@@ -7,9 +7,10 @@ import {
   signIn,
 } from "../../../redux/auth-reducer";
 
-const LoginContainer = (props) => {
+
+const SignInPageContainer = (props) => {
   return (
-    <Login
+    <SignInPage
       signIn={props.signIn}
       email={props.email}
       password={props.password}
@@ -29,4 +30,4 @@ export default connect(mapStateToProps, {
   changeEmail,
   signIn,
   changePassword,
-})(LoginContainer);
+})(SignInPageContainer);

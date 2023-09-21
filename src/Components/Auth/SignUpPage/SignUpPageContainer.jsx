@@ -1,6 +1,6 @@
 import React from "react";
-import SignUp from "./SignUp";
-import { signUpSelector } from "./signUpSelector";
+import SignUpPage from "./SignUpPage";
+import { signUpPageSelector } from "./signUpPageSelector";
 import { connect } from "react-redux";
 import {
   registerUser,
@@ -8,10 +8,9 @@ import {
   signUp,
 } from "../../../redux/auth-reducer";
 
-class SignUpContainer extends React.Component {
+class SignUpPageContainer extends React.Component {
   register() {
-    const request = signUpSelector(this);
-    console.log(request);
+    const request = signUpPageSelector(this);
     this.signUp(request);
   }
   render() {
@@ -49,7 +48,7 @@ class SignUpContainer extends React.Component {
       },
     ];
     return (
-      <SignUp
+      <SignUpPage
         {...this.props}
         register={this.register}
         inputFields={inputFields}
@@ -67,5 +66,5 @@ let mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, { registerUser, changeInputRegister,
    signUp })(
-  SignUpContainer
+  SignUpPageContainer
 );

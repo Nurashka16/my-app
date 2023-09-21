@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomeAuth from "../HomeAuth/HomeAuth";
-import SignUpContainer from "../SignUp/SignUpContainer";
-import SignInContainer from "../SignIn/SignInContainer";
+import SignUpPageContainer from "../SignUpPage/SignUpPageContainer";
+import SignInPageContainer from "../SignInPage/SignInPageContainer";
 
 const RouterAuth = (props) => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeAuth />} />
-        <Route path="/signUp" element={<SignUpContainer />} />
-        <Route path="/signIn" element={<SignInContainer />} />
+        <Route path="/signUp" element={<SignUpPageContainer />} />
+        <Route path="/signIn" element={<SignInPageContainer />} />
       </Routes>
     </BrowserRouter>
   );
