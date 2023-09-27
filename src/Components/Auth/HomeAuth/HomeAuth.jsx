@@ -1,10 +1,10 @@
 import React from "react";
 import style from "./HomeAuth.module.css";
-import HomeAuthHeader from "./HomeAuthHeader";
-import HomeAuthFooter from "./HomeAuthFooter";
-import HomeAuthSignIn from "./HomeAuthSignIn";
-import HomeAuthSignUp from "./HomeAuthSignUp";
-import HomeAuthInstallApp from "./HomeAuthInstallApp";
+import HomeAuthHeader from "./HomeAuthHeader/HomeAuthHeader";
+import HomeAuthFooter from "./HomeAuthFooter/HomeAuthFooter";
+import HomeAuthSignIn from "./HomeAuthMain/HomeAuthSignIn";
+import HomeAuthSignUp from "./HomeAuthMain/HomeAuthSignUp";
+import HomeAuthInstallApp from "./HomeAuthMain/HomeAuthInstallApp";
 
 const HomeAuthCopy = (props) => {
   return (

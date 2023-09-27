@@ -108,7 +108,6 @@
    text-align: center;
    text-decoration: none;
    padding: 0 14px;
-   height: 36px;
    line-height: 36px;
    background-color: #2d81e0;
    color: white;
@@ -119,10 +118,10 @@
    font-weight: 500;
    border-radius: 10px;
    font-size: 15px;
+   height: 36px;
 }
 .signIn__link:hover {
    background-color: #297cdc;
-   height: 35.5px;
 }
 .signUp {
    width: 550px;
@@ -152,7 +151,6 @@
 }
 .signUp__link:hover {
    background-color: #47af47;
-   height: 35.5px;
 }
 
 .footer {
@@ -189,123 +187,3 @@
    height: 25px;
    font-size: 14px;
 }
-/*
-.installApp {
-   outline: 1px solid rgba(202, 190, 190, 0.2);
-   height: 50px;
-   border-radius: 15px;
-   width: 550px;
-   display: flex;
-   background-color: white;
-   justify-content: space-between;
-   padding: 10px 15px 10px 20px;
-   align-items: center;
-}
-.install_img {
-   display: flex;
-   align-items: center;
-}
-.install_img_phone {
-   height: 20px;
-   width: 20px;
-}
-.install_text {
-   margin-right: 25px;
-   color: #2D81E0 ;
-   font-size: 15px;
-   width: 450px;
-
-}
-.install_span {
-   font-size: 15px;
-   font-weight: 600;
-}*/ /*
-.signIn {
-   height: 180px;
-   background-color: white;
-   margin: 15px 0;
-   border-radius: 20px;
-   padding: 20px 0 20px;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
-   flex-direction: column;
-}
-.sign_title {
-   font-size: 21px;
-   font-weight: 500;
-}
-.sign_text {
-   font-size: 15px;
-   text-align: center;
-   line-height: 20px;
-   padding: 0 40px;
-   margin-bottom: 20px;
-   color: #99A2AD;
-   
-}
-.login_link {
-   text-decoration: none;
-   color: white;
-}
-.sign_btn {
-   padding: 0 14px;
-   height: 36px;
-   line-height: 36px;
-   background-color: #2d81e0;
-   color: white;
-   transition: all .15s;
-   transition-property: opacity,transform;
-   width: 510px;
-   border: none;
-   font-weight: 500;
-   border-radius: 10px;
-   font-size: 15px;
-}
-.register {
-   width: 550px;
-   height: 70px;
-   background-color: white;
-   border-radius: 20px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}
-
-.register_link {
-   width: 500px;
-   height: 36px;
-   line-height: 36px;
-   background-color: #4bb34b;
-   padding: 0 14px;
-   font-size: 15px;
-   font-weight: 500;
-   border: none;
-   border-radius: 10px;
-   color: white;
-   cursor: pointer;
-   text-decoration: none;
-   text-align: center;
-}
-
-.menu {
-   display: flex;
-   height: 50px;
-   width: 550px;
-   flex-direction: column;
-   row-gap: 5px;
-}
-.menu_languages {
-   height: 25px;
-   width: 550px;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   column-gap: 12px;
-   color: #818c99;
-   font-size: 14px;
-}
-.version {
-   color: #818c99;
-   font-size: 14px;
-}*/

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./HomeAuth.module.css";
+import style from "../HomeAuth.module.css";
 
 
 const HomeAuthFooter = (props) => {

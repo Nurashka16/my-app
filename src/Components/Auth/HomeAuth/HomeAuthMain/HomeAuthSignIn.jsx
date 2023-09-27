@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./HomeAuth.module.css";
+import style from "../HomeAuth.module.css";
 import { NavLink } from "react-router-dom";
 
 const HomeAuthSignIn = (props) => {
@@ -11,7 +11,7 @@ const HomeAuthSignIn = (props) => {
           Мобильная версия поможет вам оставаться ВКонтакте, даже если вы далеко
           от компьютера.
         </p>
-        <NavLink to={"/signIn"} className={style.signIn__link}>
+        <NavLink to={"/auth"} className={style.signIn__link}>
           Войти по телефону или почте
         </NavLink>
       </div>

@@ -1,0 +1,61 @@
+.signUp {
+   height: 200px;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+.textField {
+   height: 170px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+   row-gap: 7px;
+}
+.textField__container {
+   height: 35px;
+   width: 100%;
+}
+.textField__input {
+   width: 100%;
+   height: 33px;
+   outline: 1px solid rgba(129, 140, 153, 0.4);
+   background-color: rgba(129, 140, 153, 0.1);
+   border: none;
+   border-radius: 8px;
+   color: rgb(0, 0, 0);
+   font-size: 15px;
+   font-weight: 450;
+   padding-left: 12px;
+   padding-right: 12px;
+   line-height: 20px;
+}
+.textField__input:focus {
+   outline: 1px solid rgba(0, 119, 255, 0.8);
+}
+.textField__input::placeholder {
+   font-weight: 450;
+   color: #818c99;
+   font-size: 15px;
+   line-height: 20px;
+}
+.footer {
+   height: 32px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+.btn__login {
+   width: 100%;
+   background-color: #5c9ce6;
+   opacity: 0.9;
+   border-radius: 8px;
+   font-size: 16px;
+   font-weight: 500;
+   height: 32px;
+   color: rgb(255, 255, 255);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

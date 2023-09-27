@@ -1,6 +1,6 @@
 import React from "react";
-import Logotype from "../../Logotype/Logotype";
-import style from "./HomeAuth.module.css";
+import Logotype from "../../../Logotype/Logotype";
+import style from "../HomeAuth.module.css";
 
 const HomeAuthHeader = (props) => {
   return (
