@@ -8,7 +8,7 @@ const RouterAuth = (props) => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeAuth />} />
-        <Route path="/auth" element={<AuthPageRouter />} />
+        <Route path="/auth/:block" element={<AuthPageRouter />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,31 +1,31 @@
-.logo{
+.logo {
+  width: 168px;
   text-decoration: none;
+  padding: 0 12px;
 }
 .logo:hover {
   color: red;
 }
 .logo_content {
-   height: 56px;
-   width: 160px;
-   display: flex;
-   padding-left: 10px;
- }
- .logo_img {
+  height: 56px;
+  width: 147px;
+  padding-right: 16px;
+  display: flex;
+  justify-content: center;
+}
+.logo_img {
   width: 30px;
   height: 56px;
   display: flex;
   align-items: center;
-  margin-right: 1px;
+  justify-content: flex-start;
 }
- .logo_text {
-   letter-spacing: 0.1px;
-   text-transform: lowercase;
-   display: flex;
-   align-items: center;
-   font-weight: 600;
-   font-size: 22px;
-   padding-bottom: 7px;
-   color: rgb(0, 0, 0);
+.logo_text {
+  display: flex;
+  align-items: center;
+  text-align: justify;
+  font-size: 22.1px;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   border: none;
- }
+}

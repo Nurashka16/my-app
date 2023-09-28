@@ -33,18 +33,13 @@ class SignUpContainer extends React.Component {
       },
       {
         id: 3,
-        text: "Эл.почта",
+        text: "Электронная почта",
         name: "email",
       },
       {
         id: 4,
         text: "Пароль",
         name: "password",
-      },
-      {
-        id: 5,
-        text: "Аватар",
-        name: "avatar",
       },
     ];
     return (

@@ -10,16 +10,21 @@
    display: flex;
    justify-content: center;
    width: 100%;
-   height: 56px;
+   height: 57px;
    flex: 1 0 30%;
    background-color: white;
    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-   box-shadow: 2px 9px 40px rgba(0, 0, 0, 0.03);
+   box-shadow: 2px 9px 40px rgba(0, 0, 0, 0.01);
    position: fixed;
    top: 0;
 }
+.header .container {
+   cursor: pointer;
+   width: 168px;
+}
 .main {
-   margin: 75px 0 25px;
+   margin: 77px 0 25px;
+   row-gap: 13px;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -27,36 +32,40 @@
 }
 .footer {
    height: 50px;
-   width: 550px;
+   width: 548px;
    margin-bottom: 15px;
 }
 .container {
    display: flex;
-   width: 550px;
+   width: 548px;
    justify-content: center;
    align-items: center;
 }
 .installApp {
    outline: 1px solid rgba(202, 190, 190, 0.2);
-   height: 50px;
+   height: 49.64px;
+   width: 548.54px;
    border-radius: 15px;
-   width: 550px;
    display: flex;
    background-color: white;
    justify-content: space-between;
-   padding: 10px 15px 10px 20px;
+   padding: 10px 12px 10px 20px;
    align-items: center;
+   cursor: pointer;
 }
 .installApp__link {
+   align-items: center;
+   height: 50px;
    display: flex;
    justify-content: space-between;
    width: 500px;
-   padding: 0 0 0 10px;
+   padding: 0 0 0 5px;
    cursor: pointer;
 }
 .installApp__link:hover {
    text-decoration: underline #2d81e0;
-   padding: 0 5px 0 10px;
+   margin: 0 -2px 0 0;
+   transition: right 100ms linear;
 }
 .installApp__img {
    display: flex;
@@ -78,17 +87,22 @@
    font-weight: 600;
 }
 .installApp__img_arrow {
+   display: block;
+   width: 9px;
+   height: 15px;
 }
 
 .signIn {
+   padding: 24px 20px 20px;
    height: 180px;
+   width: 548.54px;
    background-color: white;
-   margin: 15px 0;
    border-radius: 20px;
    display: flex;
    align-items: center;
    flex-direction: column;
-   justify-content: space-evenly;
+   justify-content: space-between;
+   outline: 1px solid rgba(202, 190, 190, 0.2);
 }
 .signIn__title {
    font-size: 21px;
@@ -100,9 +114,8 @@
    font-size: 15px;
    text-align: center;
    line-height: 20px;
-   padding: 0 40px 5px;
    color: #99a2ad;
-   margin: 0;
+   margin: 0 0 15px;
 }
 .signIn__link {
    text-align: center;
@@ -121,11 +134,13 @@
    height: 36px;
 }
 .signIn__link:hover {
-   background-color: #297cdc;
+   background-color: #2d81e0;
+   opacity: 90%;
 }
 .signUp {
-   width: 550px;
-   height: 70px;
+   outline: 1px solid rgba(202, 190, 190, 0.2);
+   height: 77.81px;
+   width: 548.54px;
    background-color: white;
    border-radius: 20px;
    display: flex;
@@ -150,7 +165,8 @@
    font-size: 15px;
 }
 .signUp__link:hover {
-   background-color: #47af47;
+   background-color: #4bb34b;
+   opacity: 90%;
 }
 
 .footer {
@@ -159,6 +175,7 @@
    margin-bottom: 15px;
 }
 .nav {
+   cursor: pointer;
    height: 50px;
    width: 550px;
    row-gap: 5px;
@@ -169,6 +186,7 @@
    margin: 0;
 }
 .nav__languages {
+   cursor: pointer;
    margin: 0;
    height: 25px;
    list-style: none;
@@ -182,8 +200,17 @@
    color: #818c99;
    font-size: 14px;
 }
+.menu__language_list:hover {
+   text-decoration: underline;
+}
+.nav__language:hover {
+   text-decoration: underline;
+}
 .version {
    color: #818c99;
    height: 25px;
    font-size: 14px;
+}
+.version__btn:hover{
+   text-decoration: underline;
 }

@@ -6,7 +6,7 @@ const HomeAuthSignUp = (props) => {
   return (
     <div className={style.container}>
       <div className={style.signUp}>
-        <NavLink to={"/auth"} className={style.signUp__link}>
+        <NavLink to={"/auth/signUp"} className={style.signUp__link}>
           Зарегистрироваться
         </NavLink>
       </div>

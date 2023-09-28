@@ -8,10 +8,10 @@ const HomeAuthSignIn = (props) => {
       <div className={style.signIn}>
         <h1 className={style.signIn__title}>Вход ВКонтакте</h1>
         <p className={style.signIn__text}>
-          Мобильная версия поможет вам оставаться ВКонтакте, даже если вы далеко
+          Мобильная версия поможет вам оставаться ВКонтакте, даже если <br/> вы далеко
           от компьютера.
         </p>
-        <NavLink to={"/auth"} className={style.signIn__link}>
+        <NavLink value="signIn" to={"/auth/signIn"} className={style.signIn__link}>
           Войти по телефону или почте
         </NavLink>
       </div>

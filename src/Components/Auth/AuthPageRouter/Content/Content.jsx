@@ -1,10 +1,11 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import style from "./Content.module.css";
-import SignIn from "./SignIn/SignIn";
-import SignUp from "./SignUp/SignUp";
+import SignInContainer from "./SignIn/SignInContainer";
+import SignUpContainer from "./SignUp/SignUpContainer";
 
 const Content = (props) => {
-  const auth = 0;
+  const blockName = useParams();
   return (
     <div className={style.body}>
       <header className={style.header}>
@@ -29,7 +30,7 @@ const Content = (props) => {
           </div>
           <div className={style.logotype__title}>Вход ВКонтакте</div>
         </div>
-        {auth ? (
+        {blockName.block == "signIn" ? (
           <div className={style.info}>
             Введите телефон или почту, которые
             <br className={style.info__span} />
@@ -44,7 +45,11 @@ const Content = (props) => {
         )}
       </header>
       <main className={style.main}>
-        {auth ? <SignIn /> : <SignUp />}
+        {blockName.block == "signIn" ? (
+          <SignInContainer />
+        ) : (
+          <SignUpContainer />
+        )}
       </main>
       <footer className={style.footer}>
         <p className={style.footer__desc}>
