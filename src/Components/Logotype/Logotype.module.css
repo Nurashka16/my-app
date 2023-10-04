@@ -1,30 +1,29 @@
 .logo {
-  width: 168px;
+  width: 160px;
   text-decoration: none;
-  padding: 0 12px;
 }
 .logo:hover {
   color: red;
 }
 .logo_content {
   height: 56px;
-  width: 147px;
-  padding-right: 16px;
+  width: 138px;
   display: flex;
   justify-content: center;
 }
 .logo_img {
-  width: 30px;
+  width: 24px;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 .logo_text {
+  width: 113px;
   display: flex;
   align-items: center;
   text-align: justify;
-  font-size: 22.1px;
+  font-size: 22px;
   color: rgb(0, 0, 0);
   text-decoration: none;
   border: none;

@@ -1,5 +1,4 @@
 import AuthAPI from "../API/AuthAPI";
-import { setIsFetching } from "./users-reducer";
 
 const REGISTER_USER = "REGISTER_USER";
 const CHANGE_INPUT_REGISTER = "CHANGE_INPUT_REGISTER";
@@ -91,7 +90,6 @@ export const signIn = (email, password) => (dispatch) => {
     });
 };
 export const signUp = (request) => (dispatch) => {
-  console.log("123");
   AuthAPI.signUp(request)
     .then((response) => {
       dispatch(registerUser(response));

@@ -1,4 +1,3 @@
-
 .header {
   position: sticky;
   top: 0;
@@ -8,21 +7,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 55px;
+  height: 55.99px;
   box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.3);
 }
 .container {
-  width: 58%;
+  margin-left: 25px;
+  background-color: rgb(255, 255, 255);
+  width: 862px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 55.7px;
 }
 .logotype {
-  width: 260px;
+  padding: 0 0 0 0px;
+  width: 264.99px;
+  height: 55.99px;
   display: flex;
   text-transform: none;
 }
 .logotype_link {
+  width: 246.99px;
   text-decoration: none;
 }
 .header_components {
@@ -30,11 +35,10 @@
   justify-content: space-between;
   width: 600px;
 }
-.title {
-  display: flex;
-}
+
 .search {
   display: flex;
   align-items: center;
-  width: 265px;
+  width: 263.99px;
 }
+

@@ -1,16 +1,17 @@
 import { MyPostsContainer } from "./MyPosts/MyPostContainer";
 import style from "./Profile.module.css";
 
-const Profile = (props) => {
+const ProfileTest = (props) => {
   return (
     <div>
-      {!props.user ? (
+      {props.userId==props.id ? (
         <div>
           <img
             className={style.profile__img}
             src="https://artjapan.ru/wp-content/uploads/2022/01/6d9834b8e903b9518dc5f74e33050283.jpg"
             alt=""
           />
+          <div>Нурайым Тилепова</div>
         </div>
       ) : (
         <div>
@@ -20,7 +21,11 @@ const Profile = (props) => {
           <div>Город: Москва</div>
           <img
             className={style.user}
-            src="https://cdn-static.ntv.ru/home/news/20141208/putin1_vs.jpg"
+            src={
+              props.user.avatar
+                ? "https://cdn-static.ntv.ru/home/news/20141208/putin1_vs.jpg"
+                : props.user.avatar
+            }
             alt=""
           />
         </div>
@@ -31,4 +36,4 @@ const Profile = (props) => {
     </div>
   );
 };
-export default Profile;
+export default ProfileTest;

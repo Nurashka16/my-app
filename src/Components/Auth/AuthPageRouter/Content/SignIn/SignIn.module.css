@@ -54,6 +54,7 @@
    align-items: center;
 }
 .btn__login {
+   cursor: pointer;
    width: 100%;
    background-color: #5c9ce6;
    opacity: 0.9;

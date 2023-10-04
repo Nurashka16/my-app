@@ -1,11 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import style from "./Content.module.css";
-import SignInContainer from "./SignIn/SignInContainer";
-import SignUpContainer from "./SignUp/SignUpContainer";
+import { useAuthFactory } from "../../../../app/hooks/auth/useAuthFactory";
 
 const Content = (props) => {
-  const blockName = useParams();
+  const authInfo = useAuthFactory();
+  console.log(authInfo);
   return (
     <div className={style.body}>
       <header className={style.header}>
@@ -30,27 +29,15 @@ const Content = (props) => {
           </div>
           <div className={style.logotype__title}>Вход ВКонтакте</div>
         </div>
-        {blockName.block == "signIn" ? (
+        {
           <div className={style.info}>
-            Введите телефон или почту, которые
+            {authInfo.description.item1}
             <br className={style.info__span} />
-            привязаны к аккаунту
+            {authInfo.description.item2}
           </div>
-        ) : (
-          <div className={style.info}>
-            Ваш номер телефона будет использоваться
-            <br className={style.info__span} />
-            для входа в аккаунт
-          </div>
-        )}
+        }
       </header>
-      <main className={style.main}>
-        {blockName.block == "signIn" ? (
-          <SignInContainer />
-        ) : (
-          <SignUpContainer />
-        )}
-      </main>
+      <main className={style.main}>{authInfo.component}</main>
       <footer className={style.footer}>
         <p className={style.footer__desc}>
           Нажимая «Продолжить», вы принимаете&ensp;

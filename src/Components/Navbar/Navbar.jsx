@@ -1,16 +1,15 @@
 import style from "./Navbar.module.css";
 import CostumLink from "./../CostumLink";
 import Footer from "./Footer/Footer.jsx";
+import { connect } from "react-redux";
 
-const Navbar = () => {
+export const Navbar = (props) => {
+  console.log(props.id);
   return (
     <div className={style.container}>
       <nav className={style.nav}>
         <div className={style.item}>
-          <CostumLink
-            className={style.link}
-            to="/profile/de3d08e0-e04c-40dc-8552-ffcf19bb15ec"
-          >
+          <CostumLink className={style.link} to={`/profile/${props.id}`}>
             Профиль
           </CostumLink>
         </div>
@@ -99,4 +98,10 @@ const Navbar = () => {
     </div>
   );
 };
-export default Navbar;
+const mapStateToProp = (state) => {
+  return {
+    id: state.authPage.id,
+  };
+};
+
+export default connect(mapStateToProp)(Navbar);

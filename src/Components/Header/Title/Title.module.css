@@ -1,33 +1,45 @@
 .title {
-   width: 285px;
-   cursor: pointer;
-   display: flex;
-   align-self: flex-start;
-   margin-left: 10px;
-   height: 50px;
- }
- .title_content {
-   display: flex;
-   align-items: center;
- }
- .title_text {
-   display: flex;
-   align-items: center;
-   color: rgb(0, 0, 0);
-   font-size: 20px;
-   height: 50px;
-   font-weight: 650;
+  width: 280px;
+  cursor: pointer;
+  display: flex;
+  margin-left: 5px;
+  height: 55.98px;
+  background-color: aqua;
+  justify-content: start;
+}
+.title_content {
+  display: flex;
+  align-items: center;
+  height: 55.98px;
+  justify-content: center;
+  width: 110px;
+}
+.title_text {
+  padding-left: 1px;
+  color: rgb(0, 0, 0);
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  text-align: start;
+  font-size: 19px;
+  width: 90px;
+  font-weight: 650;
+  transform: scale(1.06, 1.18);
+  letter-spacing: 0.1px;
+  text-transform: capitalize;
+}
+/*  text-transform: capitalize;
+*/
 
-   letter-spacing: 0.2px;
-
- }
- 
- .title_icon {
-   display: flex;
-   height: 50px;
-   align-items: center;
-   margin-top: 3px;
- }
- .title_icon svg {
-  display: inline-block;
- }
+.title_icon {
+  display: flex;
+  height: 20px;
+  width: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.title_icon svg {
+  height: 20px;
+  width: 20px;
+}

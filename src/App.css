@@ -7,7 +7,7 @@
 }
 .app_container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 58%;
 }
 .app_navbar {
@@ -17,5 +17,5 @@
 .app-wrapper-content {
   background-color: #5277b0 ;
   display: flex;
-  width: 750px;
+  width: 550px;
 }
