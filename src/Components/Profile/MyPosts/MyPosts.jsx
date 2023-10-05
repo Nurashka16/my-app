@@ -4,15 +4,13 @@ import Post from "./Post/Post.jsx";
 
 const MyPosts = (props) => {
   let newPostElement = React.createRef();
-  let addPost = () => {
-    props.addPost();
-  };
   let onPostChange = () => {
     let text = newPostElement.current.value;
-    props.updateNewPost(text);
+    props.updateTextInput(text);
   };
   let messagesItems = props.posts.map((m) => (
-    <Post key={m.id} id={m.id} message={m.message} number={m.number} />
+    <Post key={m.id} id={m.id} 
+    message={m.message} number={m.number} />
   ));
 
   return (
@@ -26,7 +24,7 @@ const MyPosts = (props) => {
             ref={newPostElement}
             className={style.textArea}
           />
-          <button onClick={addPost} className={style.button}>
+          <button onClick={props.addPost} className={style.button}>
             add post
           </button>
         </div>

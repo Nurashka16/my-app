@@ -4,7 +4,6 @@ import { useAuthFactory } from "../../../../app/hooks/auth/useAuthFactory";
 
 const Content = (props) => {
   const authInfo = useAuthFactory();
-  console.log(authInfo);
   return (
     <div className={style.body}>
       <header className={style.header}>

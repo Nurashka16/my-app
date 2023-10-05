@@ -7,15 +7,14 @@
 }
 .app_container {
   display: flex;
-  justify-content: space-evenly;
-  width: 58%;
+  justify-content: space-between;
+  width: 886px;
 }
 .app_navbar {
-  display: flex;
-  flex: 0 1 30%;
+  /*margin: 0 0 0 25px;*/
+  width: 280px;
 }
 .app-wrapper-content {
-  background-color: #5277b0 ;
   display: flex;
-  width: 550px;
+  width: 606px;
 }

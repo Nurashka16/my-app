@@ -2,9 +2,8 @@
   width: 280px;
   cursor: pointer;
   display: flex;
-  margin-left: 5px;
+  margin-left: 4.5px;
   height: 55.98px;
-  background-color: aqua;
   justify-content: start;
 }
 .title_content {
@@ -15,31 +14,21 @@
   width: 110px;
 }
 .title_text {
-  padding-left: 1px;
   color: rgb(0, 0, 0);
   height: 30px;
   display: flex;
   align-items: center;
   justify-content: start;
   text-align: start;
-  font-size: 19px;
+  font-size: 20px;
   width: 90px;
   font-weight: 650;
-  transform: scale(1.06, 1.18);
-  letter-spacing: 0.1px;
+  transform: scale(1.03, 1.05);
   text-transform: capitalize;
+  padding: 0 0 1.5px 2px;
 }
-/*  text-transform: capitalize;
-*/
-
 .title_icon {
   display: flex;
-  height: 20px;
-  width: 20px;
-  align-items: center;
-  justify-content: flex-end;
+  padding-left: 2.5px;
 }
-.title_icon svg {
-  height: 20px;
-  width: 20px;
-}
+

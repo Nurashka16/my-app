@@ -1,3 +1,7 @@
+.container {
+  background-color: aliceblue;
+  width: 606px;
+}
 .profile__img {
   width: 250px;
   height: 100px;
@@ -11,6 +15,6 @@
   color: white;
 }
 .user {
-  width: 400px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
 }

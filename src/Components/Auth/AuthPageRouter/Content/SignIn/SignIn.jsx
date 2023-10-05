@@ -1,6 +1,5 @@
 import React from "react";
 import style from "./SignIn.module.css";
-import { NavLink } from "react-router-dom";
 
 const SignIn = (props) => {
   return (

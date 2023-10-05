@@ -1,7 +1,7 @@
 import ProfileApi from "../API/ProfileApi";
 
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_POST = "ADD_POST";
+const UPDATE_TEXT_INPUT = "UPDATE_TEXT_INPUT";
 const SET_USER = "SET_USER";
 const IS_FETCHING = "IS_FETCHING";
 const CLEAR_STATE = "CLEAR_STATE";
@@ -23,38 +23,39 @@ let initialState = {
   user: "",
   id: "",
   isFetching: false,
+  arr: "",
 };
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_POST: {
-      let newPost = {
-        id: 3,
+      state.posts.push({
+        id: state.posts.length + 1,
         message: state.newPostText,
         number: 0,
+      });
+      state.newPostText = "";
+      return {
+        ...state,
+        ...state.posts,
       };
-      let stateCopy = { ...state };
-      stateCopy.posts = [...state.posts];
-      stateCopy.posts.push(newPost);
-      stateCopy.newPostText = "";
-      return stateCopy;
     }
-    case UPDATE_NEW_POST_TEXT: {
-      let stateCopy = { ...state };
-      stateCopy.newPostText = action.newText;
-      return stateCopy;
+    case UPDATE_TEXT_INPUT: {
+      return { ...state,
+         newPostText: action.letter };
     }
     case SET_USER: {
       console.log(action.user);
       return { ...state, user: action.user };
     }
     case IS_FETCHING: {
-      return { ...state, value: action.value };
+      return { ...state, isFetching: action.boolean };
     }
     case CLEAR_STATE: {
       return {
         ...state,
         user: null,
+        id: null,
       };
     }
     default:
@@ -62,16 +63,15 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostCreator = () => ({ type: ADD_POST });
-export const updateNewPostTextCreator = (text) => ({
-  type: UPDATE_NEW_POST_TEXT,
-  newText: text,
-});
+export const addPost = () => ({ type: ADD_POST });
+export const updateTextInput = (letter) => ({
+  type: UPDATE_TEXT_INPUT,
+  letter,});
 export const clearState = () => ({ type: CLEAR_STATE });
 export const setUser = (user) => ({ type: SET_USER, user });
-export const toggleIsFetching = (value) => ({
+export const isFetching = (boolean) => ({
   type: IS_FETCHING,
-  value,
+  boolean,
 });
 
 export const setProfile = (id) => (dispatch) => {

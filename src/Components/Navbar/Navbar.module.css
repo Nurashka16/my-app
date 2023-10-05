@@ -1,16 +1,19 @@
 .container {
-  width: 265px;
+  width: 270px;
 }
-
 .item {
-  font-size: 25px;
+  font-size: 17px;
+  padding: 8px 12px 8px 10px;
+  font-weight: 400;
+
 }
-.link{
+.item:hover {
+  background-color: rgb(211,213,216,0.5);
+  border-radius: 5px;
+}
+.link {
   text-decoration: none;
   color: black;
-}
-.link:hover {
-  color: red;
 }
 .item.active {
   color: red;
