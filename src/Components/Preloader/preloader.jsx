@@ -1,9 +1,10 @@
 import style from "./preloader.module.css";
+import gif from "../../images/preloader.gif";
  
  const Preloader = (isFetching) => {
    return isFetching ? <img
    className={style.load}
-   src="https://phonoteka.org/uploads/posts/2022-01/thumbs/1643171694_4-phonoteka-org-p-fon-zagruzki-5.jpg"
+   src={gif}
  /> : null
  }
 

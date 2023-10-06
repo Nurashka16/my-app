@@ -1,17 +1,16 @@
 import style from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import Avatar from "../Common/Avatar";
 
-const ProfileTest = (props) => {
+const Profile = (props) => {
   return (
     <div className={style.container}>
-      {props.userId == props.id ? (
+      {props.user.id == props.urlId ? (
         <div>
-          <img
-            className={style.profile__img}
-            src="https://artjapan.ru/wp-content/uploads/2022/01/6d9834b8e903b9518dc5f74e33050283.jpg"
-            alt=""
-          />
-          <div>Нурайым Тилепова</div>
+          <Avatar url={props.user.avatar} width="50px" height="50px" />
+          <div>
+            {props.user.firstName} {props.user.lastName}
+          </div>
         </div>
       ) : (
         <div>
@@ -38,4 +37,4 @@ const ProfileTest = (props) => {
     </div>
   );
 };
-export default ProfileTest;
+export default Profile;

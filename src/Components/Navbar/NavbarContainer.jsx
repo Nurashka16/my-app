@@ -9,7 +9,7 @@ export const NavbarContainer = (props) => {
 const mapStateToProps = (state) => {
   return {
     userId: state.authPage.id,
-    userName: state.authPage.firstName + state.authPage.lastName,
+    userName: state.authPage.firstName + " " + state.authPage.lastName,
     userAvatar: state.authPage.avatar,
   };
 };

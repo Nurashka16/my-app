@@ -2,23 +2,16 @@ import style from "./Navbar.module.css";
 import CostumLink from "./../CostumLink";
 import Footer from "./Footer/Footer.jsx";
 import { connect } from "react-redux";
-import UserName from "../Dialogs/UserName/UserName";
+import Avatar from "../Common/Avatar";
 
 export const Navbar = (props) => {
   return (
     <div className={style.container}>
       <nav className={style.nav}>
-        <div className={style.item}>
+        <div className={style.ownerPanel}>
           <CostumLink className={style.link} to={`/profile/${props.id}`}>
-            <img width="20" height="20"
-              src={
-                !props.userAvatar
-                  ? "https://cdn-icons-png.flaticon.com/512/44/44948.png"
-                  : "https://artjapan.ru/wp-content/uploads/2022/01/6d9834b8e903b9518dc5f74e33050283.jpg"
-              }
-              alt=""
-            />{" "}
-            {props.userName}
+            <Avatar url={props.userAvatar} width="36px" height="36px" />
+            <div className={style.userName}>{props.userName}</div>
           </CostumLink>
         </div>
         <div className={style.item}>

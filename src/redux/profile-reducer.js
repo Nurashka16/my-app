@@ -1,4 +1,5 @@
 import ProfileApi from "../API/ProfileApi";
+import Preloader from "../Components/Preloader/preloader";
 
 const ADD_POST = "ADD_POST";
 const UPDATE_TEXT_INPUT = "UPDATE_TEXT_INPUT";
@@ -20,10 +21,16 @@ let initialState = {
     },
   ],
   newPostText: "danya kaka",
-  user: "",
-  id: "",
+  user: [
+    {
+      id: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      avatar: "",
+    },
+  ],
   isFetching: false,
-  arr: "",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -41,11 +48,9 @@ const profileReducer = (state = initialState, action) => {
       };
     }
     case UPDATE_TEXT_INPUT: {
-      return { ...state,
-         newPostText: action.letter };
+      return { ...state, newPostText: action.letter };
     }
     case SET_USER: {
-      console.log(action.user);
       return { ...state, user: action.user };
     }
     case IS_FETCHING: {
@@ -66,7 +71,8 @@ const profileReducer = (state = initialState, action) => {
 export const addPost = () => ({ type: ADD_POST });
 export const updateTextInput = (letter) => ({
   type: UPDATE_TEXT_INPUT,
-  letter,});
+  letter,
+});
 export const clearState = () => ({ type: CLEAR_STATE });
 export const setUser = (user) => ({ type: SET_USER, user });
 export const isFetching = (boolean) => ({
@@ -75,10 +81,11 @@ export const isFetching = (boolean) => ({
 });
 
 export const setProfile = (id) => (dispatch) => {
+  dispatch(isFetching(true));
   ProfileApi.getProfile(id)
     .then((response) => {
-      console.log(response);
-      dispatch(setUser(response.data));
+      dispatch(setUser(response));
+      dispatch(isFetching(false));
     })
     .catch((response) => {
       console.log("ошибка в getProfile");

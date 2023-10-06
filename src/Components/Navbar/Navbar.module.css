@@ -1,23 +1,45 @@
 .container {
+  margin-top: 18px;
   width: 270px;
 }
 .item {
   font-size: 17px;
   padding: 8px 12px 8px 10px;
   font-weight: 400;
-
+  display: flex;
+  align-items: center;
 }
 .item:hover {
-  background-color: rgb(211,213,216,0.5);
+  background-color: rgb(211, 213, 216, 0.5);
   border-radius: 5px;
 }
 .link {
   text-decoration: none;
   color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  row-gap: 15px;
+  column-gap: 15px;
 }
 .item.active {
   color: red;
 }
 .link:target {
   color: blue;
+}
+.userName {
+  font-size: 15px;
+  font-weight: 500;
+}
+.userName:hover {
+  text-decoration: underline;
+}
+.ownerPanel {
+  font-size: 17px;
+  padding: 8px 12px 8px 10px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
 }

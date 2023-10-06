@@ -5,7 +5,7 @@ import { DialogsContainer } from "./Components/Dialogs/DialogsContainer";
 import { FriendsContainer } from "./Components/Friends/FriendsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
-import New from "./Components/New/New";
+import New from "./Components/News/News";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 

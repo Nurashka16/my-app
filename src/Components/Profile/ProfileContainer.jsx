@@ -7,28 +7,27 @@ import {
   setProfile,
 } from "../../redux/profile-reducer";
 import { useEffect } from "react";
+import Preloader from "../Preloader/preloader";
 
 export const ProfileContainer = (props) => {
-  const userId = props.authPage.id;
-  const {id} = useParams();
+  const { id } = useParams();
   useEffect(() => {
     props.setProfile(id);
   }, [id]);
   return (
-    <Profile
-      id={id}
-      userId={userId}
-      profilePage={props.profilePage}
-      user={props.user}
-      authPage={props.authPage}
-      posts={props.posts}
-      arr={props.arr}
-      updateTextInput={
-        props.updateTextInput
-      }
-      addPost={props.addPost}
-      newPostText={props.newPostText}
-    />
+    <>
+      {Preloader(props.isFetching)}
+      <Profile
+        urlId={id}
+        profilePage={props.profilePage}
+        user={props.user}
+        posts={props.posts}
+        updateTextInput={props.updateTextInput}
+        isFetching={props.isFetching}
+        addPost={props.addPost}
+        newPostText={props.newPostText}
+      />
+    </>
   );
 };
 
@@ -36,10 +35,8 @@ const mapStateToProps = (state) => {
   return {
     posts: state.profilePage.posts,
     newPostText: state.profilePage.newPostText,
-    //profilePage: state.profilePage,
     user: state.profilePage.user,
-    authPage: state.authPage,
-    arr : state.profilePage.arr,
+    isFetching: state.profilePage.isFetching,
   };
 };
 

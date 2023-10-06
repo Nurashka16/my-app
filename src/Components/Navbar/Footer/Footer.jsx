@@ -1,8 +1,12 @@
 import React from "react";
 import CostumLink from "../../CostumLink";
 import style from "./Footer.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Footer = (props) => {
+  const navigate = useNavigate();
+  const goBack = () => navigate('/');
+
   return (
     <div>
       <div className={style.item}>
@@ -20,8 +24,8 @@ const Footer = (props) => {
           Версия для компьютера
         </CostumLink>
       </div>
-      <div className={style.item}>
-        <CostumLink className={style.link} to="/4">
+      <div className={style.item} onClick={goBack}>
+        <CostumLink className={style.link} to="/" >
           Выход
         </CostumLink>
       </div>

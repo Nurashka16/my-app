@@ -1,4 +1,6 @@
 .load {
-   height: 200px;
-   width: 50%;
+   z-index: 50;
+   position: absolute;
+   height: 654px;
+   width: 606px;
 }
