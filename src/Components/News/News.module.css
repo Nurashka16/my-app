@@ -1,10 +1,12 @@
 .container {
-   margin-top: 10px;
+   display: flex;
+   flex-direction: column;
+   margin-top: 9px;
    width: 603px;
+   row-gap: 10px;
 }
 .status {
    height: 100px;
-   margin-bottom: 10px;
    background-color: white;
    border-radius: 15px;
    display: flex;
@@ -68,8 +70,7 @@
    width: 20px;
 }
 .wall {
-   height: 100%;
-   margin-top: 10px;
+   height: 620px;
 }
 .news_content {
    background-color: white;

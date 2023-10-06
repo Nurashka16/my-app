@@ -1,0 +1,8 @@
+.recommendation {
+   width: 100%;
+   height: 2000px;
+   display: flex;
+   flex-direction: column;
+   row-gap: 11px;
+   margin-top: 9px;
+}

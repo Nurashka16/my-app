@@ -20,7 +20,7 @@ export const Navbar = (props) => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/friends">
+          <CostumLink className={style.link} to="/recommendation">
             Рекомендация
           </CostumLink>
         </div>
@@ -75,7 +75,7 @@ export const Navbar = (props) => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/fale">
+          <CostumLink className={style.link} to="/friends">
             Файлы
           </CostumLink>
         </div>

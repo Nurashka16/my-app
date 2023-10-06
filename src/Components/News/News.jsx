@@ -42,7 +42,7 @@ const News = (props) => {
       </div>
       <div className={style.record}>
         <div className={style.record_content}>
-        <Avatar url={props.userAvatar} width="36px" height="36px" />
+          <Avatar url={props.userAvatar} width="36px" height="36px" />
           <form>
             <input
               className={style.record_input}
@@ -73,7 +73,7 @@ const News = (props) => {
           </svg>
         </div>
       </div>
-      <Wall/>
+      <Wall />
     </div>
   );
 };
