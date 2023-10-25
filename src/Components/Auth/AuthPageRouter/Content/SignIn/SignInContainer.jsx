@@ -6,12 +6,20 @@ import {
   changePassword,
   signIn,
 } from "../../../../../redux/auth-reducer";
-
+import { useNavigate } from "react-router-dom";
 
 const SignInContainer = (props) => {
+  const navigate = useNavigate();
+  const signIn = async (email, password) => {
+    const signInResult = await props.signIn(email, password);
+    if (signInResult.isSuccess) {
+      navigate("/");
+    }
+  };
+
   return (
     <SignIn
-      signIn={props.signIn}
+      signIn={signIn}
       email={props.email}
       password={props.password}
       changeEmail={props.changeEmail}

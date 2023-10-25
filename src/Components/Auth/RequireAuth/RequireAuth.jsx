@@ -1,12 +1,16 @@
 import React from "react";
-import App from "../../../App";
 import { useSelector } from "react-redux";
-import RouterAuth from "../RouterAuth/RouterAuth";
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const RequireAuth = () => {
   const isAuth = useSelector((state) => state.authPage.isAuth);
+  const location = useLocation();
 
-  return <>{!isAuth ? <RouterAuth /> : <App />}</>;
+  return (
+    <>
+      {isAuth ? <Outlet /> : <Navigate to="auth" state={{ from: location }} />}
+    </>
+  );
 };
 
 export default RequireAuth;

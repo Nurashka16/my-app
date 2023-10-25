@@ -1,10 +1,9 @@
 import style from "./Navbar.module.css";
 import CostumLink from "./../CostumLink";
 import Footer from "./Footer/Footer.jsx";
-import { connect } from "react-redux";
 import Avatar from "../Common/Avatar";
 
-export const Navbar = (props) => {
+const Navbar = (props) => {
   return (
     <div className={style.container}>
       <nav className={style.nav}>
@@ -25,12 +24,12 @@ export const Navbar = (props) => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/notifications">
+          <CostumLink className={style.link} to="/emptyPage">
             Уведомления
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/dialogs/*">
+          <CostumLink className={style.link} to="/mail">
             Мессенджер
           </CostumLink>
         </div>
@@ -40,17 +39,17 @@ export const Navbar = (props) => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/groups">
+          <CostumLink className={style.link} to="/emptyPage">
             Сообщества
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/photos">
+          <CostumLink className={style.link} to="/emptyPage">
             Фотография
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/video">
+          <CostumLink className={style.link} to="/emptyPage">
             Видео
           </CostumLink>
         </div>
@@ -60,17 +59,17 @@ export const Navbar = (props) => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/servis">
+          <CostumLink className={style.link} to="/emptyPage">
             Сервисы
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/plays">
+          <CostumLink className={style.link} to="/emptyPage">
             Игры
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/trava">
+          <CostumLink className={style.link} to="/emptyPage">
             Закладки
           </CostumLink>
         </div>
@@ -80,17 +79,17 @@ export const Navbar = (props) => {
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/reclam">
+          <CostumLink className={style.link} to="/emptyPage">
             Реклама
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/react">
+          <CostumLink className={style.link} to="/emptyPage">
             Реакции
           </CostumLink>
         </div>
         <div className={style.item}>
-          <CostumLink className={style.link} to="/search">
+          <CostumLink className={style.link} to="/emptyPage">
             Поиск
           </CostumLink>
         </div>
@@ -99,10 +98,5 @@ export const Navbar = (props) => {
     </div>
   );
 };
-const mapStateToProp = (state) => {
-  return {
-    id: state.authPage.id,
-  };
-};
 
-export default connect(mapStateToProp)(Navbar);
+export default Navbar;

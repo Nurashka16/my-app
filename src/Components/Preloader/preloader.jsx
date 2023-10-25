@@ -5,7 +5,7 @@ import gif from "../../images/preloader.gif";
    return isFetching ? <img
    className={style.load}
    src={gif}
- /> : null
+ />: null
  }
 
 export default Preloader;

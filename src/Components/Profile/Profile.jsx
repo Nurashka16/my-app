@@ -3,6 +3,7 @@ import MyPosts from "./MyPosts/MyPosts";
 import Avatar from "../Common/Avatar";
 
 const Profile = (props) => {
+  console.log(props.urlId)
   return (
     <div className={style.container}>
       {props.user.id == props.urlId ? (

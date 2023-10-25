@@ -81,12 +81,18 @@ export const authUser = (data) => ({
 });
 
 export const signIn = (email, password) => (dispatch) => {
-  AuthAPI.signIn(email, password)
+  return AuthAPI.signIn(email, password)
     .then((response) => {
       dispatch(authUser(response));
+      return {
+        isSuccess : true,
+      }
     })
     .catch((response) => {
       console.log("ошибка в singIn");
+      return {
+        isSuccess : false,
+      }
     });
 };
 export const signUp = (request) => (dispatch) => {

@@ -5,12 +5,10 @@ import AuthPageRouter from "../AuthPageRouter/AuthPageRouter";
 
 const RouterAuth = (props) => {
   return (
-    <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomeAuth />} />
         <Route path="/auth/:block" element={<AuthPageRouter />} />
       </Routes>
-    </BrowserRouter>
   );
 };
 

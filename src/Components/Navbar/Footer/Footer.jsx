@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Footer = (props) => {
   const navigate = useNavigate();
-  const goBack = () => navigate('/');
+  const goBack = () => navigate('/auth');
 
   return (
     <div>

@@ -6,7 +6,7 @@ import HomeAuthSignIn from "./HomeAuthMain/HomeAuthSignIn";
 import HomeAuthSignUp from "./HomeAuthMain/HomeAuthSignUp";
 import HomeAuthInstallApp from "./HomeAuthMain/HomeAuthInstallApp";
 
-const HomeAuthCopy = (props) => {
+const HomeAuth = (props) => {
   return (
     <div className={style.body}>
       <header className={style.header}>
@@ -24,4 +24,4 @@ const HomeAuthCopy = (props) => {
   );
 };
 
-export default HomeAuthCopy;
+export default HomeAuth;

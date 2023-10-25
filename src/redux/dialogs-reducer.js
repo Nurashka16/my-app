@@ -2,61 +2,72 @@ const SEND_MESSAGE = "SEND-MESSAGE";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 
 let initialState = {
-  messages: [
+  lastDialog: [
     {
-      id: 1,
-      message: "How are you?",
+      I: "Hi",
     },
     {
-      id: 2,
-      message: "Hi",
+      He: "Hey, how are you?",
     },
     {
-      id: 3,
-      message: "What do you doing?",
+      I: "Nice, and you?",
     },
     {
-      id: 4,
-      message: "Hello!",
-    },
-    {
-      id: 5,
-      message: "ok",
+      He: "Me too, thunks",
     },
   ],
-  dialogs: [
+  contacts: [
     {
       id: 1,
-      name: "Sveta",
+      fullName: "Ananasik",
+      avatar: "",
+      lastMess: "You: HI!",
+      time: "10:21",
     },
     {
-      id: 2,
-      name: "Petya",
+      id: 1,
+      fullName: "Granatus",
+      avatar: "",
+      lastMess: "He: Okay",
+      time: "Tomorrow in 20:35",
     },
     {
-      id: 3,
-      name: "Sasha",
+      id: 1,
+      fullName: "Bubuz",
+      avatar: "",
+      lastMess: "She: Good",
+      time: "22 sep in 16:20",
     },
     {
-      id: 4,
-      name: "Kostya",
+      id: 1,
+      fullName: "Vinogradka",
+      avatar: "",
+      lastMess: "You: No, i don`t",
+      time: "10 jule 2021",
+    },
+    {
+      id: 1,
+      fullName: "Yablych",
+      avatar: "",
+      lastMess: "He: Thunk",
+      time: "3 years ago",
     },
   ],
   newMessageBody: "",
-}
+};
 
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEND_MESSAGE: {
       let body = state.newMessageBody;
-      let stateCopy = {...state};
-      stateCopy.messages = [...state.messages]
+      let stateCopy = { ...state };
+      stateCopy.messages = [...state.messages];
       stateCopy.messages.push({ id: 6, message: body });
       stateCopy.newMessageBody = "";
       return stateCopy;
     }
     case UPDATE_NEW_MESSAGE_BODY: {
-      let stateCopy = {...state};
+      let stateCopy = { ...state };
       stateCopy.newMessageBody = action.body;
       return stateCopy;
     }

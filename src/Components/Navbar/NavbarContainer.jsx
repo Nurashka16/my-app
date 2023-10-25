@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import Navbar from "./Navbar";
 
 export const NavbarContainer = (props) => {
+  
+  console.log(props.userName);
   return <Navbar id={props.userId} userName={props.userName} 
   userAvatar={props.userAvatar}/>;
 };
