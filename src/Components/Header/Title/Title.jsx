@@ -30,7 +30,6 @@ const Title = (props) => {
                     fill="#2e8dec"
                     fillRule="nonzero"
                     strokeWidth="6"
-                    
                   />
                 </g>
               </svg>

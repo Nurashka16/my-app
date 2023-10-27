@@ -1,0 +1,40 @@
+.message {
+   width: 600px;
+   height: 52px;
+   margin: 10px 0;
+}
+.container {
+   height: 52px;
+   display: flex;
+   align-items: center;
+}
+.body {
+}
+.upBlock {
+   display: flex;
+   align-items: center;
+}
+.avatar {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 52px;
+   width: 60px;
+}
+.name {
+   font-size: 15px;
+   font-weight: 500;
+   color: #2d81e0;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   height: 18px;
+   margin-right: 8px;
+}
+.mess {
+   font-size: 15px;
+}
+.date {
+   font-size: 13px;
+   color: #99a2ad;
+}

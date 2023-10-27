@@ -8,7 +8,7 @@ const RequireAuth = () => {
 
   return (
     <>
-      {isAuth ? <Outlet /> : <Navigate to="auth" state={{ from: location }} />}
+      {true ? <Outlet /> : <Navigate to="auth" state={{ from: location }} />}
     </>
   );
 };

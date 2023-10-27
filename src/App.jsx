@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import { MailContainer } from "./Components/Mail/MailContainer";
 import { FriendsContainer } from "./Components/Friends/FriendsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
@@ -12,7 +11,8 @@ import HomeAuth from "./Components/Auth/HomeAuth/HomeAuth";
 import AuthPageRouter from "./Components/Auth/AuthPageRouter/AuthPageRouter";
 import Layout from "./Components/Layout";
 import EmptyPage from "./Components/EmptyPage/EmptyPage";
-import Dialog from "./Components/Mail/Dialog/Dialog";
+import MailContainer from "./Components/Mail/MailContainer";
+import DialogContainer from "./Components/Mail/Dialog/DialogContainer";
 
 const App = (props) => {
   return (
@@ -29,8 +29,8 @@ const App = (props) => {
               <Route path=":id" element={<ProfileContainer />} />
             </Route>
             <Route path="/emptyPage" element={<EmptyPage />} />
-            <Route path="mail" element={<MailContainer />}/>
-            <Route path="dialog/:id" element={<Dialog />} />
+            <Route path="/mail" element={<MailContainer />} />
+            <Route path="/dialogs/:id" element={<DialogContainer />} />
             <Route path="/users" element={<UsersContainer />} />
             <Route path="/musics" element={<HighMusicsContainer />} />
             <Route path="/friends/*" element={<FriendsContainer />} />

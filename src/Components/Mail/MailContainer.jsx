@@ -1,21 +1,22 @@
-import Mail from "./Mail";
+import React from "react";
 import { connect } from "react-redux";
-
-const mapStateToProps = (state) => {
-  return {
-    state: state.dialogsPage,
-  };
-};
+import Mail from "./Mail";
 
 export const MailContainer = (props) => {
-  console.log(props.state);
+  console.log(props.contacts);
+  const contacts = props.contacts.map((item) => {
+    return <div>{item.fullName}</div>;
+  });
   return (
-    <Mail
-      dialogsPage={props.dialogsPage}
-      lastDialog={props.lastDialog}
-      contacts={props.contacts}
-    />
+    <div>
+      <Mail contacts={props.contacts} />
+    </div>
   );
+};
+const mapStateToProps = (state) => {
+  return {
+    contacts: state.dialogsPage.contacts,
+  };
 };
 
 export default connect(mapStateToProps)(MailContainer);

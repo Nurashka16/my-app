@@ -1,0 +1,52 @@
+
+.dialog {
+   background-color: white;
+   width: 604.99px;
+   height: 790px;
+   display: flex;
+   flex-direction: column;
+   overflow-y: scroll;
+   overflow-x: auto;
+   color: black;
+   justify-content: flex-end;
+}
+.dialog::-webkit-scrollbar {
+   width: 5px;             /* ширина всей полосы прокрутки */
+ }
+ 
+ .dialog::-webkit-scrollbar-track {
+   background: rgb(245, 244, 243);        /* цвет зоны отслеживания */
+ }
+ 
+.dialog::-webkit-scrollbar-thumb {
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: rgba(197, 196, 196,0.3);    /* цвет бегунка */
+   border-radius: 20px; /* отступ вокруг бегунка */
+ }
+ .footer {
+   display: flex;
+   margin-top: 30px;
+   height: 45px;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 1px;
+ }
+ .search {
+   background-color: #f3f2f5;
+   width: 470px;
+   height: 36px;
+   padding: 8px 14px;
+   font-size: 15px;
+   line-height: 20px;
+   border-radius: 18px;
+ }
+ .icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 44px;
+   height: 44px;
+ }
+ .icon svg {
+   color: #2d81e0;
+ }
