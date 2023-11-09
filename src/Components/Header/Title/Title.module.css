@@ -97,7 +97,5 @@
   right: 1px;
   display: flex;
   align-items: center;
-  width: 44px;
-  height: 44px;
-  color: #2688eb;
+  margin-right: 16px;
 }

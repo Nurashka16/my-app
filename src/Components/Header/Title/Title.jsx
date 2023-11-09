@@ -1,6 +1,7 @@
 import React from "react";
 import style from "./Title.module.css";
 import Avatar from "../../Common/Avatar";
+import ButtonBack from "../../Common/ButtonBack";
 
 export const Title = (props) => {
   const user = (name, img, date, login) => {
@@ -34,10 +35,7 @@ export const Title = (props) => {
     return list.map((el) => {
       if (el?.pathMatcher(url)) {
         return (
-          <div
-            key={el.id}
-            className={style.title}
-          >
+          <div key={el.id} className={style.title}>
             <div
               className={style.title_container}
               style={{
@@ -48,7 +46,11 @@ export const Title = (props) => {
             >
               <div className={style.title_content}>
                 {el.title.left ? (
-                  <div className={style.title_icon_left}>{el.title.left}</div>
+                  <div className={style.title_icon_left}>
+                    <ButtonBack width="44px" color="#2688eb" height="44px">
+                      {el.title.left}
+                    </ButtonBack>
+                  </div>
                 ) : (
                   ""
                 )}
