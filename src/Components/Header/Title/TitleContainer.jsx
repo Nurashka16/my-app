@@ -1,23 +1,29 @@
 import React from "react";
-import Title from "./Title";
+import { Title } from "./Title";
 import { connect } from "react-redux";
 import { closeBlock, openBlock } from "../../../redux/header-reducer";
-import { useParams, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { arrSelection } from "../../Common/Menu";
 
-export const TitleContainer = (props) => {
-  const url= useLocation();
-  const newUrl = url.pathname.split("/")[1];
-  console.log(newUrl);
-  return <div>{newUrl}</div>;
+const TitleContainer = (props) => {
+  const dataUrl = useLocation();
+  console.log(props.contacts);
+  const [_, url, userIdDialog] = dataUrl.pathname.split("/");
+  const userDialog = props.contacts.find((user) => {
+    if (user.id == userIdDialog) {
+      return user;
+    }
+  });
+  const list = arrSelection("title", userDialog?.fullName);
+
+  return <Title list={list} url={url}  userDialog={userDialog}/>;
 };
-
-let mapStateToProps = (state) => {
-  return { 
+const mapStateToProps = (state) => {
+  return {
+    contacts: state.dialogsPage.contacts,
     block: state.headerPage.block,
     elemsBurger: state.headerPage.elemsBurger,
   };
 };
-export default connect(mapStateToProps, {
-  closeBlock,
-  openBlock,
-})(TitleContainer);
+
+export default connect(mapStateToProps)(TitleContainer);

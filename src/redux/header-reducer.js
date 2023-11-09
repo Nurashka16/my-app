@@ -1,5 +1,6 @@
 const OPEN_BLOCK = "OPEN_BLOCK";
 const CLOSE_BLOCK = "CLOSE_BLOCK";
+const RE_HEADER_TITLE = "RE_HEADER_TITLE";
 
 let initialState = {
   block: false,
@@ -206,6 +207,7 @@ let initialState = {
       btn: "",
     },
   ],
+  title: "",
 };
 
 function headerReducer(state = initialState, action) {
@@ -222,11 +224,21 @@ function headerReducer(state = initialState, action) {
         ...state,
         block: false,
       };
+    };
+    case RE_HEADER_TITLE: {
+      console.log("reTitle");
+      return {
+        ...state,
+        title: action.url,
+      };
     }
     default:
       return state;
   }
 }
+export const reHeaderTitle = (url) => ({
+  type: RE_HEADER_TITLE, url
+})
 
 export const openBlock = () => ({
   type: OPEN_BLOCK,

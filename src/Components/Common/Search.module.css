@@ -1,0 +1,28 @@
+.container {
+   background-color: #434040;
+   display: flex;
+   flex-direction: row;
+}
+.icon {
+   display: flex;
+   align-items: center;
+   justify-content: end;
+   width: 31px;
+   height: 100%;
+   color: #ebedf0;
+}
+.input {
+   padding-left: 8px;
+   background-color: #ebedf0;
+   font-weight: 400;
+   font-size: 15px;
+   width: 100%;
+   height: 100%;
+   color: #818c99;
+} 
+.input::placeholder{
+   color: #818c99;
+}
+.container:hover{
+   opacity: 0.8;
+}

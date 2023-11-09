@@ -46,8 +46,4 @@ const Logotype = () => {
     </div>
   );
 };
-/*
-<NavLink className={style.link} key={u.id} 
-            to={"/profile/"+ (u.id)}>
-*/
 export default Logotype;

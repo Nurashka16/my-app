@@ -14,6 +14,7 @@ import EmptyPage from "./Components/EmptyPage/EmptyPage";
 import MailContainer from "./Components/Mail/MailContainer";
 import DialogContainer from "./Components/Mail/Dialog/DialogContainer";
 
+
 const App = (props) => {
   return (
     <BrowserRouter>
@@ -28,7 +29,18 @@ const App = (props) => {
             <Route path="/profile" element={<ProfileContainer />}>
               <Route path=":id" element={<ProfileContainer />} />
             </Route>
-            <Route path="/emptyPage" element={<EmptyPage />} />
+            <Route path="/notice" element={<EmptyPage />} />
+            <Route path="/communities" element={<EmptyPage />} />
+            <Route path="/photos" element={<EmptyPage />} />
+            <Route path="/video" element={<EmptyPage />} />
+            <Route path="/clips" element={<EmptyPage />} />
+            <Route path="/services" element={<EmptyPage />} />
+            <Route path="/plays" element={<EmptyPage />} />
+            <Route path="/bookmarks" element={<EmptyPage />} />
+            <Route path="/files" element={<EmptyPage />} />
+            <Route path="/advertisement" element={<EmptyPage />} />
+            <Route path="/reaction" element={<EmptyPage />} />
+            <Route path="/search" element={<EmptyPage />} />
             <Route path="/mail" element={<MailContainer />} />
             <Route path="/dialogs/:id" element={<DialogContainer />} />
             <Route path="/users" element={<UsersContainer />} />

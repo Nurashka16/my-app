@@ -36,8 +36,9 @@ let initialState = {
       id: 1,
       fullName: "Ananasik",
       avatar: "",
-      mess: "You: HI!",
+      lastMess: "You: HI!",
       time: "10:21",
+      login: "phone",
     },
     {
       id: 2,
@@ -45,6 +46,7 @@ let initialState = {
       avatar: "",
       lastMess: "He: Okay",
       time: "Tomorrow in 20:35",
+      login: "",
     },
     {
       id: 3,
@@ -52,6 +54,7 @@ let initialState = {
       avatar: "",
       lastMess: "She: Good",
       time: "22 sep in 16:20",
+      login: "",
     },
     {
       id: 4,
@@ -59,6 +62,7 @@ let initialState = {
       avatar: "",
       lastMess: "You: No, i don`t",
       time: "10 jule 2021",
+      login: "phone",
     },
     {
       id: 5,
@@ -66,6 +70,7 @@ let initialState = {
       avatar: "",
       lastMess: "He: Thunk",
       time: "3 years ago",
+      login: "",
     },
   ],
   newMessageBody: "",

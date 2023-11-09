@@ -23,6 +23,10 @@
 .search {
    padding: 16px 0 4px;
    height: 55px;
+   width: 598.54px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 .recommendationContact {
    padding: 12px;

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import Mail from "./Mail";
 
 export const MailContainer = (props) => {
-  console.log(props.contacts);
   const contacts = props.contacts.map((item) => {
     return <div>{item.fullName}</div>;
   });

@@ -1,12 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import Navbar from "./Navbar";
+import { arrSelection } from "../Common/Menu";
 
 export const NavbarContainer = (props) => {
-  
-  console.log(props.userName);
-  return <Navbar id={props.userId} userName={props.userName} 
-  userAvatar={props.userAvatar}/>;
+  const list = arrSelection("navbar");
+  return (
+    <Navbar
+      id={props.userId}
+      userName={props.userName}
+      userAvatar={props.userAvatar}
+      list={list}
+    />
+  );
 };
 const mapStateToProps = (state) => {
   return {

@@ -5,17 +5,15 @@ import Header from "./Header/Header";
 
 const Layout = (props) => {
   return (
-      <div className="app-wrapper">
-        <Header />
-        <div className="app_container">
-          <div className="app_navbar">
-            <NavbarContainer />
-          </div>
-          <div className="app-wrapper-content">
-            <Outlet />
-          </div>
+    <div className="app-wrapper">
+      <Header />
+      <div className="app_container">
+        <NavbarContainer />
+        <div className="app-wrapper-content">
+          <Outlet />
         </div>
       </div>
+    </div>
   );
 };
 

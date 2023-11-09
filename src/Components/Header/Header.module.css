@@ -1,34 +1,49 @@
 .header {
   position: sticky;
-  top: 0;
   grid-area: header;
   background-color: white;
   width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 55.99px;
-  box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 1px 4px 0 rgba(0, 0, 0, 0.05),
+    0 0 4px 0 rgba(0, 0, 0, 0.05);
 }
 .container {
-  margin-left: 25px;
   background-color: rgb(255, 255, 255);
-  width: 861px;
+  width: 881.99px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
-  height: 55.7px;
+  height: 55.98px;
+}
+.body {
+  width: 870px;
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
 }
 .logotype {
   padding: 0 0 0 0px;
   width: 264.99px;
-  height: 55.99px;
+  height: 55.98px;
+  padding: 0 15px 0 3px;
+}
+.logotype_container {
+  width: 246.99px;
+  height: 55.98px;
+  padding: 0 12px 0 0;
   display: flex;
-  text-transform: none;
+  align-items: end;
+  
 }
 .logotype_link {
-  width: 246.99px;
-  text-decoration: none;
+  width: 235px;
+  height: 37.98px;
+  padding: 19px 0;
+  display: flex;
+  align-items: last baseline;
 }
 .header_components {
   display: flex;
@@ -39,6 +54,17 @@
 .search {
   display: flex;
   align-items: center;
-  width: 263.99px;
+
 }
 
+.header:after {
+  border-bottom: rgba(0, 0, 0, 0.05) solid 1px;
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+}
+.title {
+  width: 336px;
+}

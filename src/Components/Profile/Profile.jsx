@@ -13,20 +13,7 @@ const Profile = (props) => {
             {props.user.firstName} {props.user.lastName}
           </div>
         </div>
-      ) : (
-        <div>
-          <div>
-            {props.user.firstName} {props.user.lastName}
-          </div>
-          <div>Город: Москва</div>
-          <div>Имя: Владимир</div>
-          <img
-            className={style.user}
-            src="https://cdn-static.ntv.ru/home/news/20141208/putin1_vs.jpg"
-            alt=""
-          />
-        </div>
-      )}
+      ) : "технические проблемы"}
       <div className={style.content}>
         <MyPosts
           addPost={props.addPost}

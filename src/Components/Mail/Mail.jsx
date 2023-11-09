@@ -1,6 +1,7 @@
 import style from "./Mail.module.css";
 import Avatar from "../Common/Avatar.jsx";
 import { Link } from "react-router-dom";
+import Search from "../Common/Search.jsx";
 
 const Mail = (props) => {
   const contacts = props.contacts.map((item) => (
@@ -24,7 +25,7 @@ const Mail = (props) => {
   ));
   return (
     <div className={style.dialogs}>
-      <div className={style.search}>Search</div>
+      <div className={style.search}><Search width="566px" height="35px"   /></div>
       <div className={style.recommendationContact}>RecommendationContact</div>
       <div className={style.mail}>{contacts}</div>
     </div>

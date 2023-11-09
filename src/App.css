@@ -8,13 +8,9 @@
 .app_container {
   display: flex;
   justify-content: space-between;
-  width: 886px;
-}
-.app_navbar {
-  /*margin: 0 0 0 25px;*/
-  width: 280px;
+  width: 868px;
 }
 .app-wrapper-content {
   display: flex;
-  width: 606px;
+  width: 604px;
 }

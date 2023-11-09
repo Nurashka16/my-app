@@ -68,14 +68,27 @@ const Dialog = (props) => {
           </div>
           <div className={style.icon}>
             <svg
+              width="28"
+              height="28"
+              viewBox="0 0 28 28"
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-send-fill"
-              viewBox="0 0 16 16"
             >
-              <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z" />
+              <g
+                id="send_28__Page-2"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
+                <g id="send_28__send_28">
+                  <path id="send_28__Rectangle-76" d="M0 0h28v28H0z"></path>
+                  <path
+                    d="M6.93 18.12a42.81 42.81 0 0 0-1.43 4.31c-.62 2.6-1.07 3.18 1.23 1.95 2.29-1.24 13.38-7.35 15.86-8.71 3.22-1.77 3.26-1.64-.18-3.52C19.8 10.72 8.83 4.76 6.73 3.6c-2.1-1.17-1.85-.65-1.23 1.95.2.84.68 2.29 1.46 4.35a4.4 4.4 0 0 0 3.28 2.77l6.44 1.23a.11.11 0 0 1 0 .22l-6.45 1.23a4.4 4.4 0 0 0-3.3 2.78Z"
+                    id="send_28__Mask"
+                    fill="currentColor"
+                  ></path>
+                </g>
+              </g>
             </svg>
           </div>
         </div>
