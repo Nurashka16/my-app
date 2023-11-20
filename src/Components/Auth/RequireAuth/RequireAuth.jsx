@@ -4,10 +4,10 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const RequireAuth = () => {
   const location = useLocation();
-
+  const isAuth = useSelector((state) => state.authPage.isAuth);
   return (
     <>
-      {true ? <Outlet /> : <Navigate to="auth" state={{ from: location }} />}
+      {isAuth ? <Outlet /> : <Navigate to="auth" state={{ from: location }} />}
     </>
   );
 };

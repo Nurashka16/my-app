@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const Footer = (props) => {
   const navigate = useNavigate();
-  const goBack = () => navigate('/auth');
+  const goBack = () => navigate("/auth");
 
   return (
     <div>
@@ -25,7 +25,11 @@ const Footer = (props) => {
         </CostumLink>
       </div>
       <div className={style.item} onClick={goBack}>
-        <CostumLink className={style.link} to="/" >
+        <CostumLink
+          className={style.link}
+          onClick={(e) => props.clearData()}
+          to="/"
+        >
           Выход
         </CostumLink>
       </div>

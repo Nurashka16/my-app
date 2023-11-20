@@ -8,12 +8,11 @@
   
 }
 .textField {
-   height: 100px;
+   height: 165px;
    display: flex;
    flex-direction: column;
    align-items: center;
-   row-gap: 20px;
-   justify-content: space-between;
+   row-gap: 30px;
    width: 100%;
 }
 .textField__container {
@@ -24,7 +23,7 @@
    margin: 0;
    width: 100%;
    height: 34px;
-   outline: 1px solid rgba(129,140,153,0.4);
+   outline: 0.5px solid rgba(0,0,0,0.12);
    background-color: rgba(129,140,153,0.1);
    border: none;
    border-radius: 8px;
@@ -36,7 +35,11 @@
    padding-right: 12px;
    line-height: 20px;
 }
+.textField__input:active{
+   background-color: rgba(129,140,153,0.1);
+}
 .textField__input:focus {
+   background-color: rgba(129,140,153,0.1);
    border: none;
    outline: 1px solid rgba(0,119,255,0.8);
 }
@@ -56,7 +59,6 @@
 .btn__login {
    cursor: pointer;
    width: 100%;
-   background-color: #5c9ce6;
    opacity: 0.9;
    border-radius: 8px;
    font-size: 16px;
@@ -67,5 +69,7 @@
    justify-content: center;
    align-items: center;
 }
-
+.btn__login:hover{
+   backdrop-filter: drop-shadow(4px 4px 10px blue);
+}
 

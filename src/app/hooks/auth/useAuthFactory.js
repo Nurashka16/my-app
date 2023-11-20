@@ -4,7 +4,6 @@ import SignUpContainer from "../../../Components/Auth/AuthPageRouter/Content/Sig
 
 export function useAuthFactory() {
   const { block: blockName } = useParams();
-  console.log(useParams());
   if (blockName == "signIn") {
     return {
       description: {

@@ -27,7 +27,7 @@ const Navbar = (props) => {
   return (
     <div className={style.container}>
       <nav className={style.nav}>{menu}</nav>
-      <Footer />
+      <Footer clearData={props.clearData} />
     </div>
   );
 };

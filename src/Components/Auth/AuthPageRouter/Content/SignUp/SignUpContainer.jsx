@@ -1,66 +1,34 @@
 import React from "react";
 import SignUp from "./SignUp";
-import { SignUpSelector } from "./SignUpSelector";
 import { connect } from "react-redux";
-import {
-  registerUser,
-  changeInputRegister,
-  signUp,
-} from "../../../../../redux/auth-reducer";
+import { registerUser, signUp } from "../../../../../redux/auth-reducer";
+import { useNavigate } from "react-router-dom";
 
-class SignUpContainer extends React.Component {
-  register() {
-    const request = SignUpSelector(this);
-    this.signUp(request);
-  }
-  render() {
-    const onChangeHandler = (e) => {
-      const obj = {
-        [e.target.name]: e.target.value,
-      };
-      this.props.changeInputRegister(obj);
-    };
-    const inputFields = [
-      {
-        id: 1,
-        text: "Имя",
-        name: "firstName",
-      },
-      {
-        id: 2,
-        text: "Фамилия",
-        name: "lastName",
-      },
-      {
-        id: 3,
-        text: "Электронная почта",
-        name: "email",
-      },
-      {
-        id: 4,
-        text: "Пароль",
-        name: "password",
-      },
-    ];
-    return (
-      <SignUp
-        {...this.props}
-        register={this.register}
-        inputFields={inputFields}
-        onChangeHandler={onChangeHandler}
-      />
+const SignUpContainer = (props) => {
+  const navigate = useNavigate();
+  const signUp = async (firstName, lastName, email, password, avatar) => {
+    const signUpResult = await props.signUp(
+      firstName,
+      lastName,
+      email,
+      password,
+      avatar
     );
-  }
-}
+    console.log(signUpResult);
+    if (signUpResult.isSuccess) {
+      navigate("/");
+    }
+  };
 
+  return <SignUp registerUser={props.registerUser} signUp={signUp} />;
+};
 let mapStateToProps = (state) => {
   return {
-    authPage: state.authPage,
+    authPage: state.authPage, //не нужен
   };
 };
 
 export default connect(mapStateToProps, {
   registerUser,
-  changeInputRegister,
   signUp,
 })(SignUpContainer);

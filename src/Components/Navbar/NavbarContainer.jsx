@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import Navbar from "./Navbar";
 import { arrSelection } from "../Common/Menu";
+import { clearData } from "../../redux/auth-reducer";
 
 export const NavbarContainer = (props) => {
   const list = arrSelection("navbar");
@@ -11,6 +12,7 @@ export const NavbarContainer = (props) => {
       userName={props.userName}
       userAvatar={props.userAvatar}
       list={list}
+      clearData={props.clearData}
     />
   );
 };
@@ -22,4 +24,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(NavbarContainer);
+export default connect(mapStateToProps,{clearData})(NavbarContainer);

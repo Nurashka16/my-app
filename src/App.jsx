@@ -13,7 +13,8 @@ import Layout from "./Components/Layout";
 import EmptyPage from "./Components/EmptyPage/EmptyPage";
 import MailContainer from "./Components/Mail/MailContainer";
 import DialogContainer from "./Components/Mail/Dialog/DialogContainer";
-
+import NoticePage from "./Components/NoticePage/NoticePage";
+import { useForm } from "react-hook-form"
 
 const App = (props) => {
   return (
@@ -29,7 +30,7 @@ const App = (props) => {
             <Route path="/profile" element={<ProfileContainer />}>
               <Route path=":id" element={<ProfileContainer />} />
             </Route>
-            <Route path="/notice" element={<EmptyPage />} />
+            <Route path="/notice" element={<NoticePage />} />
             <Route path="/communities" element={<EmptyPage />} />
             <Route path="/photos" element={<EmptyPage />} />
             <Route path="/video" element={<EmptyPage />} />

@@ -1,11 +1,7 @@
 import React from "react";
 import SignIn from "./SignIn";
 import { connect } from "react-redux";
-import {
-  changeEmail,
-  changePassword,
-  signIn,
-} from "../../../../../redux/auth-reducer";
+import { signIn } from "../../../../../redux/auth-reducer";
 import { useNavigate } from "react-router-dom";
 
 const SignInContainer = (props) => {
@@ -20,10 +16,6 @@ const SignInContainer = (props) => {
   return (
     <SignIn
       signIn={signIn}
-      email={props.email}
-      password={props.password}
-      changeEmail={props.changeEmail}
-      changePassword={props.changePassword}
     />
   );
 };
@@ -35,7 +27,5 @@ const mapStateToProps = (state) => {
   };
 };
 export default connect(mapStateToProps, {
-  changeEmail,
   signIn,
-  changePassword,
 })(SignInContainer);
