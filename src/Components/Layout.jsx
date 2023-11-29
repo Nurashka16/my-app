@@ -8,7 +8,9 @@ const Layout = (props) => {
     <div className="app-wrapper">
       <Header />
       <div className="app_container">
-        <NavbarContainer />
+        <div className="app_menu">
+          <NavbarContainer />
+        </div>
         <div className="app-wrapper-content">
           <Outlet />
         </div>

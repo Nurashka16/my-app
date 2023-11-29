@@ -1,0 +1,123 @@
+.info {
+   width: 604px;
+   height: 450px;
+   display: flex;
+   align-items: center;
+   justify-content: end;
+   flex-direction: column;
+   border-radius: 20px;
+   background-repeat: no-repeat;
+   background-size: 100% 60%;
+   background-position: top;
+   background-image: url("https://traveling.by/files/images/2018/04/5d63d9c055f5c8ca1394aa37d7da0cf8-thumb-940x0.jpg");
+}
+.info_content {
+   margin: 0 0 0 1px;
+   border-radius: 20px;
+   height: 208px;
+   width: 604px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border: 1px solid rgb(210, 207, 207);
+   background-color: white;
+   padding: 63px 16px 16px;
+   justify-content: space-between;
+}
+.info_avatar {
+   height: 106px;
+   width: 108px;
+   display: block;
+   padding: 3.5px;
+   position: relative;
+   top: 53px;
+   background-color: rgb(255, 255, 255);
+   border-radius: 50%;
+}
+.info_avatar::after {
+   content: "";
+   outline: 4px solid rgb(255, 255, 255);
+   /*border: 0.5px solid rgb(255, 255, 255);*/
+   border-radius: 50%;
+   width: 13px;
+   background-color: #4bb34b;
+   height: 13px;
+   position: absolute;
+   top: 82.5px;
+   right: 13px;
+}
+.info_personInfo {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+   height: 85px;
+}
+.info_personInfo:hover {
+   background-color: #f5f5f5;
+   width: 594px;
+   border-radius: 7px;
+   height: 85px;
+}
+.info_name {
+   font-size: 21.5px;
+   font-weight: 500;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   column-gap: 10px;
+}
+.info_imageStatus {
+   margin: 3.5px 0 0;
+}
+.info_status {
+   margin: 2px 0 0 0;
+   display: flex;
+   align-items: center;
+}
+.info_addInfo {
+   text-align: center;
+   display: flex;
+   column-gap: 8px;
+   width: 100%;
+   height: 20px;
+   color: #818c99;
+   align-items: center;
+   justify-content: center;
+   margin: 0 0 4px 0;
+}
+.info_geo {
+   column-gap: 8px;
+   display: flex;
+   align-items: center;
+   height: 20px;
+}
+.info_job {
+   height: 20px;
+   column-gap: 8px;
+   display: flex;
+   align-items: center;
+}
+.info_icon__geo {
+}
+.info_btn {
+   height: 32px;
+   color: #2688eb;
+   background-color: #f5f5f5;
+   border-radius: 7px;
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin: 10px 0 0 0;
+   column-gap: 5px;
+   font-weight: 500;
+   text-align: center;
+}
+.info_icon__add {
+   margin: 1px 0 0 0;
+}
+.info_btn:hover {
+   background-color: #ebedf0;
+}

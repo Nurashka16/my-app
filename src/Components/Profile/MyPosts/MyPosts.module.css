@@ -1,34 +1,94 @@
-.item {
-  color: green;
+.myPost {
+  width: 100%;
+  height: 100%;
 }
-.title {
-  font-size: 40px;
-  font-weight: 600;
-}
-.postBlock{
-  
-}
-.areaBlock {
+.textArea {
+  width: 602.17px;
+  border-radius: 20px;
+  height: 284px;
+  background-color: white;
   display: flex;
-  margin-top: 15px;
-  width: 350px;
-  height: 50px;
-
+  flex-direction: column;
+  font-size: 16px;
 }
-.textArea{
-  display: flex;
-  flex: 0 1 70%;
-  border-radius: 50px 0px 0px 50px;
-  font-size: 30px;
+.textArea__input {
+  width: 602.17px;
+  height: 180px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  outline: none;
+  resize: none;
+  border: none;
+  font-size: 16px;
 }
-.button{
+.textArea_selector {
   display: flex;
-  flex: 0 1 30%;
-  justify-content: center;
+  flex-direction: row;
+  column-gap: 20px;
+  height: 44px;
+  border-bottom: 1px solid #d7d8d9;
+  margin: 0 16px;
+}
+.selector_container {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  font-size: 20px;
-  border-radius: 0px 50px 50px 0px;
-  border: 0.5px solid gray;
-  color: red;
+  column-gap: 6px;
+}
+.selector__icon {
+  margin-top: 0.5px;
+  color: #2d81e0;
+}
+.btn_burger {
+  background-color: white;
+  color: #2d81e0;
+  font-size: 16px;
+}
+
+.textArea__footer {
+  margin: 0 16px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__left {
+  display: flex;
+  column-gap: 20px;
+}
+.footer__right {
+  height: 60px;
+  align-items: center;
+  display: flex;
+  column-gap: 15px;
+}
+.btn_create {
+  color: white;
+  border-radius: 10px;
   font-weight: 500;
+  height: 36px;
+  width: 139.23px;
+  background-color: #2688eb;
+  font-size: 16px;
+  padding: 0 14px;
+}
+.error_block {
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+  align-items: center;
+  justify-content: start;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: -14px 0px 70px -14px rgba(34, 60, 80, 0.24);
+  height: 52px;
+  width: 384px;
+  margin: 24px;
+  padding: 14px 14px 14px 12px;
+  border-radius: 8px;
+  background-color: white;
+}
+.error {
+  font-size: 16px;
 }

@@ -4,14 +4,13 @@ import Footer from "./Footer/Footer.jsx";
 import Avatar from "../Common/Avatar";
 
 const Navbar = (props) => {
-  /*to={list.path}*/
   const menu = props.list.map((list) => {
     return list.navbar.name == "Мой Профиль" ? (
       <div className={style.ownerPanel} key={list.id}>
         <CostumLink className={style.link} to={`/profile/${props.id}`}>
           <Avatar url={props.userAvatar} width="36px" height="36px" />
           <div className={style.userName}>
-            {props.userName ? "Нурайым Тилепова" : props.userName}
+            {props.userName ?  props.userName : ""}
           </div>
         </CostumLink>
       </div>

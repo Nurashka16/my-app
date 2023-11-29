@@ -1,0 +1,99 @@
+.createPost {
+   margin-top: 9px;
+   width: 100%;
+   height: 100%;
+}
+.createPost_container {
+   width: 603px;
+   border-radius: 20px;
+   height: 284px;
+   background-color: white;
+   display: flex;
+   flex-direction: column;
+   font-size: 16px;
+   outline: 1px solid #e1e3e6;
+}
+.createPost_textArea {
+}
+.createPost_input {
+   width: 603px;
+   height: 180px;
+   padding: 10px 16px;
+   border-radius: 20px;
+   outline: none;
+   resize: none;
+   border: none;
+   font-size: 15px;
+}
+.createPost_containerSelect {
+   display: flex;
+   flex-direction: row;
+   column-gap: 20px;
+   height: 44px;
+   border-bottom: 1px solid #d7d8d9;
+   margin: 0 16px;
+}
+.createPost_select {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   column-gap: 6px;
+}
+.createPost_icon {
+   margin-top: 0.5px;
+   color: #2d81e0;
+}
+.createPost_btn__burger {
+   background-color: white;
+   color: #2d81e0;
+   font-size: 15px;
+}
+
+.createPost_footer {
+   margin: 0 16px;
+   height: 60px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.createPost_buttonsAdd {
+   display: flex;
+   column-gap: 16.5px;
+}
+.createPost_buttonsCreate {
+   height: 60px;
+   align-items: center;
+   display: flex;
+   column-gap: 12px;
+}
+.createPost_btnCreate {
+   color: white;
+   border-radius: 10px;
+   font-weight: 500;
+   height: 36px;
+   width: 130px;
+   background-color: #2688eb;
+   font-size: 15px;
+   text-align: center;
+   line-height: 36px;
+}
+.createPost_errorContainer {
+   display: flex;
+   flex-direction: row;
+   column-gap: 12px;
+   align-items: center;
+   justify-content: start;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   box-shadow: -14px 0px 70px -14px rgba(34, 60, 80, 0.24);
+   height: 52px;
+   width: 384px;
+   margin: 24px;
+   padding: 14px 14px 14px 12px;
+   border-radius: 8px;
+   background-color: white;
+}
+.createPost_error {
+   font-size: 16px;
+}

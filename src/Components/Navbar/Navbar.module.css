@@ -1,6 +1,6 @@
 .container {
   height: 855px;
-  width: 264px;
+  width: 266px;
 } /* скролл
 .container {
   overflow-y: scroll;
@@ -20,7 +20,7 @@
 
 .ownerPanel {
   height: 43.98px;
-  width: 258px;
+  width: 265px;
   margin: 22px 3px 2px;
   padding: 4px 0;
   font-weight: 500;
@@ -32,7 +32,7 @@
   height: 44px;
   width: 256px;
   font-size: 15px;
-  padding: 8px 12px 8px 10px;
+  padding: 8px 12px 8px 11px;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  column-gap: 18px;
+  column-gap: 15px;
 } 
 .ownerPanel__link {
   display: flex;
@@ -55,10 +55,12 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  column-gap: 10px;
 } 
 .link svg {
   color: #2688eb;
+}
+.text {
+  padding: 0 0 2.5px 0;
 }
   /*
 .item {

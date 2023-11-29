@@ -14,7 +14,8 @@ import EmptyPage from "./Components/EmptyPage/EmptyPage";
 import MailContainer from "./Components/Mail/MailContainer";
 import DialogContainer from "./Components/Mail/Dialog/DialogContainer";
 import NoticePage from "./Components/NoticePage/NoticePage";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
+import CreatePost from "./Components/CreatePost/CreatePost";
 
 const App = (props) => {
   return (
@@ -30,6 +31,7 @@ const App = (props) => {
             <Route path="/profile" element={<ProfileContainer />}>
               <Route path=":id" element={<ProfileContainer />} />
             </Route>
+            <Route path="/createPost" element={<CreatePost />} />
             <Route path="/notice" element={<NoticePage />} />
             <Route path="/communities" element={<EmptyPage />} />
             <Route path="/photos" element={<EmptyPage />} />

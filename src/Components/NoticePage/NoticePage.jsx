@@ -3,10 +3,19 @@ import { useState } from "react";
 import style from "./NoticePage.module.css"
 import { useForm } from "react-hook-form";
 import * as yup from 'yup'
-import {yupResolver} from '@hookform/resolvers/yup'
+import {yupResolver} from '@hookform/resolvers/yup';
+import BurgerPost from "../BurgerPost/BurgerPost";
 
 const NoticePage = (props) => {
-  
+  return (
+    <div>
+      {/*<BurgerPost/>*/}
+    </div>
+  );
+};
+
+export default NoticePage;
+  /*
   const valid = (name) => yup
   .string()
   .required(name)
@@ -33,9 +42,8 @@ const NoticePage = (props) => {
     formState: { errors },
   } = useForm({resolver: yupResolver(schema)});
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
-  return (
-    <div>
+  console.log(errors);*/
+    /*<div>
       <form className={style.form} onSubmit={handleSubmit(onSubmit)}>
         <input
           type="text"
@@ -77,12 +85,7 @@ const NoticePage = (props) => {
 
         <input type="submit" />
       </form>
-    </div>
-  );
-};
-
-export default NoticePage;
-
+    </div>*/
 /* для статуса код
   const [status, setStatus] = useState({
     text: "hi, how are you?",

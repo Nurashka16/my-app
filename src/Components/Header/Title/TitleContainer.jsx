@@ -7,14 +7,14 @@ import { arrSelection } from "../../Common/Menu";
 
 const TitleContainer = (props) => {
   const dataUrl = useLocation();
-  console.log(props.contacts);
   const [_, url, userIdDialog] = dataUrl.pathname.split("/");
   const userDialog = props.contacts.find((user) => {
     if (user.id == userIdDialog) {
       return user;
     }
   });
-  const list = arrSelection("title", userDialog?.fullName);
+  console.log(props.ownerFullName);
+  const list = arrSelection("title", userDialog?.fullName, props.ownerFullName);
 
   return <Title list={list} url={url}  userDialog={userDialog}/>;
 };
@@ -23,6 +23,7 @@ const mapStateToProps = (state) => {
     contacts: state.dialogsPage.contacts,
     block: state.headerPage.block,
     elemsBurger: state.headerPage.elemsBurger,
+    ownerFullName: state.authPage.firstName + " " + state.authPage.lastName,
   };
 };
 

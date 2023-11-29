@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./Burger.module.css";
 
 const Burger = (props) => {
-  let links = props.elems.map((elem) => (
+  let links = props.profiles.map((elem) => (
     <div className={style.link}>
       <div className={style.icon}>{elem.icon}</div>
       <div className={style.text}>{elem.text}</div>

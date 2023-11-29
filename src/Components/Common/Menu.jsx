@@ -25,12 +25,13 @@ import {
   Icon28LogoClipsOutline,
   Icon28WriteSquareOutline,
   Icon28PhoneOutline,
+  Icon24Filter,
 } from "@vkontakte/icons";
 
 const List = [
   {
     id: 0,
-    path: "/profile",
+    path: "profile",
     pathMatcher(url) {
       return url === this.path;
     },
@@ -39,14 +40,17 @@ const List = [
       icon: "",
     },
     title: {
-      name: "",
+      name: "@idonia",
       left: "",
       near: "",
       right: [<Icon28ServicesOutline />, <Icon28MoreHorizontal />],
-      paddingForLeft: "",
+      paddingForTop: "16.5px",
+      paddingForLeft: "5px",
       paddingForRight: "12px",
       paddingForNear: "",
-      fontsize: "",
+      fontsize: "19px",
+      iconColor: "black",
+      fontWeight: 500,
     },
   },
   {
@@ -65,7 +69,7 @@ const List = [
       near: <Icon16Dropdown />,
       right: "",
       paddingForLeft: "",
-      paddingForRight: "",
+      paddingForRight: "8px",
       paddingForNear: "",
       fontsize: "",
     },
@@ -105,9 +109,20 @@ const List = [
       name: "",
       left: "",
       near: <Icon16Dropdown />,
-      right: "",
+      right: (
+        <svg width="28" height="28" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none" fill-rule="evenodd">
+            <path d="M0 0h28v28H0z"></path>
+            <path
+              d="M18.5 15a3.5 3.5 0 0 1 3.35 2.5H24a1 1 0 0 1 0 2h-2.15a3.5 3.5 0 0 1-6.7 0H4a1 1 0 0 1 0-2h11.14A3.5 3.5 0 0 1 18.5 15zm0 1.75a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5zM10.5 6a3.5 3.5 0 0 1 3.35 2.5H24a1 1 0 0 1 0 2H13.86a3.5 3.5 0 0 1-6.71 0H4a1 1 0 0 1 0-2h3.15A3.5 3.5 0 0 1 10.5 6zm0 1.75a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5z"
+              fill="currentColor"
+              fill-rule="nonzero"
+            ></path>
+          </g>
+        </svg>
+      ),
       paddingForLeft: "10px",
-      paddingForRight: "",
+      paddingForRight: "16px",
       paddingForNear: "2px",
       fontsize: "",
     },
@@ -172,7 +187,7 @@ const List = [
       near: <Icon16Dropdown />,
       right: <Icon24Add />,
       paddingForLeft: "12px",
-      paddingForRight: "21px",
+      paddingForRight: "20px",
       paddingForNear: "2px",
       fontsize: "",
     },
@@ -411,10 +426,9 @@ const List = [
     },
   },
 ];
-
-const getLastElement = (userName) => ({
+const getDialog = (userName) => ({
   id: 18,
-  path: "dialogs",
+  path: "dialog",
   pathMatcher(url) {
     return url === this.path;
   },
@@ -423,7 +437,7 @@ const getLastElement = (userName) => ({
     icon: "",
   },
   title: {
-    name: userName,
+    name: ["был в сети",userName],
     left: <Icon28ArrowLeftOutline />,
     near: (
       <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12">
@@ -441,8 +455,34 @@ const getLastElement = (userName) => ({
   },
 });
 
-export function arrSelection(name, userName) {
-  const arr = name == "navbar" ? List : [...List, getLastElement(userName)];
+const getPost = (ownerFullName) => ({
+  id: 19,
+  path: "createPost",
+  pathMatcher(url) {
+    return url === this.path;
+  },
+  navbar: {
+    name: "",
+    icon: "",
+  },
+
+  title: {
+    name: ["Новая запись", ownerFullName],
+    left: <Icon28ArrowLeftOutline />,
+    near: "",
+    right: "",
+    paddingForLeft: "",
+    paddingForRight: "14px",
+    paddingForNear: "",
+    fontsize: "",
+  },
+});
+
+export function arrSelection(name, userName, ownerFullName) {
+  const arr =
+    name == "navbar"
+      ? List
+      : [...List, getDialog(userName), getPost(ownerFullName)];
 
   return arr;
 }

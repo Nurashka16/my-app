@@ -1,5 +1,4 @@
 import ProfileApi from "../API/ProfileApi";
-import Preloader from "../Components/Preloader/preloader";
 
 const ADD_POST = "ADD_POST";
 const UPDATE_TEXT_INPUT = "UPDATE_TEXT_INPUT";
@@ -20,7 +19,6 @@ let initialState = {
       number: 10,
     },
   ],
-  newPostText: "danya kaka",
   user: [
     {
       id: "",
@@ -38,7 +36,7 @@ const profileReducer = (state = initialState, action) => {
     case ADD_POST: {
       state.posts.push({
         id: state.posts.length + 1,
-        message: state.newPostText,
+        message: action.value,
         number: 0,
       });
       state.newPostText = "";
@@ -68,7 +66,7 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPost = () => ({ type: ADD_POST });
+export const addPost = (value) => ({ type: ADD_POST, value });
 export const updateTextInput = (letter) => ({
   type: UPDATE_TEXT_INPUT,
   letter,

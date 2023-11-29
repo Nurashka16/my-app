@@ -1,7 +1,6 @@
 import React from "react";
-import style from "./MyPosts.module.css";
-import Post from "./Post/Post.jsx";
-import { Icon56GalleryOutline } from "@vkontakte/icons";
+import style from "./CreatePost.module.css";
+import { Icon28PictureOutline } from "@vkontakte/icons";
 import { Icon28MusicOutline } from "@vkontakte/icons";
 import { Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon28SettingsOutline } from "@vkontakte/icons";
@@ -9,9 +8,8 @@ import { Icon28ErrorCircleOutline } from "@vkontakte/icons";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addPost } from "../../../redux/profile-reducer.js";
 
-const MyPosts = (props) => {
+const CreatePost = (props) => {
   const valid = (name) =>
     yup
       .string()
@@ -33,27 +31,27 @@ const MyPosts = (props) => {
   };
   console.log(errors);
   return (
-    <div className={style.myPost}>
-      <form className={style.textArea} onSubmit={handleSubmit(onSubmit)}>
-        <div className={style.textArea_container}>
+    <div className={style.createPost}>
+      <form className={style.createPost_container} onSubmit={handleSubmit(onSubmit)}>
+        <div className={style.createPost_textArea}>
           <textarea
             {...register("text")}
             placeholder="Введите текст записи..."
-            className={style.textArea__input}
+            className={style.createPost_input}
           />
 
           {errors?.text && (
-            <div className={style.error_block}>
+            <div className={style.createPost_errorContainer}>
               <Icon28ErrorCircleOutline color="red"/>
-              <div className={style.error}> {errors?.text.message}</div>
+              <div className={style.createPost_error}> {errors?.text.message}</div>
             </div>
           )}
         </div>
-        <div className={style.textArea_selector}>
-          <div className={style.selector_container}>
-            <button className={style.btn_burger}>Видно всем</button>
+        <div className={style.createPost_containerSelect}>
+          <div className={style.createPost_select}>
+            <button className={style.createPost_btn__burger}>Видно всем</button>
             <svg
-              className={style.selector__icon}
+              className={style.createPost_icon}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="12"
@@ -67,10 +65,10 @@ const MyPosts = (props) => {
             </svg>
           </div>
 
-          <div className={style.selector_container}>
-            <button className={style.btn_burger}>Сейчас</button>
+          <div className={style.createPost_select}>
+            <button className={style.createPost_btn__burger}>Сейчас</button>
             <svg
-              className={style.selector__icon}
+              className={style.createPost_icon}
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="12"
@@ -84,16 +82,16 @@ const MyPosts = (props) => {
             </svg>
           </div>
         </div>
-        <div className={style.textArea__footer}>
-          <div className={style.footer__left}>
-            <Icon56GalleryOutline color="#2688eb" width={28} height={28} />
+        <div className={style.createPost_footer}>
+          <div className={style.createPost_buttonsAdd}>
+            <Icon28PictureOutline  color="#2688eb" />
             <Icon28MusicOutline color="#2688eb" />
             <Icon28MoreHorizontal color="#2688eb" />
           </div>
-          <div className={style.footer__right}>
+          <div className={style.createPost_buttonsCreate}>
             <Icon28SettingsOutline color="#2688eb" />
             <button
-              className={style.btn_create}
+              className={style.createPost_btnCreate}
               type="submit"
             >
               Опубликовать
@@ -104,7 +102,7 @@ const MyPosts = (props) => {
     </div>
   );
 };
-export default MyPosts;
+export default CreatePost;
 /*
       /*{messagesItems}
   let newPostElement = React.createRef();

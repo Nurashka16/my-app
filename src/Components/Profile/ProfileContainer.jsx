@@ -16,14 +16,13 @@ export const ProfileContainer = (props) => {
   }, [id]);
   return (
     <>
-      {Preloader(props.isFetching)}
+      <Preloader isFetching={props.isFetching}/>
       <Profile
         urlId={id}
         profilePage={props.profilePage}
         user={props.user}
         posts={props.posts}
         updateTextInput={props.updateTextInput}
-        isFetching={props.isFetching}
         addPost={props.addPost}
         newPostText={props.newPostText}
       />

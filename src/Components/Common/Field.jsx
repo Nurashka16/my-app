@@ -12,7 +12,7 @@ const Field = ({
       <input
         autocomplete="off"
         style={
-          isError && { backgroundColor: "#faebeb", outline: "solid 1px #e64646" }
+          isError && { backgroundColor: "#faebeb", border: "solid 1px #e64646" }
         }
         placeholder={placeholder}
         onChange={onChange}

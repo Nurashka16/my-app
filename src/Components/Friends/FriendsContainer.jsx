@@ -6,7 +6,8 @@ import { closeBlock, openBlock} from "../../redux/friends-reducer";
 
 let mapStateToProps = (state) => {
   return {
-    friendsPage: state.friendsPage
+    friendsPage: state.friendsPage,
+    profiles: state.friendsPage.profile
   }
 }
 

@@ -4,7 +4,7 @@ import Avatar from "../../Common/Avatar";
 import ButtonBack from "../../Common/ButtonBack";
 
 export const Title = (props) => {
-  const user = (name, img, date, login) => {
+  const user = (name, img="", date="", login="", text="") => {
     return (
       <div className={style.user}>
         <div className={style.user__img}>
@@ -14,7 +14,7 @@ export const Title = (props) => {
           <div className={style.user__name}>{name}</div>
           <div className={style.user__lastVisited}>
             <div className={style.user__date}>был в сети {date}</div>
-            {login == "phone" ? (
+            {login == "phone" && (
               <div className={style.user__icon}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12">
                   <path
@@ -23,8 +23,6 @@ export const Title = (props) => {
                   ></path>
                 </svg>
               </div>
-            ) : (
-              ""
             )}
           </div>
         </div>
@@ -33,6 +31,7 @@ export const Title = (props) => {
   };
   const isUrl = (list, url) => {
     return list.map((el) => {
+      console.log(Array.isArray( el.title.name));
       if (el?.pathMatcher(url)) {
         return (
           <div key={el.id} className={style.title}>
@@ -42,6 +41,8 @@ export const Title = (props) => {
                 paddingLeft: el.title.paddingForLeft
                   ? el.title.paddingForLeft
                   : "9px",
+                paddingTop: el.title.paddingForTop
+                  && el.title.paddingForTop
               }}
             >
               <div className={style.title_content}>
@@ -54,7 +55,7 @@ export const Title = (props) => {
                 ) : (
                   ""
                 )}
-                {el.id == 18 ? (
+                {Array.isArray( el.title.name) ? (
                   user(
                     props.userDialog.fullName,
                     props.userDialog.avatar,
@@ -65,39 +66,39 @@ export const Title = (props) => {
                   <>
                     <span
                       className={style.title_text}
-                      style={{ fontSize: el.title.fontsize }}
+                      style={{
+                        fontSize: el.title.fontsize,
+                        fontWeight: el.title.fontWeight,
+                      }}
                     >
                       {el.title.name ? el.title.name : el.navbar.name}
                     </span>
-                    {el.title.amount ? (
+                    {el.title.amount && (
                       <span className={style.title_amount}>
                         {el.title.amount}
                       </span>
-                    ) : (
-                      ""
                     )}
-                    {el.title.near ? (
+                    {el.title.near && (
                       <div
                         className={style.title_icon_near}
                         style={{ paddingTop: el.title.paddingForNear }}
                       >
                         {el.title.near}
                       </div>
-                    ) : (
-                      ""
                     )}
                   </>
                 )}
               </div>
-              {el.title.right ? (
+              {el.title.right && (
                 <div
                   className={style.title_icon_right}
-                  style={{ paddingRight: el.title.paddingForRight }}
+                  style={{
+                    paddingRight: el.title.paddingForRight,
+                    color: el.title.iconColor,
+                  }}
                 >
                   {el.title.right}
                 </div>
-              ) : (
-                ""
               )}
             </div>
           </div>
@@ -107,62 +108,3 @@ export const Title = (props) => {
   };
   return <>{isUrl(props.list, props.url)}</>;
 };
-/*
-      {/*{block ? (
-        <Burger elems={elems} closeBlock={props.closeBlock} />
-      ) : (
-        <div className={style.title} onClick={(e) => props.openBlock()}>
-          <div className={style.title_content}>
-            <span className={style.title_text}>новости</span>
-            <div className={style.title_icon}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="21"
-                width="28"
-                fontWeight="bold"
-                viewBox="-4 -4 24 20"
-                id="dropdown_outline_16"
-                x="140"
-              >
-                <g fill="none" fillRule="evenodd">
-                  <path d="M0 0h16v12H0z" />
-                  <path
-                    d="M8 6.778l3.773-3.107a.75.75 0 11.954 1.158l-4.25 3.5a.75.75 0 01-.954 0l-4.25-3.5a.75.75 0 01.954-1.158z"
-                    fill="#2e8dec"
-                    fillRule="nonzero"
-                    strokeWidth="6"
-                  />
-                </g>
-              </svg>
-            </div>
-          </div>
-        </div>
-      )}*/
-/*const hat = (title) => {
-      return (
-        <>
-          <span
-            className={style.title_text}
-            style={{ fontSize: el.title.fontsize }}
-          >
-            {el.title.name ? el.title.name : el.navbar.name}
-          </span>
-          {el.title.amount ? (
-            <span className={style.title_amount}>{el.title.amount}</span>
-          ) : (
-            ""
-          )}
-          {el.title.near ? (
-            <div
-              className={style.title_icon_near}
-              style={{ paddingTop: el.title.paddingForNear }}
-            >
-              {el.title.near}
-            </div>
-          ) : (
-            ""
-          )}
-        </>
-      );
-    };
-  };*/
