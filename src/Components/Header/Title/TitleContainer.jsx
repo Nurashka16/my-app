@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { closeBlock, openBlock } from "../../../redux/header-reducer";
 import { useLocation } from "react-router-dom";
 import { arrSelection } from "../../Common/Menu";
+import TitleCopy from "./TitleCopy";
+
 
 const TitleContainer = (props) => {
   const dataUrl = useLocation();
@@ -13,10 +15,10 @@ const TitleContainer = (props) => {
       return user;
     }
   });
-  console.log(props.ownerFullName);
+  /*console.log(props.ownerFullName);*/
   const list = arrSelection("title", userDialog?.fullName, props.ownerFullName);
 
-  return <Title list={list} url={url}  userDialog={userDialog}/>;
+  return <TitleCopy list={list} url={url} userDialog={userDialog} />;
 };
 const mapStateToProps = (state) => {
   return {

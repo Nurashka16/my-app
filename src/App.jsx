@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FriendsContainer } from "./Components/Friends/FriendsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
@@ -14,7 +14,6 @@ import EmptyPage from "./Components/EmptyPage/EmptyPage";
 import MailContainer from "./Components/Mail/MailContainer";
 import DialogContainer from "./Components/Mail/Dialog/DialogContainer";
 import NoticePage from "./Components/NoticePage/NoticePage";
-import { useForm } from "react-hook-form";
 import CreatePost from "./Components/CreatePost/CreatePost";
 
 const App = (props) => {
@@ -35,20 +34,21 @@ const App = (props) => {
             <Route path="/notice" element={<NoticePage />} />
             <Route path="/communities" element={<EmptyPage />} />
             <Route path="/photos" element={<EmptyPage />} />
-            <Route path="/video" element={<EmptyPage />} />
+            <Route path="/videos" element={<EmptyPage />} />
             <Route path="/clips" element={<EmptyPage />} />
             <Route path="/services" element={<EmptyPage />} />
-            <Route path="/plays" element={<EmptyPage />} />
+            <Route path="/games" element={<EmptyPage />} />
             <Route path="/bookmarks" element={<EmptyPage />} />
             <Route path="/files" element={<EmptyPage />} />
-            <Route path="/advertisement" element={<EmptyPage />} />
+            <Route path="/ad" element={<EmptyPage />} />
+            <Route path="/market" element={<EmptyPage />} />
             <Route path="/reaction" element={<EmptyPage />} />
             <Route path="/search" element={<EmptyPage />} />
             <Route path="/mail" element={<MailContainer />} />
-            <Route path="/dialogs/:id" element={<DialogContainer />} />
-            <Route path="/users" element={<UsersContainer />} />
+            <Route path="/dialog/:id" element={<DialogContainer />} />
+            <Route path="/friends" element={<UsersContainer />} />
             <Route path="/musics" element={<HighMusicsContainer />} />
-            <Route path="/friends/*" element={<FriendsContainer />} />
+            <Route path="/*" element={<FriendsContainer />} />
             <Route path="/recommendation" element={<Recommendation />} />
           </Route>
         </Route>

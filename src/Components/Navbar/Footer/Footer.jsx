@@ -1,7 +1,6 @@
 import React from "react";
-import CostumLink from "../../CostumLink";
 import style from "./Footer.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Footer = (props) => {
   const navigate = useNavigate();
@@ -10,28 +9,24 @@ const Footer = (props) => {
   return (
     <div>
       <div className={style.item}>
-        <CostumLink className={style.link} to="/123">
+        <Link className={style.link} to="/123">
           Настройки
-        </CostumLink>
+        </Link>
       </div>
       <div className={style.item}>
-        <CostumLink className={style.link} to="/2">
+        <Link className={style.link} to="/2">
           Помощь
-        </CostumLink>
+        </Link>
       </div>
       <div className={style.item}>
-        <CostumLink className={style.link} to="/3">
+        <Link className={style.link} to="/3">
           Версия для компьютера
-        </CostumLink>
+        </Link>
       </div>
       <div className={style.item} onClick={goBack}>
-        <CostumLink
-          className={style.link}
-          onClick={(e) => props.clearData()}
-          to="/"
-        >
+        <Link className={style.link} onClick={(e) => props.clearData()} to="/">
           Выход
-        </CostumLink>
+        </Link>
       </div>
     </div>
   );

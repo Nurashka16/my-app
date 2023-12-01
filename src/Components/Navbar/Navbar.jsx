@@ -1,26 +1,26 @@
 import style from "./Navbar.module.css";
-import CostumLink from "./../CostumLink";
+import { Link, useMatch } from "react-router-dom";
 import Footer from "./Footer/Footer.jsx";
 import Avatar from "../Common/Avatar";
 
 const Navbar = (props) => {
   const menu = props.list.map((list) => {
-    return list.navbar.name == "Мой Профиль" ? (
+    return list.path == "profile" ? (
       <div className={style.ownerPanel} key={list.id}>
-        <CostumLink className={style.link} to={`/profile/${props.id}`}>
-          <Avatar url={props.userAvatar} width="36px" height="36px" />
+        <Link className={style.link} to={`/profile/${props.ownerId}`}>
+          <Avatar url={props.ownerAvatar} width="36px" height="36px" />
           <div className={style.userName}>
-            {props.userName ?  props.userName : ""}
+            {props.ownerFullName}
           </div>
-        </CostumLink>
+        </Link>
       </div>
     ) : (
-      <div className={style.item} key={list.id}>
-        <CostumLink to={list.path} className={style.link}>
-          <div className={style.icon}>{list.navbar.icon}</div>
-          <div className={style.text}>{list.navbar.name}</div>
-        </CostumLink>
-      </div>
+      <Link to={list.path} className={style.item} key={list.id}>
+        <div className={style.link}>
+          <div className={style.icon}>{list.icon}</div>
+          <div className={style.text}>{list.name}</div>
+        </div>
+      </Link >
     );
   });
   return (

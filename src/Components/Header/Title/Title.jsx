@@ -1,10 +1,11 @@
-import React from "react";
+/*import React from "react";
 import style from "./Title.module.css";
 import Avatar from "../../Common/Avatar";
 import ButtonBack from "../../Common/ButtonBack";
+import IsNotEmpty from "../../Common/IsNotEmpty";
 
 export const Title = (props) => {
-  const user = (name, img="", date="", login="", text="") => {
+  const user = (name, img = "", date = "", login = "", text = "") => {
     return (
       <div className={style.user}>
         <div className={style.user__img}>
@@ -31,7 +32,7 @@ export const Title = (props) => {
   };
   const isUrl = (list, url) => {
     return list.map((el) => {
-      console.log(Array.isArray( el.title.name));
+      console.log(Array.isArray(el.title.name));
       if (el?.pathMatcher(url)) {
         return (
           <div key={el.id} className={style.title}>
@@ -41,21 +42,18 @@ export const Title = (props) => {
                 paddingLeft: el.title.paddingForLeft
                   ? el.title.paddingForLeft
                   : "9px",
-                paddingTop: el.title.paddingForTop
-                  && el.title.paddingForTop
+                paddingTop: el.title.paddingForTop && el.title.paddingForTop,
               }}
             >
               <div className={style.title_content}>
-                {el.title.left ? (
+                <IsNotEmpty props={el.title.left}>
                   <div className={style.title_icon_left}>
                     <ButtonBack width="44px" color="#2688eb" height="44px">
                       {el.title.left}
                     </ButtonBack>
                   </div>
-                ) : (
-                  ""
-                )}
-                {Array.isArray( el.title.name) ? (
+                </IsNotEmpty>
+                {Array.isArray(el.title.name) ? (
                   user(
                     props.userDialog.fullName,
                     props.userDialog.avatar,
@@ -64,32 +62,34 @@ export const Title = (props) => {
                   )
                 ) : (
                   <>
-                    <span
-                      className={style.title_text}
-                      style={{
-                        fontSize: el.title.fontsize,
-                        fontWeight: el.title.fontWeight,
-                      }}
-                    >
-                      {el.title.name ? el.title.name : el.navbar.name}
-                    </span>
-                    {el.title.amount && (
+                    <IsNotEmpty props={el.title.name}>
+                      <span
+                        className={style.title_text}
+                        style={{
+                          fontSize: el.title.fontsize,
+                          fontWeight: el.title.fontWeight,
+                        }}
+                      >
+                        {el.navbar.name}
+                      </span>
+                    </IsNotEmpty>
+                    <IsNotEmpty props={el.title.amount}>
                       <span className={style.title_amount}>
                         {el.title.amount}
                       </span>
-                    )}
-                    {el.title.near && (
+                    </IsNotEmpty>
+                    <IsNotEmpty props={el.title.near}>
                       <div
                         className={style.title_icon_near}
                         style={{ paddingTop: el.title.paddingForNear }}
                       >
                         {el.title.near}
                       </div>
-                    )}
+                    </IsNotEmpty>
                   </>
                 )}
               </div>
-              {el.title.right && (
+              <IsNotEmpty props={el.title.right}>
                 <div
                   className={style.title_icon_right}
                   style={{
@@ -99,7 +99,7 @@ export const Title = (props) => {
                 >
                   {el.title.right}
                 </div>
-              )}
+              </IsNotEmpty>
             </div>
           </div>
         );
@@ -108,3 +108,4 @@ export const Title = (props) => {
   };
   return <>{isUrl(props.list, props.url)}</>;
 };
+*/
