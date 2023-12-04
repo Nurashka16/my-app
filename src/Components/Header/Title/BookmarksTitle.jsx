@@ -5,12 +5,12 @@ import { Icon28TagOutline } from "@vkontakte/icons";
 const BookmarksTitle = () => {
   return (
     <div className={style.title}>
-      <div className={style.title_container}>
+      <div className={style.title_container} style={{paddingLeft: "8px"}}>
         <div className={style.title_content}>
-          <div className={style.title_text}>Закладки</div>
-          <div className={style.title_icon}>
-            <Icon28TagOutline />
-          </div>
+          <div className={style.title_mini}>Закладки</div>
+        </div>
+        <div className={style.title_icon__right}>
+          <Icon28TagOutline />
         </div>
       </div>
     </div>

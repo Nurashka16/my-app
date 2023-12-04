@@ -6,7 +6,7 @@ const RecommendationTitle = () => {
     <div className={style.title}>
       <div className={style.title_container}>
         <div className={style.title_content}>
-          <div className={style.text}>Рекомендации</div>
+          <div className={style.title_text}>Рекомендации</div>
         </div>
       </div>
     </div>

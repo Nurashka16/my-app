@@ -1,16 +1,20 @@
-import React from 'react';
+import React from "react";
 import style from "./Title.module.css";
+import { Icon28ArrowLeftOutline } from "@vkontakte/icons";
 
 const ReactionTitle = () => {
   return (
-   <div className={style.title}>
-   <div className={style.title_container}>
-     <div className={style.title_content}>
-       <div className={style.title_text}>Реакции</div>
-     </div>
-   </div>
- </div>
-  )
-}
+    <div className={style.title}>
+      <div className={style.title_container} style={{ paddingLeft: "8px" }}>
+        <div className={style.title_content}>
+          <div className={style.title_icon__left}>
+            <Icon28ArrowLeftOutline />
+          </div>
+          <div className={style.title_text}>Реакции</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default ReactionTitle
+export default ReactionTitle;
