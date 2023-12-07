@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./CreatePost.module.css";
 import { Icon28PictureOutline } from "@vkontakte/icons";
 import { Icon28MusicOutline } from "@vkontakte/icons";
 import { Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon28SettingsOutline } from "@vkontakte/icons";
-import { Icon28ErrorCircleOutline } from "@vkontakte/icons";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { addPost } from "../../redux/profile-reducer";
+import { useNavigate } from "react-router-dom";
+import TemporaryHint from "../Common/TemporaryHint";
 
 const CreatePost = (props) => {
-  const valid = (name) =>
+  const navigate = useNavigate();
+  const [error, setError] = useState({
+    isActive: false,
+  });
+  const toggleError = (value) => {
+    setError({ isActive: value });
+  };
+const valid = (name) =>
     yup
       .string()
       .required("Нельзя опубликовать пустую запись")
@@ -18,7 +27,6 @@ const CreatePost = (props) => {
   const schema = yup.object().shape({
     text: valid("text"),
   });
-
   const {
     register,
     handleSubmit,
@@ -26,26 +34,24 @@ const CreatePost = (props) => {
     formState: { errors, isValid },
   } = useForm({ resolver: yupResolver(schema), mode: "onBlur" });
   const onSubmit = (data) => {
-    props.addPost(data.text);
+    console.log(data.text);
+    /*addPost(data.text);
     reset();
+    navigate('/profile');*/
   };
-  console.log(errors);
   return (
     <div className={style.createPost}>
-      <form className={style.createPost_container} onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className={style.createPost_container}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <div className={style.createPost_textArea}>
           <textarea
             {...register("text")}
             placeholder="Введите текст записи..."
             className={style.createPost_input}
           />
-
-          {errors?.text && (
-            <div className={style.createPost_errorContainer}>
-              <Icon28ErrorCircleOutline color="red"/>
-              <div className={style.createPost_error}> {errors?.text.message}</div>
-            </div>
-          )}
+          {errors?.text && TemporaryHint(errors.text)}
         </div>
         <div className={style.createPost_containerSelect}>
           <div className={style.createPost_select}>
@@ -84,16 +90,13 @@ const CreatePost = (props) => {
         </div>
         <div className={style.createPost_footer}>
           <div className={style.createPost_buttonsAdd}>
-            <Icon28PictureOutline  color="#2688eb" />
+            <Icon28PictureOutline color="#2688eb" />
             <Icon28MusicOutline color="#2688eb" />
             <Icon28MoreHorizontal color="#2688eb" />
           </div>
           <div className={style.createPost_buttonsCreate}>
             <Icon28SettingsOutline color="#2688eb" />
-            <button
-              className={style.createPost_btnCreate}
-              type="submit"
-            >
+            <button className={style.createPost_btnCreate} type="submit">
               Опубликовать
             </button>
           </div>
@@ -103,31 +106,3 @@ const CreatePost = (props) => {
   );
 };
 export default CreatePost;
-/*
-      /*{messagesItems}
-  let newPostElement = React.createRef();
-  let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateTextInput(text);
-  };
-  let messagesItems = props.posts.map((m) => (
-    <Post key={m.id} id={m.id} 
-    message={m.message} number={m.number} />
-  ));
-<div>
-      <div className={style.postBlock}>
-        <div className={style.title}>My post</div>
-        <div className={style.areaBlock}>
-          <textarea
-            onChange={onPostChange}
-            value={props.newPostText}
-            ref={newPostElement}
-            className={style.textArea}
-          />
-          <button onClick={props.addPost} className={style.button}>
-            add post
-          </button>
-        </div>
-      </div>
-      {messagesItems}
-    </div>*/

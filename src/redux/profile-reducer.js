@@ -19,15 +19,6 @@ let initialState = {
       number: 10,
     },
   ],
-  user: [
-    {
-      id: "",
-      email: "",
-      firstName: "",
-      lastName: "",
-      avatar: "",
-    },
-  ],
   isFetching: false,
 };
 
@@ -53,13 +44,6 @@ const profileReducer = (state = initialState, action) => {
     }
     case IS_FETCHING: {
       return { ...state, isFetching: action.boolean };
-    }
-    case CLEAR_STATE: {
-      return {
-        ...state,
-        user: null,
-        id: null,
-      };
     }
     default:
       return state;

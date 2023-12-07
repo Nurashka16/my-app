@@ -1,5 +1,5 @@
 import style from "./Navbar.module.css";
-import { Link, useMatch } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Footer from "./Footer/Footer.jsx";
 import Avatar from "../Common/Avatar";
 
@@ -9,9 +9,7 @@ const Navbar = (props) => {
       <div className={style.ownerPanel} key={list.id}>
         <Link className={style.link} to={`/profile/${props.ownerId}`}>
           <Avatar url={props.ownerAvatar} width="36px" height="36px" />
-          <div className={style.userName}>
-            {props.ownerFullName}
-          </div>
+          <div className={style.userName}>{props.ownerFullName}</div>
         </Link>
       </div>
     ) : (
@@ -20,7 +18,7 @@ const Navbar = (props) => {
           <div className={style.icon}>{list.icon}</div>
           <div className={style.text}>{list.name}</div>
         </div>
-      </Link >
+      </Link>
     );
   });
   return (
@@ -32,91 +30,3 @@ const Navbar = (props) => {
 };
 
 export default Navbar;
-
-/*}
-    <div className={style.ownerPanel}>
-      <CostumLink className={style.link} to={`/profile/${props.id}`}>
-        <Avatar url={props.userAvatar} width="36px" height="36px" />
-        <div className={style.userName}>{props.userName? "Нурайым Тилепова" :  props.userName}</div>
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/">
-        Новости
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/recommendation">
-        Рекомендация
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Уведомления
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/mail">
-        Мессенджер
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/users">
-        Друзья
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Сообщества
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Фотография
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Видео
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/musics">
-        Музыка
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Сервисы
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Игры
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Закладки
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/friends">
-        Файлы
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Реклама
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Реакции
-      </CostumLink>
-    </div>
-    <div className={style.item}>
-      <CostumLink className={style.link} to="/emptyPage">
-        Поиск
-      </CostumLink>
-</div>*/

@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import style from "../Header/Title/Title.module.css";
 
 const ButtonBack = ({ children, width, height, color }) => {
   const navigate = useNavigate();

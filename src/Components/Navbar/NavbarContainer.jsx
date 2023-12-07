@@ -21,6 +21,7 @@ import {
   Icon28SearchOutline,
   Icon28LogoClipsOutline,
   Icon28MarketOutline,
+  Icon24NewsfeedOutline
 } from "@vkontakte/icons";
 
 const List = [
@@ -34,7 +35,7 @@ const List = [
     id: 1,
     path: "",
     name: "Новости",
-    icon: <Icon28NewsfeedOutline />,
+    icon: <Icon24NewsfeedOutline width={28} height={28}/>,
   },
   {
     id: 2,

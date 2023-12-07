@@ -6,7 +6,7 @@ import Search from "../Common/Search.jsx";
 const Mail = (props) => {
   const contacts = props.contacts.map((item) => (
     <Link
-      to={"/dialogs/" + item.id}
+      to={"/dialog/" + item.id}
       name={"Nura"}
       className={style.convo}
       id={item.id}
