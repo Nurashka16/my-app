@@ -2,7 +2,13 @@ import React from "react";
 import style from "./Search.module.css";
 import { Icon16SearchOutline } from "@vkontakte/icons";
 
-const Search = ({ width, height, borderRadius = "8px" }) => {
+const Search = ({
+  width,
+  height,
+  borderRadius = "8px",
+  text = "Поиск",
+  icon = "",
+}) => {
   return (
     <div
       className={style.container}
@@ -11,7 +17,6 @@ const Search = ({ width, height, borderRadius = "8px" }) => {
         width: width,
         height: height,
         borderRadius: borderRadius,
-        
       }}
     >
       <div className={style.icon}>
@@ -23,8 +28,21 @@ const Search = ({ width, height, borderRadius = "8px" }) => {
         className={style.input}
         style={{ borderRadius: borderRadius }}
         type="search"
-        placeholder="Поиск"
+        placeholder={text}
       />
+      {icon && (
+        <div
+          className={style.icon_outline}
+          style={{
+            backgroundColor: "#2688eb",
+            width: "53.5px",
+            height: height,
+            borderRadius: "0 8px 8px 0",
+          }}
+        >
+          {icon}
+        </div>
+      )}
     </div>
   );
 };

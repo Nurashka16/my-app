@@ -24,7 +24,10 @@ import CreatePostTitle from "./CreatePostTitle";
 import VideosTitle from "./VideosTitle";
 
 const titleFactory = [
-  { match: (url) => url === "profile", component: <ProfileTitle /> },
+  {
+    match: (url, param, ownerId) => url === "profile" && param === ownerId,
+    component: <ProfileTitle />,
+  },
   { match: (url) => url === "", component: <NewsTitle /> },
   {
     match: (url) => url === "recommendation",
@@ -54,7 +57,9 @@ const Title = (props) => {
   const dataUrl = useLocation();
   const [_, url, param] = dataUrl.pathname.split("/");
 
-  const component = titleFactory.find((title) => title.match(url))?.component;
+  const component = titleFactory.find((title) =>
+    title.match(url, param, props.ownerId)
+  )?.component;
 
   return <div>{component}</div>;
 };

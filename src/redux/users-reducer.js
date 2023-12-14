@@ -9,10 +9,8 @@ const IN_PROGRESS_OF_SWITCHING = "IN_PROGRESS_OF_SWITCHING";
 
 let initialState = {
   users: [],
-  pageSize: 4,
-  totalCount: 20,
-  currentPage: 1,
-  isFetching: false,
+  page: 1,
+  pageSize: 20,
   followingInProgress: [],
 };
 
@@ -71,21 +69,25 @@ export const inProgressOfSwitching = (isFetching, userId) => ({
   userId,
 });
 
-export const getUsers = (currentPage, pageSize) => (dispatch) => {
-  dispatch(setIsFetching(true));
-  dispatch(setCurrentPage(currentPage));
-  UsersAPI.getUsers(currentPage, pageSize).then((response) => {
-    dispatch(setIsFetching(false));
-    dispatch(setUsers(response.data));
-  });
+export const getUsers = (page, pageSize) => (dispatch) => {
+  //dispatch(setIsFetching(true));
+  //dispatch(setCurrentPage(page));
+  return UsersAPI.getUsers(page, pageSize)
+    .then((response) => {
+      //dispatch(setIsFetching(false));
+      dispatch(setUsers(response.data));
+    })
+    .catch((response) => {
+      console.log("ошибка в getUsers");
+    });
 };
 
 export const setFollow = (userId, boolean) => (dispatch) => {
   dispatch(inProgressOfSwitching(true, userId));
   UsersAPI.isFollowed(userId.value, boolean)
-    .then((response) => { 
+    .then((response) => {
       boolean ? dispatch(unfollow(userId)) : dispatch(follow(userId));
-    dispatch(inProgressOfSwitching(false, userId));
+      dispatch(inProgressOfSwitching(false, userId));
     })
     .catch((response) => {
       console.log("ошибка в follow");

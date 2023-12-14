@@ -2,21 +2,12 @@ import React from "react";
 import style from "./ProfileInfo.module.css";
 import Avatar from "../../Common/Avatar";
 import { Icon16WorkOutline } from "@vkontakte/icons";
-import { Icon16InfoOutline } from "@vkontakte/icons";
-import { Icon16PlaceOutline } from "@vkontakte/icons";
-import { Icon24AddCircleOutline } from "@vkontakte/icons";
-import { useState } from "react";
-import BurgerPost from "../../BurgerPost/BurgerPost";
+import { Icon16InfoOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
+import { Icon16PlaceOutline, Icon28UserAddedOutline } from "@vkontakte/icons";
 
-const ProfileInfo = (props) => {
-  const [post, setPost] = useState({
-    isActive: false,
-  });
-  const toggleStatus = (value) => {
-    setPost({ isActive: value });
-  };
+const ProfileInfo = ({name, avatar, id, children}) => {
   return (
-    <div className={style.info}>
+    <div className={style.info} id={id}>
       <div className={style.info_cover}>
         <div className={style.info_avatar}>
           <Avatar
@@ -30,7 +21,7 @@ const ProfileInfo = (props) => {
       <div className={style.info_content}>
         <div className={style.info_personInfo}>
           <div className={style.info_name}>
-            Нурайым Молчанова (Тилепова)
+            {name}
             <img
               className={style.info_imageStatus}
               src="https://sun1-26.userapi.com/y6fKQg5F2zegc6mn5iwKSaZpzWmYo5dYXUcjAQ/Qy9fDkA1E7A.png"
@@ -58,13 +49,7 @@ const ProfileInfo = (props) => {
             </div>
           </div>
         </div>
-        {post.isActive ? <BurgerPost toggleStatus={toggleStatus} /> : ""}
-        <div className={style.info_btn} onClick={() => toggleStatus(true)}>
-          <div className={style.info_icon__add}>
-            <Icon24AddCircleOutline />
-          </div>
-          Опубликовать
-        </div>
+        {children}
       </div>
     </div>
   );

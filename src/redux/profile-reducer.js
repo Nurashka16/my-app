@@ -20,6 +20,7 @@ let initialState = {
     },
   ],
   isFetching: false,
+  user: {},
 };
 
 const profileReducer = (state = initialState, action) => {

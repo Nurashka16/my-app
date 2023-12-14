@@ -16,7 +16,7 @@ export const ProfileContainer = (props) => {
   }, [id]);
   return (
     <>
-      <Preloader isFetching={props.isFetching}/>
+      <Preloader isFetching={props.isFetching} />
       <Profile
         urlId={id}
         profilePage={props.profilePage}
@@ -25,6 +25,9 @@ export const ProfileContainer = (props) => {
         updateTextInput={props.updateTextInput}
         addPost={props.addPost}
         newPostText={props.newPostText}
+        ownerId={props.ownerId}
+        ownerFullName={props.ownerFullName}
+        ownerAvatar={props.ownerAvatar}
       />
     </>
   );
@@ -36,6 +39,9 @@ const mapStateToProps = (state) => {
     newPostText: state.profilePage.newPostText,
     user: state.profilePage.user,
     isFetching: state.profilePage.isFetching,
+    ownerId: state.authPage.id,
+    ownerFullName: state.authPage.firstName + " " + state.authPage.lastName,
+    ownerAvatar: state.authPage.avatar,
   };
 };
 

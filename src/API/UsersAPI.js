@@ -3,13 +3,11 @@ import axios from "axios";
 const instance = axios.create ({
    baseURL: "http://127.0.0.1:5298/Users/",
 })
-
+//http://127.0.0.1:5298/Users/Get?page=1&pageSize=20
 const UsersAPI = {
-  getUsers(currentPage = 4, pageSize = 3) {//не работает по default
+  getUsers(page = 1, pageSize = 20) {//не работает по default
     return instance
-      .get(`Get?page=
-        ${currentPage}
-        &pageSize=${pageSize}`
+      .get('Get?page=1&pageSize=20'
       )
       .then((response) => {
         return response.data;

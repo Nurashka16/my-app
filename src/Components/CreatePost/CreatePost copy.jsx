@@ -28,7 +28,7 @@ const defaultStyle = {
   columnGap: "12px",
   alignItems: "center",
   justifyContent: "start",*/
-};
+}
 
 const CreatePost = (props) => {
   const [error, setError] = useState(false);
@@ -52,20 +52,19 @@ const CreatePost = (props) => {
     reset();
     navigate('/profile');*/
   };
-  const TemporaryHint = (bool) => {
-    return errors.text ? /*(
+  console.log(errors?.text)
+  function TemporaryHint (mess) {
+    return (
       <Transition timeout={500} in={error}>
         {(state) => (
-          <div
-            style={{ ...defaultStyle }}
-            className={`style.createPost_errorContainer ${state}`}
-          >
+          <div style={{...defaultStyle}}
+          className={`style.createPost_errorContainer ${state}`}>
             <Icon28ErrorCircleOutline color="red" />
-            <div className={style.createPost_errorMess}>{errors?.text.message}</div>
+            <div className={style.createPost_errorMess}>{mess.message}</div>
           </div>
         )}
       </Transition>
-    )*/console.log(1) : console.log(2)
+    );
   };
   return (
     <div className={style.createPost}>
@@ -124,11 +123,7 @@ const CreatePost = (props) => {
           </div>
           <div className={style.createPost_buttonsCreate}>
             <Icon28SettingsOutline color="#2688eb" />
-            <button
-              className={style.createPost_btnCreate}
-              onClick={() => TemporaryHint(!error)}
-              type="submit"
-            >
+            <button className={style.createPost_btnCreate} type="submit">
               Опубликовать
             </button>
           </div>

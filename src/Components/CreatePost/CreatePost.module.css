@@ -78,22 +78,34 @@
    line-height: 36px;
 }
 .createPost_errorContainer {
-   display: flex;
-   flex-direction: row;
-   column-gap: 12px;
-   align-items: center;
-   justify-content: start;
    position: absolute;
-   left: 0;
-   bottom: 0;
-   box-shadow: -14px 0px 70px -14px rgba(34, 60, 80, 0.24);
-   height: 52px;
-   width: 384px;
-   margin: 24px;
-   padding: 14px 14px 14px 12px;
-   border-radius: 8px;
-   background-color: white;
+  left: 0;
+  bottom: 0;
+  box-shadow: -14px 0px 70px -14px rgba(34, 60, 80, 0.24);
+  height: 52px;
+  width: 384px;
+  margin: 24px;
+  padding: 14px 14px 14px 12px;
+  border-radius: 8px;
+  background-color:white;
+  display: flex;
+  flex-direction: row;
+  column-gap: 12px;
+  align-items: center;
+  justify-content: start;
 }
-.createPost_error {
+.createPost_errorContainer.entering {
+   animation: show-loader .5s forwards;
+}
+.createPost_errorContainer.entered {
+   animation: show-loader .5s forwards;
+}
+.createPost_errorContainer.exiting {
+   opacity: 0;
+}
+.createPost_errorContainer.exited{
+   opacity: 0;
+}
+.createPost_errorMess {
    font-size: 16px;
 }

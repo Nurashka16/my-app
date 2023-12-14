@@ -1,21 +1,27 @@
 //вынести за пределы record
 
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Preloader from "../Preloader/preloader";
 import { getUsers, setFollow } from "../../redux/users-reducer";
-import React from "react";
+import React, { useEffect } from "react";
 import Users from "./Users";
+import UsersCopy from "./UsersCopy";
 
-class UsersContainer extends React.Component {
-  componentDidMount() {
+export const UsersContainer = (props) => {
+  useEffect(() => {
+    props.getUsers(props.page, props.pageSize);
+  }, []);
+
+  /*componentDidMount() {
     this.props.getUsers(this.props.currentPage, this.props.pageSize);
   }
   onPageChanged = (page) => {
-    this.props.getUsers(page, this.props.pageSize);
-  };
-  render() {
-    return (
-      <>
+    this.props.getUsers(page, this.props.pageSize); //с useEffect
+  };*/
+  return (
+    <>
+      <UsersCopy />
+      {/*
         <Preloader isFetching={this.props.isFetching}/> 
         <Users
           setFollow={this.props.setFollow}
@@ -25,18 +31,15 @@ class UsersContainer extends React.Component {
           pageSize={this.props.pageSize}
           totalCount={this.props.totalCount}
           followingInProgress={this.props.followingInProgress}
-        />
-      </>
-    );
-  }
-}
+        />*/}
+    </>
+  );
+};
 
 let mapStateToProps = (state) => {
   return {
-    users: state.usersPage.users,
     pageSize: state.usersPage.pageSize,
-    totalCount: state.usersPage.totalCount,
-    currentPage: state.usersPage.currentPage,
+    page: state.usersPage.page,
     isFetching: state.usersPage.isFetching,
     followingInProgress: state.usersPage.followingInProgress,
   };

@@ -1,11 +1,8 @@
 import React from "react";
 import style from "./Title.module.css";
 import { Icon16Dropdown, Icon28WriteSquareOutline } from "@vkontakte/icons";
-import { useSelector } from "react-redux";
 
 const MessagesTitle = () => {
-  const n = useSelector(state => state.profilePage);
-  console.log(n)
   return (
     <div className={style.title}>
       <div className={style.title_container}>

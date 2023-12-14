@@ -7,7 +7,6 @@ const Mail = (props) => {
   const contacts = props.contacts.map((item) => (
     <Link
       to={"/dialog/" + item.id}
-      name={"Nura"}
       className={style.convo}
       id={item.id}
     >

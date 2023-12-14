@@ -10,6 +10,7 @@
    width: 31px;
    height: 100%;
    color: #ebedf0;
+
 }
 .input {
    padding-left: 8px;
@@ -25,4 +26,9 @@
 }
 .container:hover{
    opacity: 0.8;
+}
+.icon_outline {
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }

@@ -14,10 +14,11 @@ const TitleContainer = (props) => {
   });
 
   return (
-    <Title
+    <Title 
       url={url}
       userDialog={userDialog}
       ownerFullName={props.ownerFullName}
+      ownerId={props.ownerId}
     />
   );
 };
@@ -26,6 +27,7 @@ const mapStateToProps = (state) => {
     contacts: state.dialogsPage.contacts,
     block: state.headerPage.block,
     elemsBurger: state.headerPage.elemsBurger,
+    ownerId: state.authPage.id,
     ownerFullName: state.authPage.firstName + " " + state.authPage.lastName,
   };
 };
