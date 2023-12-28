@@ -3,6 +3,7 @@ import SignIn from "./SignIn";
 import { connect } from "react-redux";
 import { signIn } from "../../../../../redux/auth-reducer";
 import { useNavigate } from "react-router-dom";
+import {getStateOwnerEmail, getStateOwnerId} from '../../../../Common/Selector';
 
 const SignInContainer = (props) => {
   const navigate = useNavigate();
@@ -22,8 +23,8 @@ const SignInContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    email: state.authPage.email,
-    password: state.authPage.password,
+    email: getStateOwnerEmail(state),
+    password: getStateOwnerEmail(state)
   };
 };
 export default connect(mapStateToProps, {

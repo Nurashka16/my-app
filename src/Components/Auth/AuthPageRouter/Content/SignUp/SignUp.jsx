@@ -29,7 +29,6 @@ const SignUp = (props) => {
     props.signUp(data)
     reset();
   };
-  console.log(errors);
   return (
     <div className={style.signUp}>
       <form className={style.textField} onSubmit={handleSubmit(onSubmit)}>

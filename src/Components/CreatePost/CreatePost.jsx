@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addPost } from "../../redux/profile-reducer";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useMemo } from "react-router-dom";
 import { Icon28ErrorCircleOutline } from "@vkontakte/icons";
 import { Transition } from "react-transition-group";
 
@@ -31,6 +31,7 @@ const defaultStyle = {
 };
 
 const CreatePost = (props) => {
+
   const [error, setError] = useState(false);
   const navigate = useNavigate();
   const valid = (name) =>

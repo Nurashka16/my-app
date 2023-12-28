@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import Mail from "./Mail";
+import { getStateContacts } from "../Common/Selector";
 
 export const MailContainer = (props) => {
   return (
@@ -11,7 +12,7 @@ export const MailContainer = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    contacts: state.dialogsPage.contacts,
+    contacts: getStateContacts(state),
   };
 };
 

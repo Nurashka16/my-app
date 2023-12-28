@@ -1,7 +1,6 @@
 import ProfileApi from "../API/ProfileApi";
 
 const ADD_POST = "ADD_POST";
-const UPDATE_TEXT_INPUT = "UPDATE_TEXT_INPUT";
 const SET_USER = "SET_USER";
 const IS_FETCHING = "IS_FETCHING";
 const CLEAR_STATE = "CLEAR_STATE";
@@ -20,7 +19,7 @@ let initialState = {
     },
   ],
   isFetching: false,
-  user: {},
+  userInfo: {},
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -37,11 +36,8 @@ const profileReducer = (state = initialState, action) => {
         ...state.posts,
       };
     }
-    case UPDATE_TEXT_INPUT: {
-      return { ...state, newPostText: action.letter };
-    }
     case SET_USER: {
-      return { ...state, user: action.user };
+      return { ...state, userInfo: action.userInfo };
     }
     case IS_FETCHING: {
       return { ...state, isFetching: action.boolean };
@@ -52,12 +48,8 @@ const profileReducer = (state = initialState, action) => {
 };
 
 export const addPost = (value) => ({ type: ADD_POST, value });
-export const updateTextInput = (letter) => ({
-  type: UPDATE_TEXT_INPUT,
-  letter,
-});
 export const clearState = () => ({ type: CLEAR_STATE });
-export const setUser = (user) => ({ type: SET_USER, user });
+export const setUser = (userInfo) => ({ type: SET_USER, userInfo });
 export const isFetching = (boolean) => ({
   type: IS_FETCHING,
   boolean,

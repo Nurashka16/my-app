@@ -5,13 +5,15 @@ const AUTH_USER = "AUTH_USER ";
 const CLEAR_DATA = "CLEAR_DATA";
 
 const initialState = {
-  id: "",
-  email: "",
-  firstName: "",
-  lastName: "",
-  avatar: "",
-  token: "",
-  password: "",
+  owner: {
+    id: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    avatar: "",
+    token: "",
+    password: "",
+  },
   isAuth: false,
 };
 

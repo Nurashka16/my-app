@@ -22,13 +22,8 @@ const SignUpContainer = (props) => {
 
   return <SignUp registerUser={props.registerUser} signUp={signUp} />;
 };
-let mapStateToProps = (state) => {
-  return {
-    authPage: state.authPage, //не нужен
-  };
-};
 
-export default connect(mapStateToProps, {
+export default connect({
   registerUser,
   signUp,
 })(SignUpContainer);

@@ -7,10 +7,11 @@ import {
   Icon24PhoneOutline,
   Icon24AddCircleOutline,
 } from "@vkontakte/icons";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import BurgerPost from "../BurgerPost/BurgerPost";
 
 const Profile = (props) => {
+
   let messagesItems = props.posts.map((m) => (
     <Post key={m.id} id={m.id} message={m.message} number={m.number} />
   ));
@@ -21,8 +22,9 @@ const Profile = (props) => {
     setPost({ isActive: value });
   };
   return (
-    <div className={style.container}>
-      {props.ownerId == props.user.id ? (
+    <div
+     className={style.container}>
+      {props.ownerId == props.userInfo.id ? (
         <ProfileInfo
           avatar={props.ownerAvatar}
           name={props.ownerFullName}
@@ -44,9 +46,9 @@ const Profile = (props) => {
         />
       ) : (
         <ProfileInfo
-          avatar={props.user.avatar}
-          name={props.user.firstName + " " + props.user.lastName}
-          id={props.user.id}
+          avatar={props.userInfo.avatar}
+          name={props.userInfo.firstName + " " + props.userInfo.lastName}
+          id={props.userInfo.id}
           children={
             <div className={style.info_footer}>
               {/*переименовать переменные*/}

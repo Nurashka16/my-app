@@ -1,8 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
-import { closeBlock, openBlock } from "../../../redux/header-reducer";
 import { useLocation } from "react-router-dom";
 import Title from "./Title";
+import {
+  getStateOwnerId,
+  getStateOwnerFullName,
+  getStateContacts,
+} from "../../Common/Selector";
 
 const TitleContainer = (props) => {
   const dataUrl = useLocation();
@@ -14,7 +18,7 @@ const TitleContainer = (props) => {
   });
 
   return (
-    <Title 
+    <Title
       url={url}
       userDialog={userDialog}
       ownerFullName={props.ownerFullName}
@@ -24,11 +28,9 @@ const TitleContainer = (props) => {
 };
 const mapStateToProps = (state) => {
   return {
-    contacts: state.dialogsPage.contacts,
-    block: state.headerPage.block,
-    elemsBurger: state.headerPage.elemsBurger,
-    ownerId: state.authPage.id,
-    ownerFullName: state.authPage.firstName + " " + state.authPage.lastName,
+    contacts: getStateContacts(state),
+    ownerId: getStateOwnerId(state),
+    ownerFullName: getStateOwnerFullName(state),
   };
 };
 

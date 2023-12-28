@@ -2,14 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import Dialog from "./Dialog";
+import {getStateLastDialog, getStateContacts, getStateUserInfo} from "../../Common/Selector";
 
 export const DialogContainer = (props) => {
   const { id } = useParams();
   const user = props.contacts.filter((item) => item.id == id);
   return (
     <Dialog
-      name={user[0].fullName}
-      user={props.user}
+      name={user[0].firstName}
       lastDialog={props.lastDialog}
     />
   );
@@ -17,9 +17,8 @@ export const DialogContainer = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.dialogsPage.contacts,
-    lastDialog: state.dialogsPage.lastDialog,
-    user: state.profilePage.user,
+    contacts: getStateContacts(state),
+    lastDialog: getStateLastDialog(state),
   };
 };
 

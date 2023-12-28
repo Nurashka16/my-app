@@ -1,6 +1,5 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { FriendsContainer } from "./Components/Friends/FriendsContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
 import News from "./Components/News/News";
@@ -48,7 +47,6 @@ const App = (props) => {
             <Route path="/dialog/:id" element={<DialogContainer />} />
             <Route path="/friends" element={<UsersContainer />} />
             <Route path="/musics" element={<HighMusicsContainer />} />
-            <Route path="/*" element={<FriendsContainer />} />
             <Route path="/recommendation" element={<Recommendation />} />
           </Route>
         </Route>
