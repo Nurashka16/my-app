@@ -47,6 +47,8 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
+
+
 export const addPost = (value) => ({ type: ADD_POST, value });
 export const clearState = () => ({ type: CLEAR_STATE });
 export const setUser = (userInfo) => ({ type: SET_USER, userInfo });
@@ -55,16 +57,16 @@ export const isFetching = (boolean) => ({
   boolean,
 });
 
-export const setProfile = (id) => (dispatch) => {
-  dispatch(isFetching(true));
-  ProfileApi.getProfile(id)
-    .then((response) => {
-      dispatch(setUser(response));
-      dispatch(isFetching(false));
-    })
-    .catch((response) => {
-      console.log("ошибка в getProfile");
-    });
+
+export const setProfile = (id) => async (dispatch) => {
+  try {
+    dispatch(isFetching(true));
+    let data = await ProfileApi.getProfile(id);
+    dispatch(setUser(data));
+    dispatch(isFetching(false));
+  } catch (err) {
+    console.log("ошибка в getProfile");
+  }
 };
 
 export default profileReducer;

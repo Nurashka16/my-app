@@ -72,20 +72,19 @@ export const signIn = (email, password) => (dispatch) => {
       };
     });
 };
-export const signUp = (request) => (dispatch) => {
-  return AuthAPI.signUp(request)
-    .then((response) => {
-      dispatch(registerUser(response));
-      return {
-        isSuccess: true,
-      };
-    })
-    .catch((response) => {
-      console.log("ошибка в singUp");
-      return {
-        isSuccess: false,
-      };
-    });
+export const signUp = (request) => async (dispatch) => {
+  try {
+    let data = await AuthAPI.signUp(request);
+    dispatch(registerUser(data));
+    return {
+      isSuccess: true,
+    };
+  } catch (err) {
+    console.log("ошибка в singUp");
+    return {
+      isSuccess: false,
+    };
+  }
 };
 
 export default authReducer;

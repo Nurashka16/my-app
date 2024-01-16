@@ -17,41 +17,39 @@ import CreatePost from "./Components/CreatePost/CreatePost";
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <Routes>
-        {/*public*/}
-        <Route path="auth" element={<HomeAuth />} />
-        <Route path="auth/:block" element={<AuthPageRouter />} />
-        {/*privet*/}
-        <Route element={<RequireAuth />}>
-          <Route element={<Layout />}>
-            <Route path="/" element={<News />} />
-            <Route path="/profile" element={<ProfileContainer />}>
-              <Route path=":id" element={<ProfileContainer />} />
-            </Route>
-            <Route path="/createPost" element={<CreatePost />} />
-            <Route path="/notice" element={<NoticePage />} />
-            <Route path="/communities" element={<EmptyPage />} />
-            <Route path="/photos" element={<EmptyPage />} />
-            <Route path="/videos" element={<EmptyPage />} />
-            <Route path="/clips" element={<EmptyPage />} />
-            <Route path="/services" element={<EmptyPage />} />
-            <Route path="/games" element={<EmptyPage />} />
-            <Route path="/bookmarks" element={<EmptyPage />} />
-            <Route path="/files" element={<EmptyPage />} />
-            <Route path="/ad" element={<EmptyPage />} />
-            <Route path="/market" element={<EmptyPage />} />
-            <Route path="/reaction" element={<EmptyPage />} />
-            <Route path="/search" element={<EmptyPage />} />
-            <Route path="/mail" element={<MailContainer />} />
-            <Route path="/dialog/:id" element={<DialogContainer />} />
-            <Route path="/friends" element={<UsersContainer />} />
-            <Route path="/musics" element={<HighMusicsContainer />} />
-            <Route path="/recommendation" element={<Recommendation />} />
+    <Routes>
+      {/*public*/}
+      <Route path="auth" element={<HomeAuth />} />
+      <Route path="auth/:block" element={<AuthPageRouter />} />
+      {/*privet*/}
+      <Route element={<RequireAuth />}>
+        <Route element={<Layout />}>
+          <Route path="/" element={<News />} />
+          <Route path="/profile" element={<ProfileContainer />}>
+            <Route path=":id" element={<ProfileContainer />} />
           </Route>
+          <Route path="/createPost" element={<CreatePost />} />
+          <Route path="/notice" element={<NoticePage />} />
+          <Route path="/communities" element={<EmptyPage />} />
+          <Route path="/photos" element={<EmptyPage />} />
+          <Route path="/videos" element={<EmptyPage />} />
+          <Route path="/clips" element={<EmptyPage />} />
+          <Route path="/services" element={<EmptyPage />} />
+          <Route path="/games" element={<EmptyPage />} />
+          <Route path="/bookmarks" element={<EmptyPage />} />
+          <Route path="/files" element={<EmptyPage />} />
+          <Route path="/ad" element={<EmptyPage />} />
+          <Route path="/market" element={<EmptyPage />} />
+          <Route path="/reaction" element={<EmptyPage />} />
+          <Route path="/search" element={<EmptyPage />} />
+          <Route path="/mail" element={<MailContainer />} />
+          <Route path="/dialog/:id" element={<DialogContainer />} />
+          <Route path="/friends" element={<UsersContainer />} />
+          <Route path="/musics" element={<HighMusicsContainer />} />
+          <Route path="/recommendation" element={<Recommendation />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
+      </Route>
+    </Routes>
   );
 };
 

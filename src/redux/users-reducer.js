@@ -82,16 +82,15 @@ export const getUsers = (page, pageSize) => (dispatch) => {
     });
 };
 
-export const setFollow = (userId, boolean) => (dispatch) => {
+export const setFollow = (userId, boolean) => async (dispatch) => {
   dispatch(inProgressOfSwitching(true, userId));
-  UsersAPI.isFollowed(userId.value, boolean)
-    .then((response) => {
-      boolean ? dispatch(unfollow(userId)) : dispatch(follow(userId));
-      dispatch(inProgressOfSwitching(false, userId));
-    })
-    .catch((response) => {
-      console.log("ошибка в follow");
-    });
+  try {
+    let data = await UsersAPI.isFollowed(userId.value, boolean);
+    boolean ? dispatch(unfollow(userId)) : dispatch(follow(userId));
+    dispatch(inProgressOfSwitching(false, userId));
+  } catch (err) {
+    console.log("ошибка в follow");
+  }
 };
 
 export default usersReducer;
