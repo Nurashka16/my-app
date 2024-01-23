@@ -1,23 +1,14 @@
 import React from "react";
 import style from "./ProfileInfo.module.css";
-import Avatar from "../../Common/Avatar";
+import AvatarBlock from "../../AvatarBlock/AvatarBlock.jsx";
 import { Icon16WorkOutline } from "@vkontakte/icons";
 import { Icon16InfoOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon16PlaceOutline, Icon28UserAddedOutline } from "@vkontakte/icons";
 
-const ProfileInfo = ({name, avatar, id, children}) => {
+const ProfileInfo = ({ name, avatar, id, children }) => {
   return (
     <div className={style.info} id={id}>
-      <div className={style.info_cover}>
-        <div className={style.info_avatar}>
-          <Avatar
-            style={{ borderColor: "black" }}
-            width="101px"
-            height="99px"
-            url="https://klike.net/uploads/posts/2022-08/1661856423_j-26.jpg"
-          />
-        </div>
-      </div>
+      <AvatarBlock/>
       <div className={style.info_content}>
         <div className={style.info_personInfo}>
           <div className={style.info_name}>

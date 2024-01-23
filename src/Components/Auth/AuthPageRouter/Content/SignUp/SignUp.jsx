@@ -3,7 +3,7 @@ import style from "./SignUp.module.css";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Field from "../../../../Common/Field";
+import Field from "../../../../Common/Field/Field";
 
 const SignUp = (props) => {
   const valid = (name) =>

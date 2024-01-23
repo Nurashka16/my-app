@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./News.module.css";
-import Avatar from "../Common/Avatar";
+import Avatar from "../Common/Avatar/Avatar";
 import Wall from "./Wall/Wall";
 
 const News = (props) => {

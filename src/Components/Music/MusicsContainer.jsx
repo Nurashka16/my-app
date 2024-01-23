@@ -4,7 +4,7 @@ import { Musics } from "./Musics";
 import { playAC } from "../../redux/music-reducer";
 
 
-export const LowMusicsContainer = (props) => {
+const LowMusicsContainer = (props) => {
   //для запросов и хуков
   return (
     <Musics playAC={props.playAC} musicPage={props.musicPage}/>
@@ -18,6 +18,6 @@ let mapStateToProps = (state) => {
 
 
 
-export const HighMusicsContainer = connect(mapStateToProps, {playAC})
+export default  connect(mapStateToProps, {playAC})
 (LowMusicsContainer);
 

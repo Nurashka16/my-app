@@ -1,7 +1,7 @@
 import style from "./Navbar.module.css";
 import { Link} from "react-router-dom";
 import Footer from "./Footer/Footer.jsx";
-import Avatar from "../Common/Avatar";
+import Avatar from "../Common/Avatar/Avatar";
 
 const Navbar = (props) => {
   const menu = props.list.map((list) => {

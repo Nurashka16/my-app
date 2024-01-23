@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Message.module.css";
-import Avatar from "../../Common/Avatar";
+import Avatar from "../../Common/Avatar/Avatar";
 
 const Message = (props) => {
   return (

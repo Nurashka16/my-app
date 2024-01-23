@@ -1,5 +1,5 @@
 import style from "./Mail.module.css";
-import Avatar from "../Common/Avatar.jsx";
+import Avatar from "../Common/Avatar/Avatar.jsx";
 import { Link } from "react-router-dom";
 import Search from "../Common/Search.jsx";
 

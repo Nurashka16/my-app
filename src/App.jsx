@@ -1,19 +1,31 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import UsersContainer from "./Components/Users/UsersContainer";
-import { HighMusicsContainer } from "./Components/Music/MusicsContainer";
-import News from "./Components/News/News";
-import ProfileContainer from "./Components/Profile/ProfileContainer";
-import Recommendation from "./Components/RecommendationPage/Recommendation";
+import { lazy, Suspense } from "react";
+import { Route, Routes } from "react-router-dom";
+
 import RequireAuth from "./Components/Auth/RequireAuth/RequireAuth";
-import HomeAuth from "./Components/Auth/HomeAuth/HomeAuth";
+import HomeAuth from "./Components/Auth/HomeAuth/HomeAuth.jsx";
 import AuthPageRouter from "./Components/Auth/AuthPageRouter/AuthPageRouter";
 import Layout from "./Components/Layout";
-import EmptyPage from "./Components/EmptyPage/EmptyPage";
-import MailContainer from "./Components/Mail/MailContainer";
-import DialogContainer from "./Components/Mail/Dialog/DialogContainer";
-import NoticePage from "./Components/NoticePage/NoticePage";
-import CreatePost from "./Components/CreatePost/CreatePost";
+
+const UsersContainer = lazy(() => import("./Components/Users/UsersContainer"));
+
+const LowMusicsContainer = lazy(() =>
+  import("./Components/Music/MusicsContainer")
+);
+const News = lazy(() => import("./Components/News/NewsContainer"));
+const ProfileContainer = lazy(() =>
+  import("./Components/Profile/ProfileContainer")
+);
+const EmptyPage = lazy(() => import("./Components/EmptyPage/EmptyPage"));
+const Recommendation = lazy(() =>
+  import("./Components/RecommendationPage/Recommendation")
+);
+const MailContainer = lazy(() => import("./Components/Mail/MailContainer"));
+const DialogContainer = lazy(() =>
+  import("./Components/Mail/Dialog/DialogContainer")
+);
+const NoticePage = lazy(() => import("./Components/NoticePage/NoticePage"));
+const CreatePost = lazy(() => import("./Components/CreatePost/CreatePost"));
 
 const App = (props) => {
   return (
@@ -45,7 +57,7 @@ const App = (props) => {
           <Route path="/mail" element={<MailContainer />} />
           <Route path="/dialog/:id" element={<DialogContainer />} />
           <Route path="/friends" element={<UsersContainer />} />
-          <Route path="/musics" element={<HighMusicsContainer />} />
+          <Route path="/musics" element={<LowMusicsContainer />} />
           <Route path="/recommendation" element={<Recommendation />} />
         </Route>
       </Route>

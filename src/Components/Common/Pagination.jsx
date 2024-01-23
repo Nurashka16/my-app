@@ -1,9 +1,14 @@
-import React, { useEffect, useState } from 'react';
+/*import React, { useEffect, useState } from 'react';
+import UsersCopy from "../Users/UsersCopy";
+import { getUsers, setFollow } from "../../redux/users-reducer";
 
-const Pagination = (callback, children ) => {
+const Pagination = (callback, children, page, pageSize ) => {
+   useEffect(() => {
+      getUsers(page, pageSize)
+    }, []);
   return (
-    <div>Pagination</div>
+    <div><UsersCopy/></div>
   )
 }
 
-export default Pagination;
+export default Pagination;*/

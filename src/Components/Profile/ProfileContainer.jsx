@@ -13,7 +13,7 @@ import {
 } from "../Common/Selector";
 import Preloader from "../Preloader/preloader";
 
-export const ProfileContainer = (props) => {
+const ProfileContainer = (props) => {
   const { id } = useParams();
   useEffect(() => {
     props.setProfile(id);

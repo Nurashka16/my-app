@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Mail from "./Mail";
 import { getStateContacts } from "../Common/Selector";
 
-export const MailContainer = (props) => {
+const MailContainer = (props) => {
   return (
     <div>
       <Mail contacts={props.contacts} />

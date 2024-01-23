@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./Title.module.css";
 import { Icon28ArrowLeftOutline } from "@vkontakte/icons";
-import ButtonBack from "../../Common/ButtonBack";
+import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 
 const CreatePostTitle = (props) => {
   return (

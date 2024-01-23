@@ -5,8 +5,8 @@ import {
   Icon28PhoneOutline,
   Icon28MoreHorizontal,
 } from "@vkontakte/icons";
-import Avatar from "../../Common/Avatar";
-import ButtonBack from "../../Common/ButtonBack";
+import Avatar from "../../Common/Avatar/Avatar";
+import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 
 const DialogTitle = () => {
   return (

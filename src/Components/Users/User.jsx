@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Users.module.css";
-import Avatar from "../Common/Avatar";
+import Avatar from "../Common/Avatar/Avatar";
 import { Link } from "react-router-dom";
 
 const User = ({ user }) => {

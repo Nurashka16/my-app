@@ -6,7 +6,7 @@ import User from "./User";
 import { useSelector } from "react-redux";
 import { Icon24Search } from "@vkontakte/icons";
 
-const UsersCopy = (props) => {
+const UsersCopy = () => {
   const users = useSelector((state) => state.usersPage.users);
   const items = users.map((user) => <User user={user} />);
   return (
@@ -29,7 +29,7 @@ const UsersCopy = (props) => {
             Рекомендации{/*<Recommendation />*/}
           </div>
         </div>
-        <div className={style.users_main}>{[...items.reverse()]}</div>
+        <div className={style.users_main}>{items/*[...items.reverse()]*/}</div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Dialog from "./Dialog";
 import {getStateLastDialog, getStateContacts, getStateUserInfo} from "../../Common/Selector";
 
-export const DialogContainer = (props) => {
+const DialogContainer = (props) => {
   const { id } = useParams();
   const user = props.contacts.filter((item) => item.id == id);
   return (

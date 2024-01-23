@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import NavbarContainer from "./Navbar/NavbarContainer";
 import Header from "./Header/Header";
@@ -11,8 +11,11 @@ const Layout = (props) => {
         <div className="app_menu">
           <NavbarContainer />
         </div>
+
         <div className="app-wrapper-content">
-          <Outlet />
+          <Suspense fallback={<p>123</p>}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </div>
