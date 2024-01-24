@@ -7,7 +7,9 @@ export function clickOutside(callback, ref) {
       }
     };
     document.addEventListener("mousedown", handler);
+    //document.addEventListener("scroll", handler);
     return ()=> {
       document.removeEventListener("mousedown", handler);
+     // document.addEventListener("scroll", handler);
     }
 }

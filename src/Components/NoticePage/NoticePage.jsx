@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-
-import style from "../Common/Search.module.css"; /*
+/*
 import style from "./NoticePage.module.css";*/
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import BurgerPost from "../BurgerPost/BurgerPost";
 import { Icon16SearchOutline } from "@vkontakte/icons";
+import style from "./NoticePage.module.css";
 
 const NoticePage = (props) => {
   return (

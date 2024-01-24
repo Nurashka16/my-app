@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Icon16Dropdown,
   Icon28NewsfeedOutline,
@@ -9,10 +9,10 @@ import {
 } from "@vkontakte/icons";
 import style from "./Title.module.css";
 import Burger from "../../menuBurger/Burger";
-import useOutsideAlerted from "../../Common/useOutsideAlerted";
+import { clickOutside } from "../../Common/clickOutside";
+import MiniTabWithFix from "../../Common/MiniTabWithFix/MiniTabWithFix";
 
 const NewsTitle = () => {
-  const { ref, isShow, setIsShow } = useOutsideAlerted(false);
   const tabsList = [
     {
       id: 1,
@@ -36,11 +36,16 @@ const NewsTitle = () => {
       iconLeft: <Icon28SettingsOutline />,
     },
   ];
+  const menuRef = useRef();
+  const [isShow, setIsShow] = useState(false);
+  useEffect(() => {
+    clickOutside(setIsShow, menuRef);
+  });
   return (
-    <div className={style.title}>
+    <div className={style.title} ref={menuRef}>
       <div
         className={style.title_container}
-        onClick={() => setIsShow(prev => !prev)}
+        onClick={() => setIsShow(!isShow)}
         style={{
           paddingLeft: "9px",
         }}
@@ -52,7 +57,7 @@ const NewsTitle = () => {
           </div>
         </div>
       </div>
-      <div ref={ref}>{isShow && <Burger arr={tabsList} />}</div>
+      <div>{isShow && <MiniTabWithFix arr={tabsList} />}</div>
     </div>
   );
 };

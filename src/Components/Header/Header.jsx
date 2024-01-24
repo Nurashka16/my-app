@@ -1,6 +1,6 @@
 import style from "./Header.module.css";
 import Logotype from "../Logotype/Logotype";
-import Search from "../Common/Search";
+import Search from "../Common/Search/Search";
 import { NavLink } from "react-router-dom";
 import TitleContainer from "./Title/TitleContainer";
 

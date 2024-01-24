@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./Users.module.css";
-import Search from "../Common/Search";
-import Recommendation from "../Common/Recommendation";
+import Search from "../Common/Search/Search";
 import User from "./User";
 import { useSelector } from "react-redux";
 import { Icon24Search } from "@vkontakte/icons";
