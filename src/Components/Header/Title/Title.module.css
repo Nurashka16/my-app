@@ -57,11 +57,27 @@
   align-items: center;
   justify-content: center;
 }
+.title_icon {
+  margin-left: 20px;
+}
+.title_icon:hover {
+  margin-left: 8px;
+  position: relative;
+  left: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(244, 244, 244, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+/*
 .title_icon__black {
   display: flex;
   color: black;
   column-gap: 20px;
-}
+}*/
 .title_mini {
   font-size: 17px;
   font-weight: 500;

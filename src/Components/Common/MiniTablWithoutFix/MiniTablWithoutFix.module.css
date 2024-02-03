@@ -1,12 +1,9 @@
 .block {
-  width: 174px;
-  height: 132px;
-  position: absolute;
+  /* position: absolute;
   right: -30%;
-  top: 104%;
-  z-index: 30;
+  top: 104%; */
+  /*z-index: 30;*/
   background-color: rgb(255, 255, 255);
-  border-radius: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

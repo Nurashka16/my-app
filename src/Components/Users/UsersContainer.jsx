@@ -40,9 +40,8 @@ const UsersContainer = (props) => {
   const scrollHandler = (e) => {
     if (
       e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) <
-        100 &&
-      users.length < totalCount
+        (e.target.documentElement.scrollTop + window.innerHeight) < 100
+         && users.length < totalCount
     ) {
       setIsFetching(true);
     }

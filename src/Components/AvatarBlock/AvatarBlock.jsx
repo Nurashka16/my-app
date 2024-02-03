@@ -1,33 +1,32 @@
-import React, { useState } from "react";
 import style from "../Profile/ProfileInfo/ProfileInfo.module.css";
 import Avatar from "../Common/Avatar/Avatar";
-import { useRef, useEffect } from "react";
-import {
-  Icon20UserCircleOutline,
-  Icon20WriteOutline,
-  Icon20DeleteOutline,
-} from "@vkontakte/icons";
+
 import MiniTablWithoutFix from "../Common/MiniTablWithoutFix/MiniTablWithoutFix";
-import { clickOutside } from "../Common/clickOutside";
+import { useClickOutside } from "../Common/clickOutside";
+import { AvatarTab } from "../Tables/AvatarTab";
+import { useState, useEffect } from "react";
+
 //не хватает логики, что если нет фото, то количество
 // кнопок меньше. А если это не мой профиль,то всего 1
+
 const AvatarBlock = () => {
-  const profileTabl = [
-    { id: 1, text: "Открыть фото", icon: <Icon20UserCircleOutline /> },
-    { id: 2, text: "Изменить фото", icon: <Icon20WriteOutline /> },
-    { id: 3, text: "Удалить фото", icon: <Icon20DeleteOutline /> },
-  ];
-  const menuRef = useRef();
-  const [isShow, setIsShow] = useState(false);
-  useEffect(() => {
-    clickOutside(setIsShow, menuRef);
-  });
+  /*const reverse = (maxHeight) => {
+    if(maxHeight < maxHeight/2) {
+        return right="-30%", top="-128%"
+    }
+    return right="-30%", top="104%"
+  }*/
+  /*const [isReverse, setIsReverse] = useState();*/
+  /*const top = document.getElementsByClassName(".info_avatar")*/
+  const { ref: menuRef, isShow, onShow } = useClickOutside();
+  const top = (e) => {
+    return console.log(e.target.offsetParent);
+  };
+  /*useEffect(() => {
+    return console.log(top.getBoundingClientRest);
+  });*/
   return (
-    <div
-      className={style.info_avatar}
-      ref={menuRef}
-      onClick={() => setIsShow(!isShow)}
-    >
+    <div className={style.info_avatar} ref={menuRef} onClick={onShow}>
       <Avatar
         style={{ borderColor: "black" }}
         width="101px"
@@ -37,12 +36,14 @@ const AvatarBlock = () => {
       <div>
         {isShow && (
           <MiniTablWithoutFix
-            radius="8%"
-            border="1px solid black"
+            position="absolute"
+            radius="8px"
             height="132px"
             width="174px"
-            children={profileTabl}
-          />
+            padding="0"
+          >
+            <AvatarTab />
+          </MiniTablWithoutFix>
         )}
       </div>
     </div>

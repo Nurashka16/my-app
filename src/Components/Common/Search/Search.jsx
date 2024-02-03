@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./Search.module.css";
 import { Icon16SearchOutline } from "@vkontakte/icons";
+import { useClickOutside } from "../clickOutside";
+import { useEffect } from "react";
 
 const Search = ({
   width,
@@ -9,12 +11,29 @@ const Search = ({
   text = "Поиск",
   icon = "",
 }) => {
+  // const extension = (e) => {
+  //   const a = e.target.parentElement.style;
+  //   a.width = "300px";
+  //   a.background = "black"
+  //   return a
+  // };
+
+  const { ref: menuRef, isShow, onShow } = useClickOutside();
+  // console.log(isShow)
+    useEffect(() => {
+  }, [isShow]);
   return (
     <div
-      className={style.container}
+      className={style.container} ref={menuRef}
+      // onFocus={(e) => extension(e)}
+      onClick={(e)=>onShow()}
+
       style={{
         backgroundColor: "#ebedf0",
-        width: width,
+        width:`${isShow ? "356px" : width}`,
+        position: isShow && "absolute",
+        top:isShow && "20.5%",
+        left:isShow && "56.15%",
         height: height,
         borderRadius: borderRadius,
       }}
@@ -25,6 +44,7 @@ const Search = ({
         />
       </div>
       <input
+
         className={style.input}
         style={{ borderRadius: borderRadius }}
         type="search"
@@ -43,6 +63,7 @@ const Search = ({
           {icon}
         </div>
       )}
+
     </div>
   );
 };

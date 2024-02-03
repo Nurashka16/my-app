@@ -4,11 +4,32 @@ import AvatarBlock from "../../AvatarBlock/AvatarBlock.jsx";
 import { Icon16WorkOutline } from "@vkontakte/icons";
 import { Icon16InfoOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon16PlaceOutline, Icon28UserAddedOutline } from "@vkontakte/icons";
+import Popup from "../../Common/Popup.jsx";
+import Avatar from "../../Common/Avatar/Avatar.jsx";
+import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix.js";
+import { AvatarTab } from "../../Tables/AvatarTab.jsx";
 
 const ProfileInfo = ({ name, avatar, id, children }) => {
   return (
     <div className={style.info} id={id}>
-      <AvatarBlock/>
+      {/* /*<AvatarBlock/>*/}
+      <Popup
+        burger={
+          <MiniTablWithoutFix
+            right="-30%"
+            top="104%"
+            position="absolute"
+            radius="8px"
+            height="132px"
+            width="174px"
+            padding="0"
+          >
+            <AvatarTab />
+          </MiniTablWithoutFix>
+        }
+      >
+        <Avatar style={{ borderColor: "black" }} width="101px" height="99px" />
+      </Popup>
       <div className={style.info_content}>
         <div className={style.info_personInfo}>
           <div className={style.info_name}>

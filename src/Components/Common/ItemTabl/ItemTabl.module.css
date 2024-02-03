@@ -20,6 +20,8 @@
 .text {
    font-size: 15px;
    padding: 10px 0 9px;
+   color: black;
+   white-space: nowrap;
 }
 .icon_right {
    color: #2688eb;

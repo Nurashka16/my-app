@@ -1,8 +1,33 @@
 import React from "react";
 import style from "./Title.module.css";
 import { Icon28ServicesOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
+import ButtonBack from "../../Common/ButtonBack/ButtonBack";
+import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
+import { ServiceTab } from "../../Tables/ServiceTab";
+import { useClickOutside } from "../../Common/clickOutside";
+import MiniTabWithFix from "../../Common/MiniTabWithFix/MiniTabWithFix";
+import { cloneElement } from "react";
+import { useState } from "react";
+import ProfileMoreTab from "../../Tables/ProfileMoreTab";
 
 const ProfileTitle = () => {
+  const { ref: menuRef, isShow, onShow } = useClickOutside();
+
+  const [data, setData] = useState({
+    right: undefined,
+    top: undefined,
+    tab: undefined,
+  });
+
+  const onClickService = () => {
+    onShow();
+    setData({ right: "41.5%", top: "63px", tab: <ServiceTab /> });
+  };
+
+  const onClickMore = () => {
+    onShow();
+    setData({ right: "26.5%", top: "63px", tab: <ProfileMoreTab /> });
+  };
   return (
     <div className={style.title}>
       <div
@@ -13,27 +38,53 @@ const ProfileTitle = () => {
         }}
       >
         <div className={style.title_content}>
+          <div className={style.title_icon__left}>
+            <ButtonBack />
+          </div>
           <div
             className={style.title_text}
             style={{
               fontWeight: "500",
-              fontSize: "19px",
+              fontSize: "19.5px",
             }}
           >
-            @nik
+            @maybeNik
           </div>
         </div>
         <div
           className={style.title_icon__right}
+          style={{
+            paddingBottom: "0.5px",
+          }}
         >
           <div
-            className={style.title_icon__black}
-            style={{
-              paddingBottom: "0.5px",
-            }}
+            className={style.title_icon}
+            ref={menuRef}
+            onClick={() => onClickService()}
           >
             <Icon28ServicesOutline />
+          </div>
+          <div
+            className={style.title_icon}
+            style={{ fontSize: "20px" }}
+            ref={menuRef}
+            onClick={() => onClickMore()}
+          >
             <Icon28MoreHorizontal />
+          </div>
+          <div>
+            {isShow && (
+              <MiniTablWithoutFix
+                top={data.top}
+                right={data.right}
+                radius="12px"
+                height="217px"
+                width="216px"
+                position="absolute"
+              >
+                {data.tab}
+              </MiniTablWithoutFix>
+            )}
           </div>
         </div>
       </div>

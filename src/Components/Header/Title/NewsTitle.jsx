@@ -1,51 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
-import {
-  Icon16Dropdown,
-  Icon28NewsfeedOutline,
-  Icon28CheckCircleOn,
-  Icon28HistoryForwardOutline,
-  Icon28CameraOutline,
-  Icon28SettingsOutline,
-} from "@vkontakte/icons";
+import { Icon16Dropdown } from "@vkontakte/icons";
 import style from "./Title.module.css";
-import Burger from "../../menuBurger/Burger";
-import { clickOutside } from "../../Common/clickOutside";
-import MiniTabWithFix from "../../Common/MiniTabWithFix/MiniTabWithFix";
+import { NewsTab } from "../../Tables/NewsTab";
+import { useClickOutside } from "../../Common/clickOutside";
+import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
 
 const NewsTitle = () => {
-  const tabsList = [
-    {
-      id: 1,
-      text: "Новости",
-      iconLeft: <Icon28NewsfeedOutline />,
-      iconRight: <Icon28CheckCircleOn />,
-    },
-    {
-      id: 2,
-      text: "Обновления",
-      iconLeft: <Icon28HistoryForwardOutline />,
-    },
-    {
-      id: 3,
-      text: "Фотографии",
-      iconLeft: <Icon28CameraOutline />,
-    },
-    {
-      id: 4,
-      text: "Настроить новости",
-      iconLeft: <Icon28SettingsOutline />,
-    },
-  ];
-  const menuRef = useRef();
-  const [isShow, setIsShow] = useState(false);
-  useEffect(() => {
-    clickOutside(setIsShow, menuRef);
-  });
+  const { ref: menuRef, isShow, onShow } = useClickOutside();
   return (
-    <div className={style.title} ref={menuRef}>
+    <div className={style.title} onClick={onShow} ref={menuRef}>
       <div
         className={style.title_container}
-        onClick={() => setIsShow(!isShow)}
         style={{
           paddingLeft: "9px",
         }}
@@ -57,7 +21,20 @@ const NewsTitle = () => {
           </div>
         </div>
       </div>
-      <div>{isShow && <MiniTabWithFix arr={tabsList} />}</div>
+      <div>
+        {isShow && (
+          <MiniTablWithoutFix
+            width="260px"
+            height="210px"
+            radius="12px"
+            position="absolute"
+            left="38%"
+            top="63px"
+            border="1px solid #d7d8d9"
+            padding="8px 0"
+          ><NewsTab/></MiniTablWithoutFix>
+        )}
+      </div>
     </div>
   );
 };

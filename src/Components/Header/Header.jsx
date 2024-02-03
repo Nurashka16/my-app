@@ -17,7 +17,7 @@ const Header = (props) => {
             </NavLink>
           </div>
           <div className={style.header_components}>
-            <div className={style.title}>
+            <div className={style.title} >
               <TitleContainer />
             </div>
             <form action="#" className={style.search}>

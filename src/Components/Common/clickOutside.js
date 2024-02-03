@@ -1,15 +1,27 @@
+import { useEffect, useRef, useState } from "react";
 
+export const useClickOutside = () => {
+  const ref = useRef({});
+  const [isShow, setIsShow] = useState(false);
 
-export function clickOutside(callback, ref) {
-   let handler = (e) => {
-      if (!ref.current.contains(e.target)) {
-        callback(false);
-      }
-    };
+  useEffect(() => {
+    if (!isShow) {
+      return;
+    }
     document.addEventListener("mousedown", handler);
     //document.addEventListener("scroll", handler);
-    return ()=> {
+
+    return () => {
       document.removeEventListener("mousedown", handler);
-     // document.addEventListener("scroll", handler);
+    };
+    // document.addEventListener("scroll", handler);
+  }, [isShow]);
+
+  const handler = (e) => {
+    if (!ref.current.contains(e.target)) {
+      setIsShow(false);
     }
-}
+  };
+  const onShow = () => setIsShow((prev) => !prev);
+  return { ref, isShow, onShow };
+};
