@@ -1,12 +1,12 @@
 .link {
   display: flex;
-  padding: 5px 16px;
+  /* padding: 5px 16px; */
   align-items:center ;
   justify-content: space-between;
 }
 .link:hover {
    background-color: #f7f6f6;
-   border-radius: 8px;
+   border-radius: 12px;
 }
 .content {
    display: flex;

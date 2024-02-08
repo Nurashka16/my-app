@@ -5,8 +5,7 @@ import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
 import { ServiceTab } from "../../Tables/ServiceTab";
 import { useClickOutside } from "../../Common/clickOutside";
-import MiniTabWithFix from "../../Common/MiniTabWithFix/MiniTabWithFix";
-import { cloneElement } from "react";
+import MiniTabWithFix from "../../Common/WrapWithButton/WrapWithButton";
 import { useState } from "react";
 import ProfileMoreTab from "../../Tables/ProfileMoreTab";
 
@@ -17,16 +16,25 @@ const ProfileTitle = () => {
     right: undefined,
     top: undefined,
     tab: undefined,
+    height: undefined,
+    width: undefined,
   });
 
   const onClickService = () => {
     onShow();
-    setData({ right: "41.5%", top: "63px", tab: <ServiceTab /> });
+    setData({
+      right: "42%",
+      top: "63px",
+      height: "217px",
+      width: "216px",
+      tab: <ServiceTab />,
+    });
   };
 
   const onClickMore = () => {
     onShow();
-    setData({ right: "26.5%", top: "63px", tab: <ProfileMoreTab /> });
+    setData({ right: "25%", top: "63px",      height: "266px",
+    width: "242px", tab: <ProfileMoreTab padding="2.9px 16px"/> });
   };
   return (
     <div className={style.title}>
@@ -78,9 +86,12 @@ const ProfileTitle = () => {
                 top={data.top}
                 right={data.right}
                 radius="12px"
-                height="217px"
-                width="216px"
+                height={data.height}
+                width={data.width}
+                // height="217px"
+                // width="216px"
                 position="absolute"
+                padding="0"
               >
                 {data.tab}
               </MiniTablWithoutFix>

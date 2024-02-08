@@ -3,6 +3,8 @@ import style from "./Search.module.css";
 import { Icon16SearchOutline } from "@vkontakte/icons";
 import { useClickOutside } from "../clickOutside";
 import { useEffect } from "react";
+//Нужно придумать что делать с анимацией при исчезновении.
+//Либо как у вк или же поставить absolute, но уже через css.
 
 const Search = ({
   width,
@@ -11,29 +13,20 @@ const Search = ({
   text = "Поиск",
   icon = "",
 }) => {
-  // const extension = (e) => {
-  //   const a = e.target.parentElement.style;
-  //   a.width = "300px";
-  //   a.background = "black"
-  //   return a
-  // };
-
   const { ref: menuRef, isShow, onShow } = useClickOutside();
-  // console.log(isShow)
-    useEffect(() => {
-  }, [isShow]);
+  useEffect(() => {}, [isShow]);
   return (
     <div
-      className={style.container} ref={menuRef}
-      // onFocus={(e) => extension(e)}
-      onClick={(e)=>onShow()}
-
+      className={style.container}
+      ref={menuRef}
+      onClick={(e) => onShow()}
       style={{
         backgroundColor: "#ebedf0",
-        width:`${isShow ? "356px" : width}`,
+        width: `${isShow ? "356px" : width}`,
+        transitionDuration: isShow && "0.5s",
         position: isShow && "absolute",
-        top:isShow && "20.5%",
-        left:isShow && "56.15%",
+        top: isShow && "20.8%",
+        right: isShow && "20.95%",
         height: height,
         borderRadius: borderRadius,
       }}
@@ -44,7 +37,6 @@ const Search = ({
         />
       </div>
       <input
-
         className={style.input}
         style={{ borderRadius: borderRadius }}
         type="search"
@@ -63,7 +55,6 @@ const Search = ({
           {icon}
         </div>
       )}
-
     </div>
   );
 };

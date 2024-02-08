@@ -37,3 +37,19 @@
    align-items: center;
    justify-content: center;
 }
+/* .show-enter { 
+   width: 300px, transform 300ms;
+ }
+ .show-enter-active {
+   width: 356px, transform 300ms;
+ }
+ .show-exit {
+   /* opacity: 1; */
+
+ /* .show-exit-active {
+ } */
+ /*
+         width:`${isShow ? "356px" : width}`,
+        position: isShow && "absolute",
+        top:isShow && "20.8%",
+        left:isShow && "55.62%",*/
