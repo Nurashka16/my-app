@@ -9,21 +9,16 @@ import {
 } from "@vkontakte/icons";
 import { useState, useMemo } from "react";
 import BurgerPost from "../BurgerPost/BurgerPost";
+import WrapWithButton from "../Common/WrapWithButton/WrapWithButton";
+import CreatePostTab from "../Tables/CreatePostTab";
 
 const Profile = (props) => {
-
   let messagesItems = props.posts.map((m) => (
     <Post key={m.id} id={m.id} message={m.message} number={m.number} />
   ));
-  const [post, setPost] = useState({
-    isActive: false,
-  });
-  const toggleStatus = (value) => {
-    setPost({ isActive: value });
-  };
+  const [show, onShow] = useState(false);
   return (
-    <div
-     className={style.container}>
+    <div className={style.container}>
       {props.ownerId == props.userInfo.id ? (
         <ProfileInfo
           avatar={props.ownerAvatar}
@@ -31,14 +26,19 @@ const Profile = (props) => {
           id={props.ownerId}
           children={
             <>
-              {post.isActive && <BurgerPost toggleStatus={toggleStatus} />}
-              <div
-                className={style.info_btn}
-                onClick={() => toggleStatus(true)}
-              >
-                <div className={style.info_icon__add}>
-                  <Icon24AddCircleOutline />
-                </div>
+              {show && (
+                <WrapWithButton height="100%" width="550px" padding="0">
+                  <CreatePostTab
+                    width="430px"
+                    height="201px"
+                    radius="12px"
+                    onShow={onShow}
+                    show={show}
+                  />
+                </WrapWithButton>
+              )}
+              <div className={style.info_btn} onClick={() => onShow(!show)}>
+                <Icon24AddCircleOutline />
                 Опубликовать
               </div>
             </>

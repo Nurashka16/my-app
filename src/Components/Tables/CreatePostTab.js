@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import style from "./Tables.module.css";
 import ItemTabl from "../Common/ItemTabl/ItemTabl";
 
-const CreatePostTab = ({  width,
+const CreatePostTab = ({show, onShow, width,
   height,
   radius}) => {
   const list = [
@@ -41,7 +41,7 @@ const CreatePostTab = ({  width,
       </div>
       <div
         className={style.btn_close}
-        // onClick={() => console.log(123)}
+         onClick={() => onShow(!show)}
       >
         <Icon20Cancel />
       </div>

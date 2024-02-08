@@ -14,12 +14,10 @@ import WrapWithButton from "../../Common/WrapWithButton/WrapWithButton.js";
 import { useRef } from "react";
 
 const ProfileInfo = ({ name, avatar, id, children }) => {
-  const [show, onShow] = useState(false);
-  const ref = useRef(undefined);
-  console.log(ref.current?.offsetParent)
+  // const ref = useRef(undefined);
+  // console.log(ref.current?.offsetParent);
   return (
-    <div className={style.info} ref={ref} id={id}>
-      {/* /*<AvatarBlock/>*/}
+    <div className={style.info} id={id}>
       <Popup
         burger={
           <MiniTablWithoutFix
@@ -38,7 +36,7 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
         <Avatar style={{ borderColor: "black" }} width="101px" height="99px" />
       </Popup>
       <div className={style.info_content}>
-        <div className={style.info_personInfo} onClick={(e) => onShow(!show)}>
+        <div className={style.info_personInfo}>
           <div className={style.info_name}>
             {name}
             <img
@@ -68,12 +66,7 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
             </div>
           </div>
         </div>
-        {show && (
-          <WrapWithButton height="100%" width="600x" padding="0">
-            <CreatePostTab  width="430px" height="201px" radius="12px"/>
-          </WrapWithButton>
-        )}
-        {children}
+        <div>{children}</div>
       </div>
     </div>
   );

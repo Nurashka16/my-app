@@ -47,8 +47,6 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-
-
 export const addPost = (value) => ({ type: ADD_POST, value });
 export const clearState = () => ({ type: CLEAR_STATE });
 export const setUser = (userInfo) => ({ type: SET_USER, userInfo });
@@ -56,7 +54,6 @@ export const isFetching = (boolean) => ({
   type: IS_FETCHING,
   boolean,
 });
-
 
 export const setProfile = (id) => async (dispatch) => {
   try {

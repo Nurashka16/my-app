@@ -88,8 +88,6 @@ const ProfileTitle = () => {
                 radius="12px"
                 height={data.height}
                 width={data.width}
-                // height="217px"
-                // width="216px"
                 position="absolute"
                 padding="0"
               >
