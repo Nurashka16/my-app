@@ -1,4 +1,5 @@
 const SEND_MESSAGE = "SEND-MESSAGE";
+const ADD_TEXT = "ADD_TEXT";
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 
 let initialState = {

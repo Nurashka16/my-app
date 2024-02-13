@@ -5,7 +5,6 @@ import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
 import { ServiceTab } from "../../Tables/ServiceTab";
 import { useClickOutside } from "../../Common/clickOutside";
-import MiniTabWithFix from "../../Common/WrapWithButton/WrapWithButton";
 import { useState } from "react";
 import ProfileMoreTab from "../../Tables/ProfileMoreTab";
 

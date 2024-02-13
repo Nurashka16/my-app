@@ -11,12 +11,17 @@ import { useState, useMemo } from "react";
 import BurgerPost from "../BurgerPost/BurgerPost";
 import WrapWithButton from "../Common/WrapWithButton/WrapWithButton";
 import CreatePostTab from "../Tables/CreatePostTab";
+import { useRef } from "react";
 
 const Profile = (props) => {
   let messagesItems = props.posts.map((m) => (
     <Post key={m.id} id={m.id} message={m.message} number={m.number} />
   ));
   const [show, onShow] = useState(false);
+  // const ref = useRef(undefined);
+  //   const offScroll = () => {
+  //     ref.current?.offsetParent.style
+  //   }
   return (
     <div className={style.container}>
       {props.ownerId == props.userInfo.id ? (

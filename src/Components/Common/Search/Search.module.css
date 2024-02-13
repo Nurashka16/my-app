@@ -1,13 +1,49 @@
 .container {
-   background-color: #434040;
+   height: 34px;
+   display: flex;
+   width: 284px;
+   position: absolute;
+   top: 11px;
+   right: 90.5px;
+   flex-direction: row;
+   animation-name: container-small;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
+   animation-direction: normal;
+   animation-fill-mode: forwards;
+}
+.containerActive {
+   animation-name: container;
+   animation-duration: 1s;
+   animation-iteration-count: 1;
    display: flex;
    flex-direction: row;
-}
-/* .input:focus {
+   height: 34px;
+   top: 11px;
+   right: 90.5px;
    position: absolute;
-   top: "16%";
-   left:"50%;"
-} */
+   z-index: 50;
+   display: flex;
+   width: 284px;
+   flex-direction: row;
+   animation-fill-mode: forwards;
+}
+@keyframes container {
+   from {
+      width: 284px;
+   }
+   to {
+      width: 384px;
+   }
+}
+@keyframes container-small {
+   from {
+      width: 384px;
+   }
+   to {
+      width: 284px;
+   }
+}
 .icon {
    display: flex;
    align-items: center;
@@ -15,41 +51,20 @@
    width: 31px;
    height: 100%;
    color: #ebedf0;
-
 }
 .input {
    padding-left: 8px;
-   background-color: #ebedf0;
    font-weight: 400;
    font-size: 15px;
    width: 100%;
    height: 100%;
    color: #818c99;
-} 
-.input::placeholder{
-   color: #818c99;
 }
-/* .container:hover{
-   opacity: 0.8;
+/* .input::placeholder {
+   color: #818c99;
 } */
 .icon_outline {
    display: flex;
    align-items: center;
    justify-content: center;
 }
-/* .show-enter { 
-   width: 300px, transform 300ms;
- }
- .show-enter-active {
-   width: 356px, transform 300ms;
- }
- .show-exit {
-   /* opacity: 1; */
-
- /* .show-exit-active {
- } */
- /*
-         width:`${isShow ? "356px" : width}`,
-        position: isShow && "absolute",
-        top:isShow && "20.8%",
-        left:isShow && "55.62%",*/

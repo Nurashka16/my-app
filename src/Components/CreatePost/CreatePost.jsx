@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import style from "./CreatePost.module.css";
-import { Icon28PictureOutline } from "@vkontakte/icons";
+import { Icon28PictureOutline, Icon20Dropdown } from "@vkontakte/icons";
 import { Icon28MusicOutline } from "@vkontakte/icons";
 import { Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon28SettingsOutline } from "@vkontakte/icons";
@@ -8,40 +7,25 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addPost } from "../../redux/profile-reducer";
-import { useNavigate, useMemo } from "react-router-dom";
-import { Icon28ErrorCircleOutline } from "@vkontakte/icons";
-import { Transition } from "react-transition-group";
-
-const defaultStyle = {
-  /*position: "absolute",
-  left: 0,
-  bottom: 0,
-  boxShadow: "-14px 0px 70px -14px rgba(34, 60, 80, 0.24)",
-  height: "52px",
-  width: "384px",
-  margin: "24px",
-  padding: "14px 14px 14px 12px",
-  borderRadius: "8px",
-  backgroundColor: "white",
-  display: "flex",
-  flexDirection: "row",
-  columnGap: "12px",
-  alignItems: "center",
-  justifyContent: "start",*/
-};
+import { useNavigate } from "react-router-dom";
+import FadeAnimation from "../Common/FadeAnimation/FadeAnimation";
+import Alert from "../Common/Alert/Alert";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const CreatePost = (props) => {
-
-  const [error, setError] = useState(false);
   const navigate = useNavigate();
+  const id = useSelector((state) => state.authPage.id);
+  const text = useSelector((state) => state.dialogsPage.text);
   const valid = (name) =>
-    yup
-      .string()
-      .required("Нельзя опубликовать пустую запись")
-      .max(100, "Достигнуто максимальное количество символов");
+    yup.string().required("Нельзя опубликовать пустую запись");
   const schema = yup.object().shape({
     text: valid("text"),
   });
+  const dispatch = useDispatch();
+  const add = (value) => {
+    return addPost(value);
+  };
   const {
     register,
     handleSubmit,
@@ -49,28 +33,15 @@ const CreatePost = (props) => {
     formState: { errors, isValid },
   } = useForm({ resolver: yupResolver(schema), mode: "onBlur" });
   const onSubmit = (data) => {
-    /*addPost(data.text);
+    dispatch(addPost(data.text));
     reset();
-    navigate('/profile');*/
+    navigate("/profile/" + id);
   };
-  const TemporaryHint = (bool) => {
-    return errors.text ? /*(
-      <Transition timeout={500} in={error}>
-        {(state) => (
-          <div
-            style={{ ...defaultStyle }}
-            className={`style.createPost_errorContainer ${state}`}
-          >
-            <Icon28ErrorCircleOutline color="red" />
-            <div className={style.createPost_errorMess}>{errors?.text.message}</div>
-          </div>
-        )}
-      </Transition>
-    )*/console.log(1) : console.log(2)
-  };
+
   return (
     <div className={style.createPost}>
       <form
+        value={text}
         className={style.createPost_container}
         onSubmit={handleSubmit(onSubmit)}
       >
@@ -80,41 +51,19 @@ const CreatePost = (props) => {
             placeholder="Введите текст записи..."
             className={style.createPost_input}
           />
-          {/*errors?.text && TemporaryHint(errors.text)*/}
         </div>
+        <FadeAnimation isShow={errors?.text}>
+          <Alert type="error">{errors?.text?.message}</Alert>
+        </FadeAnimation>
         <div className={style.createPost_containerSelect}>
           <div className={style.createPost_select}>
             <button className={style.createPost_btn__burger}>Видно всем</button>
-            <svg
-              className={style.createPost_icon}
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="12"
-              fill="none"
-              viewBox="0 0 16 12"
-            >
-              <path
-                fill="currentColor"
-                d="M4.45 3.7a.9.9 0 0 0-1.1 1.4l4.1 3.21a.9.9 0 0 0 1.1 0l4.1-3.2a.9.9 0 1 0-1.1-1.42L8 6.46 4.45 3.7Z"
-              ></path>
-            </svg>
+            <Icon20Dropdown className={style.createPost_icon} />
           </div>
 
           <div className={style.createPost_select}>
             <button className={style.createPost_btn__burger}>Сейчас</button>
-            <svg
-              className={style.createPost_icon}
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="12"
-              fill="none"
-              viewBox="0 0 16 12"
-            >
-              <path
-                fill="currentColor"
-                d="M4.45 3.7a.9.9 0 0 0-1.1 1.4l4.1 3.21a.9.9 0 0 0 1.1 0l4.1-3.2a.9.9 0 1 0-1.1-1.42L8 6.46 4.45 3.7Z"
-              ></path>
-            </svg>
+            <Icon20Dropdown className={style.createPost_icon} />
           </div>
         </div>
         <div className={style.createPost_footer}>
@@ -125,11 +74,7 @@ const CreatePost = (props) => {
           </div>
           <div className={style.createPost_buttonsCreate}>
             <Icon28SettingsOutline color="#2688eb" />
-            <button
-              className={style.createPost_btnCreate}
-              onClick={() => TemporaryHint(!error)}
-              type="submit"
-            >
+            <button className={style.createPost_btnCreate} type="submit">
               Опубликовать
             </button>
           </div>

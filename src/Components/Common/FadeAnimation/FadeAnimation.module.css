@@ -1,0 +1,44 @@
+.wrap {
+   animation-name: error-mess;
+   animation-duration: 10s;
+   opacity: 0;
+   animation-iteration-count: 1;
+   /* animation-delay: 0.5s; */
+   position: fixed;
+   /* width: 400px;
+   height: 52px; */
+   animation-fill-mode: forwards;
+   bottom: 0;
+   left: 0;
+   padding: 10px 30px 10px 30px;
+   border-radius: 8px;
+   box-shadow: 2px -4px 49px 24px rgba(34, 60, 80, 0.13);
+   margin: 24px;
+   animation-direction: reverse;
+   background-color: white;
+   /* display: flex;
+   flex-direction: row; */
+   /* column-gap: 12px;
+   align-items: center;
+   justify-content: center; */
+}
+@keyframes error-mess {
+   0% {
+      opacity: 0;
+   }
+   10% {
+      opacity: 1;
+   }
+   25% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 1;
+   }
+   75% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 1;
+   }
+}

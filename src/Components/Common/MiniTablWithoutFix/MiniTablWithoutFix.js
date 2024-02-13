@@ -2,6 +2,7 @@ import React from "react";
 import style from "./MiniTablWithoutFix.module.css";
 
 const MiniTablWithoutFix = ({
+  margin,
   ref,
   children,
   width,
@@ -14,13 +15,16 @@ const MiniTablWithoutFix = ({
   right,
   top,
   bottom,
-  index="30"
+  index="30",
+  boxShadow
+  
 }) => {
   return (
     <div
       ref={ref}
       className={style.block}
       style={{
+        margin: margin,
         position: position,
         padding: padding,
         width: width,
@@ -31,7 +35,8 @@ const MiniTablWithoutFix = ({
         right: right,
         top: top,
         bottom: bottom,
-        index
+        index: index,
+        boxShadow: boxShadow
       }}
     >
       {children}
