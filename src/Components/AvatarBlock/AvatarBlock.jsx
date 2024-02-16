@@ -3,7 +3,7 @@ import Avatar from "../Common/Avatar/Avatar";
 
 import MiniTablWithoutFix from "../Common/MiniTablWithoutFix/MiniTablWithoutFix";
 import { useClickOutside } from "../Common/clickOutside";
-import { AvatarTab } from "../Tables/AvatarTab";
+import { AvatarTab } from "../Tables/AvatarActions";
 import { useState, useEffect } from "react";
 
 //не хватает логики, что если нет фото, то количество

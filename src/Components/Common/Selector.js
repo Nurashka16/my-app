@@ -1,3 +1,4 @@
+//переписать с использованием хука useSelector
 //из authPage
 
 export const getStateOwnerAvatar = (state) => {

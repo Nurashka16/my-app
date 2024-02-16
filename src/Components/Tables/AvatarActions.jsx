@@ -6,7 +6,7 @@ import {
   Icon20DeleteOutline,
 } from "@vkontakte/icons";
 
-export const AvatarTab = () => {
+export const AvatarActions = () => {
   const list = [
     { id: 1, text: "Открыть фото", icon: <Icon20UserCircleOutline /> },
     { id: 2, text: "Изменить фото", icon: <Icon20WriteOutline /> },

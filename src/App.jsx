@@ -25,7 +25,7 @@ const DialogContainer = lazy(() =>
   import("./Components/Mail/Dialog/DialogContainer")
 );
 const NoticePage = lazy(() => import("./Components/NoticePage/NoticePage"));
-const CreatePost = lazy(() => import("./Components/CreatePost/CreatePost"));
+const CreatePost = lazy(() => import("./Components/CreatePostPage/CreatePost"));
 
 const App = (props) => {
   return (

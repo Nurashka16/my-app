@@ -10,7 +10,7 @@ import {
 import { useState, useMemo } from "react";
 import BurgerPost from "../BurgerPost/BurgerPost";
 import WrapWithButton from "../Common/WrapWithButton/WrapWithButton";
-import CreatePostTab from "../Tables/CreatePostTab";
+import CreatePostTab from "../Tables/CreatePostActions";
 import { useRef } from "react";
 
 const Profile = (props) => {

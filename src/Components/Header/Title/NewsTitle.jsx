@@ -1,6 +1,6 @@
 import { Icon16Dropdown } from "@vkontakte/icons";
 import style from "./Title.module.css";
-import { NewsTab } from "../../Tables/NewsTab";
+import { NewsTab } from "../../Tables/NewsActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
 

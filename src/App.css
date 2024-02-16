@@ -21,38 +21,4 @@
   display: flex;
   width: 604px;
   height: 100%;
-}/*
-.containerSearch {
-  height: 34px;
-  display: flex;
-  width: 284px;
-  flex-direction: row;
-  position: relative;
-  animation-direction: reverse;
-  animation-name: container;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
-  transition-duration: 3s;
-  animation-fill-mode: forwards;
-  transition-property: width;
 }
-.containerSearch.entering {
-}
-.containerSearch.entered {
-  position: absolute;
-  right: 80.5px;
-  top: 11px;
-  width: 380px;
-}
-.containerSearch.exiting {
-  width: 380px;
-  position: absolute;
-  right: 85px;
-  top: 12px;
-}
-.containerSearch.exited {
-  width: 380px;
-  position: absolute;
-  right: 91.5px;
-  top: 12px;
-}*/

@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import style from "./Tables.module.css";
 import ItemTabl from "../Common/ItemTabl/ItemTabl";
 
-const CreatePostTab = ({show, onShow, width,
+const CreatePostActions = ({show, onShow, width,
   height,
   radius}) => {
   const list = [
@@ -35,7 +35,7 @@ const CreatePostTab = ({show, onShow, width,
   });
   return (
     <div className={style.body}>
-      <div className={style.wrap} style={{borderRadius:radius, height:height, width:width }}>
+      <div className={style.container} style={{borderRadius:radius, height:height, width:width }}>
         <div className={style.title}>Публикация</div>
         <div className={style.buttons}>{buttonsList}</div>
       </div>

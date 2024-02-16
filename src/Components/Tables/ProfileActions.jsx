@@ -10,7 +10,7 @@ import {
 } from "@vkontakte/icons";
 import style from "./Tables.module.css";
 
-const ProfileMoreTab = ({ padding }) => {
+const ProfileActions = ({ padding }) => {
   const list = [
     { id: 1, text: "Редактировать профиль", iconLeft: <Icon28Profile /> },
     {
@@ -59,4 +59,4 @@ const ProfileMoreTab = ({ padding }) => {
   );
 };
 
-export default ProfileMoreTab;
+export default ProfileActions;

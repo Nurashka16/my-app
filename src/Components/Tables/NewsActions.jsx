@@ -8,7 +8,7 @@ import {
    Icon28SettingsOutline,
 } from "@vkontakte/icons";
 
-export const NewsTab = () => {
+export const NewsActions = () => {
    const list = [
       {
         id: 1,

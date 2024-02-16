@@ -9,7 +9,7 @@ const WrapWithButton = ({
   radius,
   border = null,
   position,
-  padding = "8px 0",
+  padding = "0",
   left,
   right,
   top,

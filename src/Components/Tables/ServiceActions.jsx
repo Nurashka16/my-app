@@ -7,7 +7,7 @@ import {
 } from "@vkontakte/icons";
 import style from "./Tables.module.css";
 
-export const ServiceTab = () => {
+export const ServiceActions = () => {
   const list = [
     { id: 1, text: "Вопросы в историях", iconLeft: <Icon28QuestionOutline /> },
     {
@@ -27,4 +27,3 @@ export const ServiceTab = () => {
     </div>
   );
 };
-/*      */

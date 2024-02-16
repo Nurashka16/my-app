@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import style from "./Search.module.css";
 import { Icon16SearchOutline } from "@vkontakte/icons";
-import { useClickOutside } from "../clickOutside";
-import { useEffect } from "react";
-import { Transition } from "react-transition-group";
-//Нужно придумать что делать с анимацией при исчезновении.
-//Либо как у вк или же поставить absolute, но уже через css.
 
 const Search = ({
   width,
@@ -21,17 +16,8 @@ const Search = ({
       onClick={(e) => onShow(!isShow)}
       style={{
         backgroundColor: "#ebedf0",
-        // width: `${isShow ? "356px" : width}`,
-        // transitionDuration: "0.5s",
-        // position: isShow && "absolute",
-        // animationName: "search",
-        // top: isShow && "12px",
-        // right: isShow && "90.5px",
-        // height: height,
-        // animationDirection: "reverse",
         borderRadius: borderRadius,
-        
-      }}
+      }}npm sta
     >
       <div className={style.icon}>
         <Icon16SearchOutline

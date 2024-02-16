@@ -13,6 +13,9 @@ import Alert from "../Common/Alert/Alert";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
+//добавить бургер "видно всем", новую страницу таймер,добавление фото, аудиозаписей,
+//доп. бургер и расширение страницы
+
 const CreatePost = (props) => {
   const navigate = useNavigate();
   const id = useSelector((state) => state.authPage.id);
