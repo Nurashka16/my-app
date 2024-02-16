@@ -3,10 +3,10 @@ import style from "./Title.module.css";
 import { Icon28ServicesOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
-import { ServiceTab } from "../../Tables/ServiceActions";
+import { ServiceActions } from "../../Profile/ServiceActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import { useState } from "react";
-import ProfileMoreTab from "../../Tables/ProfileActions";
+import ProfileActions from "../../Profile/ProfileActions";
 
 //по нажатию на search идет запрос на друзей и списком показывает
 const ProfileTitle = () => {
@@ -27,8 +27,8 @@ const ProfileTitle = () => {
       top: "63px",
       height: "217px",
       width: "216px",
-      padding:"8px 0" ,
-      tab: <ServiceTab />,
+      padding: "8px 0",
+      tab: <ServiceActions />,
     });
   };
 
@@ -39,7 +39,7 @@ const ProfileTitle = () => {
       top: "63px",
       height: "266px",
       width: "242px",
-      tab: <ProfileMoreTab padding="2.7px 16px" />,
+      tab: <ProfileActions padding="2.7px 16px" />,
     });
   };
   return (

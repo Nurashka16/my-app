@@ -6,7 +6,7 @@ import {
   Icon20Cancel,
 } from "@vkontakte/icons";
 import { Link } from "react-router-dom";
-import style from "./Tables.module.css";
+import style from "./ProfileActions.module.css";
 import ItemTabl from "../Common/ItemTabl/ItemTabl";
 
 const CreatePostActions = ({show, onShow, width,
@@ -49,4 +49,4 @@ const CreatePostActions = ({show, onShow, width,
   );
 };
 
-export default CreatePostTab;
+export default CreatePostActions;

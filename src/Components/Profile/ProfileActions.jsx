@@ -8,7 +8,7 @@ import {
   Icon28ArchiveOutline,
   Icon28StatisticsOutline,
 } from "@vkontakte/icons";
-import style from "./Tables.module.css";
+import style from "./ProfileActions.module.css";
 
 const ProfileActions = ({ padding }) => {
   const list = [

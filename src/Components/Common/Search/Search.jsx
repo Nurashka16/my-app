@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "./Search.module.css";
 import { Icon16SearchOutline } from "@vkontakte/icons";
 
+
 const Search = ({
   width,
   height,

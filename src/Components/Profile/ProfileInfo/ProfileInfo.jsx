@@ -1,15 +1,13 @@
 import React from "react";
 import style from "./ProfileInfo.module.css";
-import AvatarBlock from "../../AvatarBlock/AvatarBlock.jsx";
 import { Icon16WorkOutline } from "@vkontakte/icons";
 import { Icon16InfoOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon16PlaceOutline, Icon28UserAddedOutline } from "@vkontakte/icons";
 import Popup from "../../Common/Popup.jsx";
 import Avatar from "../../Common/Avatar/Avatar.jsx";
 import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix.js";
-import { AvatarTab } from "../../Tables/AvatarActions.jsx";
+import { AvatarActions } from "../AvatarActions.jsx";
 import { useState } from "react";
-import CreatePostTab from "../../Tables/CreatePostActions.jsx";
 import WrapWithButton from "../../Common/WrapWithButton/WrapWithButton.js";
 import { useRef } from "react";
 
@@ -29,7 +27,7 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
             width="174px"
             padding="0"
           >
-            <AvatarTab />
+            <AvatarActions />
           </MiniTablWithoutFix>
         }
       >

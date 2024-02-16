@@ -5,7 +5,7 @@ import {
   Icon28HistoryBackwardOutline,
   Icon28ListLikeOutline,
 } from "@vkontakte/icons";
-import style from "./Tables.module.css";
+import style from "./ProfileActions.module.css";
 
 export const ServiceActions = () => {
   const list = [

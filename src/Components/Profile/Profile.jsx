@@ -8,9 +8,9 @@ import {
   Icon24AddCircleOutline,
 } from "@vkontakte/icons";
 import { useState, useMemo } from "react";
-import BurgerPost from "../BurgerPost/BurgerPost";
+// import BurgerPost from "../BurgerPost/BurgerPost";
 import WrapWithButton from "../Common/WrapWithButton/WrapWithButton";
-import CreatePostTab from "../Tables/CreatePostActions";
+import CreatePostActions from "./CreatePostActions";
 import { useRef } from "react";
 
 const Profile = (props) => {
@@ -33,7 +33,7 @@ const Profile = (props) => {
             <>
               {show && (
                 <WrapWithButton height="100%" width="550px" padding="0">
-                  <CreatePostTab
+                  <CreatePostActions
                     width="430px"
                     height="201px"
                     radius="12px"

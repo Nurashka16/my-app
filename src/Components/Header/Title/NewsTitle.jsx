@@ -1,6 +1,6 @@
 import { Icon16Dropdown } from "@vkontakte/icons";
 import style from "./Title.module.css";
-import { NewsTab } from "../../Tables/NewsActions";
+import { NewsActions } from "../../Profile/NewsActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
 
@@ -32,7 +32,7 @@ const NewsTitle = () => {
             top="63px"
             border="1px solid #d7d8d9"
             padding="8px 0"
-          ><NewsTab/></MiniTablWithoutFix>
+          ><NewsActions/></MiniTablWithoutFix>
         )}
       </div>
     </div>
