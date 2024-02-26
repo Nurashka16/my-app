@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Title.module.css";
 import { Icon28ServicesOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import ButtonBack from "../../Common/ButtonBack/ButtonBack";
-import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
+import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix";
 import { ServiceActions } from "../../Profile/ServiceActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import { useState } from "react";
@@ -88,7 +88,7 @@ const ProfileTitle = () => {
           </div>
           <div>
             {isShow && (
-              <MiniTablWithoutFix
+              <WrapWithoutFix
                 top={data.top}
                 right={data.right}
                 radius="12px"
@@ -98,7 +98,7 @@ const ProfileTitle = () => {
                 padding={data.padding}
               >
                 {data.tab}
-              </MiniTablWithoutFix>
+              </WrapWithoutFix>
             )}
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./MiniTablWithoutFix.module.css";
+import style from "./WrapWithoutFix.module.css";
 
 const MiniTablWithoutFix = ({
   margin,

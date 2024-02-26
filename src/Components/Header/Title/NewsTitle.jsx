@@ -2,7 +2,7 @@ import { Icon16Dropdown } from "@vkontakte/icons";
 import style from "./Title.module.css";
 import { NewsActions } from "../../Profile/NewsActions";
 import { useClickOutside } from "../../Common/clickOutside";
-import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix";
+import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix";
 
 const NewsTitle = () => {
   const { ref: menuRef, isShow, onShow } = useClickOutside();
@@ -23,7 +23,7 @@ const NewsTitle = () => {
       </div>
       <div>
         {isShow && (
-          <MiniTablWithoutFix
+          <WrapWithoutFix
             width="260px"
             height="210px"
             radius="12px"
@@ -32,7 +32,7 @@ const NewsTitle = () => {
             top="63px"
             border="1px solid #d7d8d9"
             padding="8px 0"
-          ><NewsActions/></MiniTablWithoutFix>
+          ><NewsActions/></WrapWithoutFix>
         )}
       </div>
     </div>

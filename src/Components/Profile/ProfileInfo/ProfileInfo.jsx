@@ -5,7 +5,7 @@ import { Icon16InfoOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import { Icon16PlaceOutline, Icon28UserAddedOutline } from "@vkontakte/icons";
 import Popup from "../../Common/Popup.jsx";
 import Avatar from "../../Common/Avatar/Avatar.jsx";
-import MiniTablWithoutFix from "../../Common/MiniTablWithoutFix/MiniTablWithoutFix.js";
+import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix.js";
 import { AvatarActions } from "../AvatarActions.jsx";
 import { useState } from "react";
 import WrapWithButton from "../../Common/WrapWithButton/WrapWithButton.js";
@@ -22,7 +22,7 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
     <div className={style.info} id={id}>
       <Popup
         burger={
-          <MiniTablWithoutFix
+          <WrapWithoutFix
             right="-30%"
             top="104%"
             position="absolute"
@@ -32,7 +32,7 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
             padding="0"
           >
             <AvatarActions />
-          </MiniTablWithoutFix>
+          </WrapWithoutFix>
         }
       >
         <Avatar style={{ borderColor: "black" }} width="101px" height="99px" />
