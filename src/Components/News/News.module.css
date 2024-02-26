@@ -2,66 +2,101 @@
    display: flex;
    flex-direction: column;
    margin-top: 9px;
+   height: 100%;
    width: 603px;
-   row-gap: 10px;
+   row-gap: 8px;
 }
 .status {
-   height: 100px;
+   border: #e1e3e6 solid 1px;
+   padding: 0 0 0 0;
+   width: 100%;
+   height: 100%;
    background-color: white;
-   border-radius: 15px;
+   border-radius: 19px;
    display: flex;
    flex-direction: row;
-   border: rgba(0, 0, 0, 0.05) solid 1px;
+   border: #e1e3e6 solid 1px;
+   overflow: hidden;
+   
+   /* padding: 0 8px; */
 }
 .status_content {
-   padding: 12px 2px;
+   padding: 13px 2px;
+   height: 100%;
    width: 80px;
    text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
 }
 .status_img {
-   width: 57px;
-   height: 57px;
+   width: 60.5px;
+   height: 60.5px;
    border-radius: 50%;
    border: 3px solid white;
    outline: 2px solid #2688eb;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 .status_name {
    font-size: 12px;
    color: #2688eb;
+   width: 76px;
+   height: 14px;
    white-space: nowrap;
    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
    font-weight: bolder;
+   padding: 0px 0.5px 0 8px;
+   font-weight: 600;
+   line-height: 14px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
 }
-.record {
-   border: rgba(0, 0, 0, 0.05) solid 1px;
+.newPost {
+   border: #e1e3e6 solid 1px;
+   padding: 8px 0;
    width: 100%;
-   height: 55px;
+   height: 56px;
    background-color: white;
-   border-radius: 20px;
-}
-.record_content {
+   border-radius: 18px;
    display: flex;
-   height: 55px;
+   align-items: center;
+   justify-content: center;
+}
+.newPost_container {
+   display: flex;
+
+   height: 40px;
    width: 100%;
    align-items: center;
    padding: 0px 15px;
    flex-direction: row;
    justify-content: space-between;
 }
+.newPost_link {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   column-gap: 10px;
+}
 .record_img {
    width: 40px;
    height: 40px;
    border-radius: 50%;
 }
-.record_input {
-   width: 400px;
+.newPost_input {
+   width: 436px;
    height: 35px;
-   padding-left: 10px;
+   padding-left: 12px;
    border-radius: 7px;
    outline: none;
    background: #ebedf0;
    color: black;
    border: none;
+   font-size: 15px;
 }
 .record_clip {
    height: 20px;
@@ -72,106 +107,11 @@
    width: 20px;
 }
 .wall {
-   width: 100%;
-   height: 620px;
-}
-.news_content {
-   border: rgba(0, 0, 0, 0.05) solid 1px;
-   border-radius: 15px;
-   background-color: white;
-   height: 620px;
-   width: 100%;
-}
-.news_head {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   padding: 15px;
-}
-.news_info {
-   display: flex;
-
-}
-.news_imgFrame {
-   width: 55px;
-   height: 40px;
-}
-.news_img {
-   width: 40px;
-   height: 40px;
-   border-radius: 50%;
-   /* border: 1px solid white;
-   outline: 1px solid black;*/
-}
-.news_groupName {
-   font-size: 15px;
-   color: #2C2D2E;
-   font-weight: 600;
-}
-.news_date {
-   color: #818C99;
-   font-size: 13px;
-}
-.news_media {
-   height: 500px;
-   outline: none;
-   border: none;
-
-   /*border-radius: 15px;*/
-}
-.news_mediaImg {
-   padding: 10px;
+   /* border: #e1e3e6 solid 1px; */
    width: 100%;
    height: 100%;
-   border-radius: 20px;
-
-}
-.news_foot{
    display: flex;
-   height: 50px;
-     justify-content: space-between;
-   align-items: center;
-   margin: 0 15px;
-
-}
-.reaction {
-   display: flex;
-   align-items: center;
-   column-gap: 10px;
-}
-.likes {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 50px;
-   height: 30px;
-   background-color: #ebedf0;
-   border-radius: 15px;
-}
-.comments {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 50px;
-   height: 30px;
-   background-color: #ebedf0;
-   border-radius: 15px;
-   margin: 0 auto;
-}
-.share {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 50px;
-   height: 30px;
-   background-color: #ebedf0;
-   border-radius: 15px;
-}
-.views {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   width: 50px;
-   height: 30px;
-   border-radius: 15px;
+   /* border-radius: 20px; */
+   flex-direction: column;
+   row-gap: 10px;
 }

@@ -17,7 +17,7 @@ const Profile = (props) => {
   let messagesItems = props.posts.map((m) => (
     <Post key={m.id} id={m.id} message={m.message} number={m.number} />
   ));
-  const [show, onShow] = useState(false);
+  const [isShowPublication, onShowPublication] = useState(false);
   // const ref = useRef(undefined);
   //   const offScroll = () => {
   //     ref.current?.offsetParent.style
@@ -31,18 +31,28 @@ const Profile = (props) => {
           id={props.ownerId}
           children={
             <>
-              {show && (
-                <WrapWithButton height="100%" width="550px" padding="0">
+              {isShowPublication && (
+                <WrapWithButton
+                  height="100%"
+                  width="550px"
+                  padding="0"
+                  position="fixed"
+                  top="35%"
+                  left=" 40%"
+                >
                   <CreatePostActions
                     width="430px"
                     height="201px"
                     radius="12px"
-                    onShow={onShow}
-                    show={show}
+                    onShow={onShowPublication}
+                    show={isShowPublication}
                   />
                 </WrapWithButton>
               )}
-              <div className={style.info_btn} onClick={() => onShow(!show)}>
+              <div
+                className={style.info_btn}
+                onClick={() => onShowPublication(!isShowPublication)}
+              >
                 <Icon24AddCircleOutline />
                 Опубликовать
               </div>

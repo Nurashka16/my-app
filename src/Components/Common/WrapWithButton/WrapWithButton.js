@@ -15,6 +15,8 @@ const WrapWithButton = ({
   top,
   bottom,
   index = "30",
+  margin,
+  marginTop
 }) => {
   return (
     <div ref={ref} className={style.block}>
@@ -32,6 +34,8 @@ const WrapWithButton = ({
           top: top,
           bottom: bottom,
           index,
+          margin: margin,
+          marginTop: marginTop,
         }}
       >
         {children}

@@ -19,7 +19,34 @@ let initialState = {
     },
   ],
   isFetching: false,
-  userInfo: {},
+  userInfo: {
+    avatar: "",
+    email: "",
+    firstName: "",
+    follow: "",
+    id: "",
+    lastName: "",
+  },
+  userInfoDetails: {
+    birthday: "16.02.2001",
+    city: "Москва",
+    work: "нигде",
+    familyStatus: "замужем",
+    nik: "@idonia",
+    status: "",
+    id: "",
+    firstName: "",
+    lastName: "",
+    avatar: "",
+  },
+  ownerInfo: {
+    dateOfBirth: "16.02.2001",
+    city: "Москва",
+    placeOfWork: "нигде",
+    familyStatus: "замужем",
+    nik: "@idonia",
+    status: "",
+  },
 };
 
 const profileReducer = (state = initialState, action) => {
