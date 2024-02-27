@@ -6,10 +6,10 @@ import { Icon16PlaceOutline } from "@vkontakte/icons";
 import Popup from "../../Common/Popup.jsx";
 import Avatar from "../../Common/Avatar/Avatar.jsx";
 import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix.js";
-import { AvatarActions } from "../AvatarActions.jsx";
+import { AvatarActions } from "../Interaction/AvatarActions.jsx";
 import { useState } from "react";
 import WrapWithButton from "../../Common/WrapWithButton/WrapWithButton.js";
-import DetailedAccountInfo from "./DetailedAccountInfo.jsx";
+import DetailedAccountInfo from "../Interaction/DetailedAccountInfo.jsx";
 import { useSelector } from "react-redux";
 
 const ProfileInfo = ({ name, avatar, id, children }) => {

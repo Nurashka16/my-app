@@ -6,7 +6,7 @@ import {
 } from "@vkontakte/icons";
 import { Link } from "react-router-dom";
 import style from "./ProfileActions.module.css";
-import ItemTabl from "../Common/ItemTabl/ItemTabl";
+import ItemTabl from "../../Common/ItemTabl/ItemTabl";
 
 const CreatePostActions = ({ width, height, radius }) => {
   const list = [

@@ -7,7 +7,7 @@
    flex-direction: column;
    border-radius: 20px;
    background-repeat: no-repeat;
-   background-size: 100% 60%;
+   background-size: 99.9% 60%;
    background-position: top;
    background-image: url("https://traveling.by/files/images/2018/04/5d63d9c055f5c8ca1394aa37d7da0cf8-thumb-940x0.jpg");
 }
@@ -19,7 +19,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   border: 1px solid #e1e3e6;
+   border: 1.5px solid #e1e3e6;
    background-color: white;
    padding: 63px 16px 16px;
    justify-content: space-between;

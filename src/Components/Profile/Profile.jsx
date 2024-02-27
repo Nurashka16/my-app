@@ -1,12 +1,13 @@
 import style from "./Profile.module.css";
-import OwnerProfile from "./OwnerProfile";
+import OwnerProfile from "./ProfileInfo/OwnerProfile";
 import Wall from "../News/Wall/Wall";
-import UserProfile from './UserProfile';
-//нужно разделить данные для поста на 2, чтобы в owner/userProfile возвращались и свои посты  
+import UserProfile from "./ProfileInfo/UserProfile";
+//нужно разделить данные для поста на 2, чтобы в owner/userProfile возвращались и свои посты
 
 const Profile = (props) => {
   let posts = props.posts.map((post) => (
-    <Wall name={props.ownerFullName}
+    <Wall
+      name={props.ownerFullName}
       key={post.id}
       id={post.id}
       text={post.text}

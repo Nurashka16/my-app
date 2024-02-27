@@ -1,13 +1,10 @@
 import React from "react";
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import ProfileInfo from "./ProfileInfo";
 import { Icon24MoreHorizontal, Icon24UserAddedOutline } from "@vkontakte/icons";
-import {
-  Icon24MessageOutline,
-  Icon24PhoneOutline,
-} from "@vkontakte/icons";
+import { Icon24MessageOutline, Icon24PhoneOutline } from "@vkontakte/icons";
 import style from "./Profile.module.css";
 
-const UserProfile = ({avatar, id, name}) => {
+const UserProfile = ({ avatar, id, name }) => {
   return (
     <>
       <ProfileInfo

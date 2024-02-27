@@ -1,4 +1,4 @@
-import ItemTabl from "../Common/ItemTabl/ItemTabl";
+import ItemTabl from "../../Common/ItemTabl/ItemTabl";
 import React from "react";
 import {
   Icon28Profile,
