@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileInfo from "./ProfileInfo";
+import ProfileInfo from "./Profile";
 import { Icon24MoreHorizontal, Icon24UserAddedOutline } from "@vkontakte/icons";
 import { Icon24MessageOutline, Icon24PhoneOutline } from "@vkontakte/icons";
 import style from "./Profile.module.css";

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import style from "../Profile/ProfileInfo/ProfileInfo.module.css";
+import style from "../ProfilePage/Profile/Profile.module.css";
 import { cloneElement } from "react";
 import { useRef } from "react";
 import { useClickOutside } from "./clickOutside";

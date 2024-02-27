@@ -1,6 +1,6 @@
 import { Icon16Dropdown } from "@vkontakte/icons";
 import style from "./Title.module.css";
-import { NewsActions } from "../../Profile/NewsActions";
+import { NewsActions } from "../../ProfilePage/Interaction/NewsActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix";
 

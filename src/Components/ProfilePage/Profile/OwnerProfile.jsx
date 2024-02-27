@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileInfo from "./ProfileInfo";
 import WrapWithButton from "../../Common/WrapWithButton/WrapWithButton";
-import CreatePostActions from "../Interaction/CreatePostActions";
+import CreatePostActions from "../../ProfilePage/Interaction/CreatePostActions";
 import { useState } from "react";
 import style from "./Profile.module.css";
 import { Icon24AddCircleOutline } from "@vkontakte/icons";

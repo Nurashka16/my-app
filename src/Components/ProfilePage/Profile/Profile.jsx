@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./ProfileInfo.module.css";
+import style from "./Profile.module.css";
 import { Icon16WorkOutline } from "@vkontakte/icons";
 import { Icon16InfoOutline } from "@vkontakte/icons";
 import { Icon16PlaceOutline } from "@vkontakte/icons";
@@ -12,7 +12,7 @@ import WrapWithButton from "../../Common/WrapWithButton/WrapWithButton.js";
 import DetailedAccountInfo from "../Interaction/DetailedAccountInfo.jsx";
 import { useSelector } from "react-redux";
 
-const ProfileInfo = ({ name, avatar, id, children }) => {
+const Profile = ({ name, avatar, id, children }) => {
   const info = useSelector((state) => state.profilePage.userInfoDetails);
   // const ref = useRef(undefined);
   // console.log(ref.current?.offsetParent);
@@ -91,4 +91,4 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
   );
 };
 
-export default ProfileInfo;
+export default Profile;

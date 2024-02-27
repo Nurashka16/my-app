@@ -3,10 +3,10 @@ import style from "./Title.module.css";
 import { Icon28ServicesOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix";
-import { ServiceActions } from "../../Profile/ServiceActions";
+import { ServiceActions } from "../../ProfilePage/Interaction/ServiceActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import { useState } from "react";
-import ProfileActions from "../../Profile/ProfileActions";
+import ProfileActions from "../../ProfilePage/Interaction/ProfileActions";
 
 //по нажатию на search идет запрос на друзей и списком показывает
 const ProfileTitle = () => {

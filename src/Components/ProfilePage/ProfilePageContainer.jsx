@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import Profile from "./Profile";
+import Profile from "./Profile/Profile";
 import { addPost, setProfile } from "../../redux/profile-reducer";
 import { useEffect, useMemo } from "react";
 import {
@@ -9,7 +9,7 @@ import {
   getStateIsFetching,
   getStateOwnerId,
   getStateOwnerFullName,
-  getStateOwnerAvatar
+  getStateOwnerAvatar,
 } from "../Common/Selector";
 import Preloader from "../Preloader/preloader";
 

@@ -7,25 +7,25 @@ import HomeAuth from "./Components/Auth/HomeAuth/HomeAuth.jsx";
 import AuthPageRouter from "./Components/Auth/AuthPageRouter/AuthPageRouter";
 import Layout from "./Components/Layout";
 
-const UsersContainer = lazy(() => import("./Components/Users/UsersContainer"));
+const UsersPageContainer = lazy(() => import("./Components/Users/UsersContainer"));
 
 const LowMusicsContainer = lazy(() =>
   import("./Components/Music/MusicsContainer")
 );
-const News = lazy(() => import("./Components/News/NewsContainer"));
-const ProfileContainer = lazy(() =>
-  import("./Components/Profile/ProfileContainer")
+const NewsPage = lazy(() => import("./Components/News/NewsContainer"));
+const ProfilePageContainer = lazy(() =>
+  import("./Components/ProfilePage/ProfilePageContainer.jsx")
 );
 const EmptyPage = lazy(() => import("./Components/EmptyPage/EmptyPage"));
 const Recommendation = lazy(() =>
   import("./Components/RecommendationPage/Recommendation")
 );
-const MailContainer = lazy(() => import("./Components/Mail/MailContainer"));
-const DialogContainer = lazy(() =>
+const MailPageContainer = lazy(() => import("./Components/Mail/MailContainer"));
+const DialogPageContainer = lazy(() =>
   import("./Components/Mail/Dialog/DialogContainer")
 );
 const NoticePage = lazy(() => import("./Components/NoticePage/NoticePage"));
-const CreatePost = lazy(() => import("./Components/CreatePostPage/CreatePost"));
+const CreatePostPage = lazy(() => import("./Components/CreatePostPage/CreatePost"));
 
 const App = (props) => {
   return (
@@ -36,11 +36,11 @@ const App = (props) => {
       {/*privet*/}
       <Route element={<RequireAuth />}>
         <Route element={<Layout />}>
-          <Route path="/" element={<News />} />
-          <Route path="/profile" element={<ProfileContainer />}>
-            <Route path=":id" element={<ProfileContainer />} />
+          <Route path="/" element={<NewsPage />} />
+          <Route path="/profile" element={<ProfilePageContainer />}>
+            <Route path=":id" element={<ProfilePageContainer />} />
           </Route>
-          <Route path="/createPost" element={<CreatePost props={addPost} />} />
+          <Route path="/createPost" element={<CreatePostPage props={addPost} />} />
           <Route path="/notice" element={<NoticePage />} />
           <Route path="/communities" element={<EmptyPage />} />
           <Route path="/photos" element={<EmptyPage />} />
@@ -54,9 +54,9 @@ const App = (props) => {
           <Route path="/market" element={<EmptyPage />} />
           <Route path="/reaction" element={<EmptyPage />} />
           <Route path="/search" element={<EmptyPage />} />
-          <Route path="/mail" element={<MailContainer />} />
-          <Route path="/dialog/:id" element={<DialogContainer />} />
-          <Route path="/friends" element={<UsersContainer />} />
+          <Route path="/mail" element={<MailPageContainer />} />
+          <Route path="/dialog/:id" element={<DialogPageContainer />} />
+          <Route path="/friends" element={<UsersPageContainer />} />
           <Route path="/musics" element={<LowMusicsContainer />} />
           <Route path="/recommendation" element={<Recommendation />} />
         </Route>
