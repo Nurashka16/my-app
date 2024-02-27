@@ -42,7 +42,7 @@ const ProfileActions = ({ padding }) => {
         {(el.id == 2 || el.id == 4) && (
           <div
             style={{
-              height: "1.2px",
+              height: "1.05px",
               margin: "0 auto",
               width: "90%",
               backgroundColor: "rgba(199, 199, 199, 0.7)",

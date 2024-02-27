@@ -10,22 +10,22 @@ import Content from "./Content";
 import Header from "./Header";
 import Description from "./Description";
 
-const Wall = ({ post }) => {
+const Wall = ({avatar, name, date, text, img, like, comments, share, viewed }) => {
   return (
     <div className={style.wall}>
       <div className={style.news_content}>
         <Header
-          img={post.communityImg}
-          name={post.communityName}
-          date={post.date}
+          img={avatar}
+          name={name}
+          date={date}
         />
-        <Description text={post.text} />
-        <Content img={post.img} />
+        <Description text={text} />
+        <Content img={img} />
         <Reaction
-          like={post.like}
-          comments={post.comments}
-          share={post.share}
-          viewed={post.viewed}
+          like={like}
+          comments={comments}
+          share={share}
+          viewed={viewed}
         />
       </div>
     </div>

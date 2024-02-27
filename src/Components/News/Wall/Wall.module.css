@@ -37,6 +37,12 @@
 }
 .info_data {
    color: #818c99;
+
+
+}
+
+.date {
+   margin-top: 2px;
    font-size: 13px;
 }
 .wrap {

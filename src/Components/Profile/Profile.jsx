@@ -1,23 +1,25 @@
 import style from "./Profile.module.css";
-import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import Post from "./Post/Post";
-import { Icon24MoreHorizontal, Icon24UserAddedOutline } from "@vkontakte/icons";
-import {
-  Icon24MessageOutline,
-  Icon24PhoneOutline,
-  Icon24AddCircleOutline,
-} from "@vkontakte/icons";
-import { useState, useMemo } from "react";
-// import BurgerPost from "../BurgerPost/BurgerPost";
-import WrapWithButton from "../Common/WrapWithButton/WrapWithButton";
-import CreatePostActions from "./CreatePostActions";
-import { useRef } from "react";
+import OwnerProfile from "./OwnerProfile";
+import Wall from "../News/Wall/Wall";
+import UserProfile from './UserProfile';
+//нужно разделить данные для поста на 2, чтобы в owner/userProfile возвращались и свои посты  
 
 const Profile = (props) => {
-  let messagesItems = props.posts.map((m) => (
-    <Post key={m.id} id={m.id} message={m.message} number={m.number} />
+  let posts = props.posts.map((post) => (
+    <Wall name={props.ownerFullName}
+      key={post.id}
+      id={post.id}
+      text={post.text}
+      number={post.number}
+      like={post.like}
+      comments={post.comments}
+      share={post.share}
+      viewed={post.viewed}
+      date={post.date}
+      img={post.img}
+    />
   ));
-  const [isShowPublication, onShowPublication] = useState(false);
+
   // const ref = useRef(undefined);
   //   const offScroll = () => {
   //     ref.current?.offsetParent.style
@@ -25,79 +27,19 @@ const Profile = (props) => {
   return (
     <div className={style.container}>
       {props.ownerId == props.userInfo.id ? (
-        <ProfileInfo
-          avatar={props.ownerAvatar}
+        <OwnerProfile
           name={props.ownerFullName}
           id={props.ownerId}
-          children={
-            <>
-              {isShowPublication && (
-                <WrapWithButton
-                  height="100%"
-                  width="550px"
-                  padding="0"
-                  position="fixed"
-                  top="35%"
-                  left=" 40%"
-                >
-                  <CreatePostActions
-                    width="430px"
-                    height="201px"
-                    radius="12px"
-                    onShow={onShowPublication}
-                    show={isShowPublication}
-                  />
-                </WrapWithButton>
-              )}
-              <div
-                className={style.info_btn}
-                onClick={() => onShowPublication(!isShowPublication)}
-              >
-                <Icon24AddCircleOutline />
-                Опубликовать
-              </div>
-            </>
-          }
+          avatar={props.ownerId}
         />
       ) : (
-        <ProfileInfo
+        <UserProfile
           avatar={props.userInfo.avatar}
           name={props.userInfo.firstName + " " + props.userInfo.lastName}
           id={props.userInfo.id}
-          children={
-            <div className={style.info_footer}>
-              {/*переименовать переменные*/}
-              <div
-                className={style.info_btn_send}
-                onClick={() => console.log(5)}
-              >
-                <div className={style.info_icon__send}>
-                  <Icon24MessageOutline />
-                </div>
-                Сообщение
-              </div>
-              <div className={style.info_additional}>
-                <div className={style.info_btnContainer}>
-                  <div className={style.info_btn__icon}>
-                    <Icon24PhoneOutline />
-                  </div>
-                </div>
-                <div className={style.info_btnContainer}>
-                  <div className={style.info_btn__icon}>
-                    <Icon24UserAddedOutline />
-                  </div>
-                </div>
-                <div className={style.info_btnContainer}>
-                  <div className={style.info_btn__icon}>
-                    <Icon24MoreHorizontal />
-                  </div>
-                </div>
-              </div>
-            </div>
-          }
         />
       )}
-      <div className={style.content}>{messagesItems}</div>
+      <div className={style.content}>{posts}</div>
     </div>
   );
 };

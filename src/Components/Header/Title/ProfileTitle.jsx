@@ -71,20 +71,14 @@ const ProfileTitle = () => {
             paddingBottom: "0.5px",
           }}
         >
-          <div
-            className={style.title_icon}
-            ref={menuRef}
-            onClick={() => onClickService()}
-          >
-            <Icon28ServicesOutline />
+          <div className={style.title_icon}>
+            <Icon28ServicesOutline
+              ref={menuRef}
+              onClick={() => onClickService()}
+            />
           </div>
-          <div
-            className={style.title_icon}
-            style={{ fontSize: "20px" }}
-            ref={menuRef}
-            onClick={() => onClickMore()}
-          >
-            <Icon28MoreHorizontal />
+          <div className={style.title_icon} style={{ fontSize: "20px" }}>
+            <Icon28MoreHorizontal ref={menuRef} onClick={() => onClickMore()} />
           </div>
           <div>
             {isShow && (

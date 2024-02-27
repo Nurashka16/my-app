@@ -92,9 +92,6 @@ const DetailedAccountInfo = ({ show, onShow, width, height, radius, info }) => {
         <div className={style.infoContainer}>{infoBlock}</div>
         <div className={style.buttons}>{buttonsList}</div>
       </div>
-      <div className={style.btn_close} onClick={() => onShow(!show)}>
-        <Icon20Cancel />
-      </div>
     </div>
   );
 };

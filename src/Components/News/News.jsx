@@ -9,7 +9,21 @@ const News = (props) => {
   const posts = useSelector((state) => state.newsPage.posts);
   const ownerImg = useSelector((state) => state.authPage.avatar);
   const stories = useSelector((state) => state.newsPage.stories);
-  const walls = posts.map((post) => <Wall post={post} />);
+  const walls = posts.map((post) => (
+    <Wall
+      name={post.communityName}
+      key={post.id}
+      id={post.id}
+      text={post.text}
+      number={post.number}
+      like={post.like}
+      comments={post.comments}
+      share={post.share}
+      viewed={post.viewed}
+      date={post.date}
+      img={post.img}
+    />
+  ));
   const status = stories.map((stories) => <Status stories={stories} />);
   const ref = useRef();
   /**
@@ -22,8 +36,10 @@ const News = (props) => {
   };
   return (
     <div className={style.container}>
-      <div className={style.status} ref={ref} 
-       onWheel={(e) => setScroll(e)}
+      <div
+        className={style.status}
+        ref={ref}
+        //  onWheel={(e) => setScroll(e)}
       >
         {status}
       </div>

@@ -8,7 +8,7 @@ import { useState } from "react";
 import ClipAction from "./ClipAction";
 
 const NewPost = ({ ownerImg }) => {
-  const [isShow, onShow] = useState(false);
+  const [isShow, setShow] = useState(false);
   return (
     <div className={style.newPost_container}>
       <Link className={style.newPost_link} to={"./createPost"}>
@@ -22,13 +22,13 @@ const NewPost = ({ ownerImg }) => {
         </form>
       </Link>
       {isShow && (
-        <WrapWithButton width="440px" height="205px">
+        <WrapWithButton isShow={isShow} setShow={setShow}>
           <ClipAction />
         </WrapWithButton>
       )}
       <Icon28LogoClipsOutline
         color="#2688eb"
-        onClick={(e) => onShow(!isShow)}
+        onClick={(e) => setShow(!isShow)}
       />
       <Icon28PictureOutline color="#2688eb" />
     </div>

@@ -3,15 +3,12 @@ import {
   Icon28WriteSquareOutline,
   Icon28PictureOutline,
   Icon28LogoClipsOutline,
-  Icon20Cancel,
 } from "@vkontakte/icons";
 import { Link } from "react-router-dom";
 import style from "./ProfileActions.module.css";
 import ItemTabl from "../Common/ItemTabl/ItemTabl";
 
-const CreatePostActions = ({show, onShow, width,
-  height,
-  radius}) => {
+const CreatePostActions = ({ width, height, radius }) => {
   const list = [
     {
       id: 1,
@@ -35,15 +32,12 @@ const CreatePostActions = ({show, onShow, width,
   });
   return (
     <div className={style.body}>
-      <div className={style.container} style={{borderRadius:radius, height:height, width:width }}>
+      <div
+        className={style.container}
+        style={{ borderRadius: radius, height: height, width: width }}
+      >
         <div className={style.title}>Публикация</div>
         <div className={style.buttons}>{buttonsList}</div>
-      </div>
-      <div
-        className={style.btn_close}
-         onClick={() => onShow(!show)}
-      >
-        <Icon20Cancel />
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./ProfileInfo.module.css";
 import { Icon16WorkOutline } from "@vkontakte/icons";
-import { Icon16InfoOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
-import { Icon16PlaceOutline, Icon28UserAddedOutline } from "@vkontakte/icons";
+import { Icon16InfoOutline } from "@vkontakte/icons";
+import { Icon16PlaceOutline } from "@vkontakte/icons";
 import Popup from "../../Common/Popup.jsx";
 import Avatar from "../../Common/Avatar/Avatar.jsx";
 import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix.js";
@@ -15,9 +15,8 @@ import { useSelector } from "react-redux";
 const ProfileInfo = ({ name, avatar, id, children }) => {
   const info = useSelector((state) => state.profilePage.userInfoDetails);
   // const ref = useRef(undefined);
-  // console.log(ref.current?.offsetParent); 
-   console.log(info);
-  const [isShowInfo, onShowInfo] = useState(false);
+  // console.log(ref.current?.offsetParent);
+  const [isShowInfo, setShowInfo] = useState(false);
   return (
     <div className={style.info} id={id}>
       <Popup
@@ -40,28 +39,22 @@ const ProfileInfo = ({ name, avatar, id, children }) => {
       <div className={style.info_content}>
         {isShowInfo && (
           <WrapWithButton
-            height="100%"
-            width="550px"
+            isShow={isShowInfo}
+            setShow={setShowInfo}
             padding="0"
-            position="fixed"
-            top="25%"
-            // bottom="0"
-    //         top="50%"
-    // marginTop="0.625em"
             left="33.5%"
           >
-            <DetailedAccountInfo info={info}
+            <DetailedAccountInfo
+              info={info}
               width="430px"
               height="100%"
               radius="12px"
-              onShow={onShowInfo}
-              show={isShowInfo}
             />
           </WrapWithButton>
         )}
         <div
           className={style.info_personInfo}
-          onClick={(e) => onShowInfo(!isShowInfo)}
+          onClick={(e) => setShowInfo(!isShowInfo)}
         >
           <div className={style.info_name}>
             {name}
