@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
-import Profile from "./Profile/Profile";
+import ProfilePage from "./ProfilePage";
 import { addPost, setProfile } from "../../redux/profile-reducer";
 import { useEffect, useMemo } from "react";
 import {
@@ -22,7 +22,7 @@ const ProfileContainer = (props) => {
   return (
     <>
       <Preloader isFetching={props.isFetching} />
-      <Profile
+      <ProfilePage
         urlId={id}
         userInfo={props.userInfo}
         posts={props.posts}
@@ -43,6 +43,8 @@ const mapStateToProps = (state) => {
     ownerId: getStateOwnerId(state),
     ownerFullName: getStateOwnerFullName(state),
     ownerAvatar: getStateOwnerAvatar(state),
+    // friends: state.ProfilePage.friends,
+    // count: state.ProfilePage.count
   };
 };
 

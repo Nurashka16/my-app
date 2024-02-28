@@ -8,7 +8,7 @@ const Navbar = (props) => {
     return list.path == "profile" ? (
       <div className={style.ownerPanel} key={list.id}>
         <Link className={style.link} to={`/profile/${props.ownerId}`}>
-          <Avatar url={props.ownerAvatar} width="36px" height="36px" />
+          <Avatar url={props.ownerAvatar} width="30px" height="30px" />
           <div className={style.userName}>{props.ownerFullName}</div>
         </Link>
       </div>

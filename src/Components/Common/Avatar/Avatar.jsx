@@ -6,7 +6,7 @@ const Avatar = ({
   width,
   height,
   borderRadius = 50,
-  outline = "",
+  outline = "", border
 }) => {
   return (
     <img

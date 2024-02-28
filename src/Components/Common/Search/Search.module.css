@@ -4,7 +4,9 @@
    width: 284px;
    position: absolute;
    top: 11px;
-   right: 251px;
+   right: 18.3%;
+   /* left: 61.3%; */
+   /* right: 251px; */
    flex-direction: row;
    animation-name: container-small;
    animation-duration: 1s;
@@ -20,7 +22,8 @@
    flex-direction: row;
    height: 34px;
    top: 11px;
-   right: 251px;
+   right: 18.3%;
+   /* left: 61.3%; */
    position: absolute;
    z-index: 50;
    display: flex;

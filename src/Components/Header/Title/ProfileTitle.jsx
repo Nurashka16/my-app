@@ -7,11 +7,12 @@ import { ServiceActions } from "../../ProfilePage/Interaction/ServiceActions";
 import { useClickOutside } from "../../Common/clickOutside";
 import { useState } from "react";
 import ProfileActions from "../../ProfilePage/Interaction/ProfileActions";
+import { useRef } from "react";
 
 //по нажатию на search идет запрос на друзей и списком показывает
 const ProfileTitle = () => {
   const { ref: menuRef, isShow, onShow } = useClickOutside();
-
+  const ref = useRef();
   const [data, setData] = useState({
     right: undefined,
     top: undefined,

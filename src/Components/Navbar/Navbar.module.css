@@ -21,9 +21,9 @@
 .ownerPanel {
   height: 43.98px;
   width: 265px;
-  margin: 22px 3px 2px;
+  margin: 12px 3px 2px 8px;
   padding: 4px 0;
-  font-weight: 500;
+  font-weight: 400;
   display: flex;
   align-items: center;
   font-size: 15px;
@@ -62,39 +62,3 @@
 .text {
   padding: 0 0 2.5px 0;
 }
-  /*
-.item {
-  font-size: 15px;
-  padding: 8px 12px 8px 10px;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-}
-.item:hover {
-  background-color: rgb(211, 213, 216, 0.5);
-  border-radius: 5px;
-}
-.link {
-  text-decoration: none;
-  color: black;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-  column-gap: 10px;
-}
-.userName {
-  font-size: 15px;
-  font-weight: 500;
-}
-.userName:hover {
-  text-decoration: underline;
-}
-.ownerPanel {
-  font-size: 17px;
-  padding: 8px 12px 8px 10px;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-}
-*/

@@ -1,10 +1,16 @@
-import style from "./Profile.module.css";
-import OwnerProfile from "./ProfileInfo/OwnerProfile";
+import style from "./ProfilePage.module.css";
+import OwnerProfile from "./Profile/OwnerProfile";
 import Wall from "../News/Wall/Wall";
-import UserProfile from "./ProfileInfo/UserProfile";
+import UserProfile from "./Profile/UserProfile";
+import Friends from "./Friends/Friends";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import CreatePost from "./CreatePost/CreatePost";
 //нужно разделить данные для поста на 2, чтобы в owner/userProfile возвращались и свои посты
 
 const Profile = (props) => {
+  const count = useSelector((state) => state.profilePage.friendsCount);
+  const friends = useSelector((state) => state.profilePage.friends);
   let posts = props.posts.map((post) => (
     <Wall
       name={props.ownerFullName}
@@ -40,6 +46,12 @@ const Profile = (props) => {
           id={props.userInfo.id}
         />
       )}
+      <Link to="/friends" className={style.friends}>
+        <Friends users={friends} count={count} />
+      </Link>
+      <Link to="/createPost" className={style.createPOst}>
+        <CreatePost />
+      </Link>
       <div className={style.content}>{posts}</div>
     </div>
   );

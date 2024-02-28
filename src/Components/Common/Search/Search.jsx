@@ -18,7 +18,7 @@ const Search = ({
       style={{
         backgroundColor: "#ebedf0",
         borderRadius: borderRadius,
-      }}npm sta
+      }}
     >
       <div className={style.icon}>
         <Icon16SearchOutline

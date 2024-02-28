@@ -57,6 +57,21 @@ let initialState = {
     nik: "@idonia",
     status: "",
   },
+  friends: [{
+    id: 1,
+    name: "Маша",
+    avatar: "https://sun9-75.userapi.com/impg/mda-T0jNCgeE3lYT66RhUBR-b8RdNi6d9jxc7g/QvTnYbPO7aY.jpg?size=340x604&quality=95&sign=9ae52ad4ef3dd91d43c23fd89f79e5e5&type=album",
+    
+  },{
+    id: 2,
+    name: "Лена",
+    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTFCtEcT2eKKjWfH2kDtjZ5rUz96RdfnSFMw&usqp=CAU",
+  },{
+    id: 3,
+    name: "Петя",
+    avatar: "https://i.imgur.com/JELFi5u.jpg",
+  }],
+  friendsCount: "3",
 };
 
 const profileReducer = (state = initialState, action) => {
