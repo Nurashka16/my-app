@@ -1,4 +1,4 @@
-import ItemTabl from "../../Common/ItemTabl/ItemTabl";
+import ItemLink from "../../Common/ItemLink/ItemLink";
 import React from "react";
 import {
    Icon28NewsfeedOutline,
@@ -33,7 +33,7 @@ export const NewsActions = () => {
       },
     ];
   const buttonsList = list.map((el) => {
-    return <ItemTabl text={el.text} iconLeft={el.iconLeft} iconRight={el.iconRight} />;
+    return <ItemLink text={el.text} iconLeft={el.iconLeft} iconRight={el.iconRight} />;
   });
   return <div>{buttonsList}</div>;
 };

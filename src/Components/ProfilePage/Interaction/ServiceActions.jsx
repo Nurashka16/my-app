@@ -1,4 +1,4 @@
-import ItemTabl from "../../Common/ItemTabl/ItemTabl";
+import ItemLink from "../../Common/ItemLink/ItemLink";
 import React from "react";
 import {
   Icon28QuestionOutline,
@@ -18,7 +18,7 @@ export const ServiceActions = () => {
     { id: 3, text: "Мои желания", iconLeft: <Icon28ListLikeOutline /> },
   ];
   const buttonsList = list.map((el) => {
-    return <ItemTabl text={el.text} iconLeft={el.iconLeft} />;
+    return <ItemLink text={el.text} iconLeft={el.iconLeft} />;
   });
   return (
     <div className={style.wrap}>

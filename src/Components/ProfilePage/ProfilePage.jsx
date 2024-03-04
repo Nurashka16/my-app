@@ -6,6 +6,7 @@ import Friends from "./Friends/Friends";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CreatePost from "./CreatePost/CreatePost";
+import TabInterest from "./TabInterest/TabInterest";
 //нужно разделить данные для поста на 2, чтобы в owner/userProfile возвращались и свои посты
 
 const Profile = (props) => {
@@ -49,7 +50,11 @@ const Profile = (props) => {
       <Link to="/friends" className={style.friends}>
         <Friends users={friends} count={count} />
       </Link>
-      <Link to="/createPost" className={style.createPOst}>
+      <div className={style.tab}>
+        <TabInterest />
+      </div>
+
+      <Link to="/createPost" className={style.createPost}>
         <CreatePost />
       </Link>
       <div className={style.content}>{posts}</div>

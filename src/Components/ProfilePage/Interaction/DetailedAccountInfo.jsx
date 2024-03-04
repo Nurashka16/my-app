@@ -12,7 +12,7 @@ import {
 } from "@vkontakte/icons";
 import { Link } from "react-router-dom";
 import style from "./DetailedAccountInfo.module.css";
-import ItemTabl from "../../Common/ItemTabl/ItemTabl";
+import ItemLink from "../../Common/ItemLink/ItemLink";
 
 const DetailedAccountInfo = ({ show, onShow, width, height, radius, info }) => {
   const buttons = [
@@ -60,7 +60,7 @@ const DetailedAccountInfo = ({ show, onShow, width, height, radius, info }) => {
   const buttonsList = buttons.map((el) => {
     return (
       <Link className={style.burger_item} to={el.link}>
-        <ItemTabl id={el.id} text={el.text} iconLeft={el.iconLeft} />
+        <ItemLink id={el.id} text={el.text} iconLeft={el.iconLeft} />
       </Link>
     );
   });

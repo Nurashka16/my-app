@@ -10,7 +10,8 @@ const Button = ({
   width = "100%",
   isShow,
   setShow,
-  margin, fontsize
+  margin, fontsize,
+  padding
 }) => {
   return (
     <div
@@ -19,7 +20,8 @@ const Button = ({
         color: color,
         borderRadius: radius,
         height: height,
-        width: width,  margin:margin, fontSize: fontsize
+        width: width,  margin:margin, fontSize: fontsize,
+        padding: padding
       }}
       className={style.btn}
       onClick={() => setShow(!isShow)}

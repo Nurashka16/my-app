@@ -6,7 +6,7 @@ import {
 } from "@vkontakte/icons";
 import { Link } from "react-router-dom";
 import style from "./ProfileActions.module.css";
-import ItemTabl from "../../Common/ItemTabl/ItemTabl";
+import ItemLink from "../../Common/ItemLink/ItemLink";
 
 const CreatePostActions = ({ width, height, radius }) => {
   const list = [
@@ -26,7 +26,7 @@ const CreatePostActions = ({ width, height, radius }) => {
   const buttonsList = list.map((el) => {
     return (
       <Link className={style.burger_item} to={el.link && el.link}>
-        <ItemTabl text={el.text} iconLeft={el.iconLeft} />
+        <ItemLink text={el.text} iconLeft={el.iconLeft} />
       </Link>
     );
   });

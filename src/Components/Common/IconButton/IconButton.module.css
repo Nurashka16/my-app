@@ -1,0 +1,26 @@
+.icon {
+   color: #99a2ad;
+   height: 28px;
+   width: 28px;
+   background-color: white;
+   border-radius: 50%;
+   opacity: 0.7;
+   box-shadow:
+      0 0 2px rgba(0, 0, 0, 0.08),
+      0 4px 16px rgba(0, 0, 0, 0.08);
+   display: flex;
+   border: 1px solid #edeef0;
+   align-items: center;
+   justify-content: center;
+   /* position: relative;
+   z-index: 10; */
+   /* position: absolute;
+   z-index: 10;
+   right: 100px;
+   top: 100px; */
+   padding: 0 5px;
+   margin: 5px 10px;
+}
+.icon:hover {
+   opacity: 1;
+}

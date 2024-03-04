@@ -1,4 +1,4 @@
-import ItemTabl from "../../Common/ItemTabl/ItemTabl";
+import ItemLink from "../../Common/ItemLink/ItemLink";
 import React from "react";
 import {
   Icon28Profile,
@@ -38,7 +38,7 @@ const ProfileActions = ({ padding }) => {
   const buttonsList = list.map((el) => {
     return (
       <>
-        <ItemTabl text={el.text} iconLeft={el.iconLeft} padding={padding} />
+        <ItemLink text={el.text} iconLeft={el.iconLeft} padding={padding} />
         {(el.id == 2 || el.id == 4) && (
           <div
             style={{

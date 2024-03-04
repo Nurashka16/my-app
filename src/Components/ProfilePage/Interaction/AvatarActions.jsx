@@ -1,4 +1,4 @@
-import ItemTabl from "../../Common/ItemTabl/ItemTabl";
+import ItemLink from "../../Common/ItemLink/ItemLink";
 import React from "react";
 import {
   Icon20UserCircleOutline,
@@ -13,7 +13,7 @@ export const AvatarActions = () => {
     { id: 3, text: "Удалить фото", icon: <Icon20DeleteOutline /> },
   ];
   const buttonsList = list.map((el) => {
-    return <ItemTabl text={el.text} iconLeft={el.icon} />;
+    return <ItemLink text={el.text} iconLeft={el.icon} />;
   });
   return <div>{buttonsList}</div>;
 };

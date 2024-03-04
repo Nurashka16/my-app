@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import style from "./ItemTabl.module.css";
+import style from "./ItemLink.module.css";
 
-const ItemTabl = ({
+const ItemLink = ({
   iconLeft,
   text,
   id,
@@ -11,16 +11,29 @@ const ItemTabl = ({
   borderBottom,
   colorIcon,
   colorText,
+  paddingIcon,
+  height,
+  border,
+  radius,
+  boxShadow,
+  fontSize,
+  fontWeight,
 }) => {
   return (
     <div
       className={style.link}
+
       style={{
         colorIcon: colorIcon,
         colorText: colorText,
         padding: padding,
         margin: margin,
         borderBottom: borderBottom,
+        paddingIcon: paddingIcon,
+        height: height,
+        border: border,
+        borderRadius: radius,
+        boxShadow: boxShadow,
       }}
       key={id}
     >
@@ -29,6 +42,7 @@ const ItemTabl = ({
           <div
             className={style.icon}
             style={{
+              padding: paddingIcon,
               color: colorIcon,
             }}
           >
@@ -38,6 +52,8 @@ const ItemTabl = ({
         <div
           style={{
             color: colorText,
+            fontSize: fontSize,
+            fontWeight: fontWeight,
           }}
           className={style.text}
         >
@@ -48,6 +64,7 @@ const ItemTabl = ({
         <div
           className={style.icon_right}
           style={{
+            padding: paddingIcon,
             color: colorIcon,
           }}
         >
@@ -58,4 +75,4 @@ const ItemTabl = ({
   );
 };
 
-export default ItemTabl;
+export default ItemLink;
