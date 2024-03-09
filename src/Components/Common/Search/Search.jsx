@@ -4,7 +4,6 @@ import { Icon16SearchOutline } from "@vkontakte/icons";
 
 
 const Search = ({
-  width,
   height,
   borderRadius = "8px",
   text = "Поиск",

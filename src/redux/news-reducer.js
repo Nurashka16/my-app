@@ -91,6 +91,56 @@ let initialState = {
       name: "Ван пис",
       img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
     },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
+    {
+      id: 1,
+      name: "Ван пис",
+      img: "https://n1s1.hsmedia.ru/9d/58/dc/9d58dc855c7ffb64bb4bb70798010714/600x600_1_d57ad2ea87f26bcf4ad9e5f819e74c71@720x720_0xKjfrFMVU_1152301336622800367.jpg",
+    },
   ],
 };
 

@@ -1,7 +1,8 @@
 import React from "react";
-import style from "./Tabs.module.css";
+import style from "./Tab.module.css";
 
 const Tab = ({ iconLeft, id, iconRight, children }) => {
+  // :
   return (
     <div className={id == 1 ? style.isActive : style.button} key={id}>
       <div className={style.content}>

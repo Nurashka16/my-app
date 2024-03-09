@@ -55,7 +55,7 @@
 .search {
   display: flex;
   align-items: center;
-
+position: relative;
 }
 
 .header:after {

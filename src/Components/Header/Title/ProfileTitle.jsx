@@ -24,8 +24,8 @@ const ProfileTitle = () => {
   const onClickService = () => {
     onShow();
     setData({
-      right: "42%",
-      top: "63px",
+      right: "35px",
+      top: "35px",
       height: "217px",
       width: "216px",
       padding: "8px 0",
@@ -36,8 +36,8 @@ const ProfileTitle = () => {
   const onClickMore = () => {
     onShow();
     setData({
-      right: "25%",
-      top: "63px",
+      right: "-210px",
+      top: "35px",
       height: "266px",
       width: "242px",
       tab: <ProfileActions padding="2.7px 16px" />,
@@ -81,7 +81,7 @@ const ProfileTitle = () => {
           <div className={style.title_icon} style={{ fontSize: "20px" }}>
             <Icon28MoreHorizontal ref={menuRef} onClick={() => onClickMore()} />
           </div>
-          <div>
+          <div className={style.title_wrap}>
             {isShow && (
               <WrapWithoutFix
                 top={data.top}

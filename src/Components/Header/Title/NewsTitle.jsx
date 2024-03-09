@@ -28,11 +28,13 @@ const NewsTitle = () => {
             height="210px"
             radius="12px"
             position="absolute"
-            left="38%"
+            left="-4px"
             top="63px"
             border="1px solid #d7d8d9"
             padding="8px 0"
-          ><NewsActions/></WrapWithoutFix>
+          >
+            <NewsActions />
+          </WrapWithoutFix>
         )}
       </div>
     </div>

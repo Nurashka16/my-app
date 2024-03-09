@@ -5,8 +5,6 @@
    position: absolute;
    top: 11px;
    right: 18.3%;
-   /* left: 61.3%; */
-   /* right: 251px; */
    flex-direction: row;
    animation-name: container-small;
    animation-duration: 1s;

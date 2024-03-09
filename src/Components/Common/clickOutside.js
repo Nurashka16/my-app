@@ -9,12 +9,12 @@ export const useClickOutside = () => {
       return;
     }
     document.addEventListener("mousedown", handler);
-    //document.addEventListener("scroll", handler);
+    document.addEventListener("scroll", handler);
 
     return () => {
       document.removeEventListener("mousedown", handler);
+      document.addEventListener("scroll", handler);
     };
-    // document.addEventListener("scroll", handler);
   }, [isShow]);
 
   const handler = (e) => {

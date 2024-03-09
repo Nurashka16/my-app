@@ -83,7 +83,9 @@ const Menu = () => {
         <Tabs list={buttons} />
       </div>
 
-      <Content><Example/></Content>
+      <Content>
+        <Example />
+      </Content>
     </div>
   );
 };
