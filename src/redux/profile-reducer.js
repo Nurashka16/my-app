@@ -1,9 +1,11 @@
 import ProfileApi from "../API/ProfileApi";
+import mediaResourcesData from "../Components/ProfilePage/MediaResources/MediaResourcesData";
 
 const ADD_POST = "ADD_POST";
 const SET_USER = "SET_USER";
 const IS_FETCHING = "IS_FETCHING";
 const CLEAR_STATE = "CLEAR_STATE";
+const SET_MEDIA_RESOURCE = "SET_MEDIA_RESOURCE";
 
 let initialState = {
   posts: [
@@ -57,22 +59,27 @@ let initialState = {
     nik: "@idonia",
     status: "",
   },
-  friends: [{
-    id: 1,
-    name: "Маша",
-    avatar: "https://sun9-75.userapi.com/impg/mda-T0jNCgeE3lYT66RhUBR-b8RdNi6d9jxc7g/QvTnYbPO7aY.jpg?size=340x604&quality=95&sign=9ae52ad4ef3dd91d43c23fd89f79e5e5&type=album",
-    
-  },{
-    id: 2,
-    name: "Лена",
-    avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTFCtEcT2eKKjWfH2kDtjZ5rUz96RdfnSFMw&usqp=CAU",
-  },{
-    id: 3,
-    name: "Петя",
-    avatar: "https://i.imgur.com/JELFi5u.jpg",
-  }],
+  friends: [
+    {
+      id: 1,
+      name: "Маша",
+      avatar:
+        "https://sun9-75.userapi.com/impg/mda-T0jNCgeE3lYT66RhUBR-b8RdNi6d9jxc7g/QvTnYbPO7aY.jpg?size=340x604&quality=95&sign=9ae52ad4ef3dd91d43c23fd89f79e5e5&type=album",
+    },
+    {
+      id: 2,
+      name: "Лена",
+      avatar:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTFCtEcT2eKKjWfH2kDtjZ5rUz96RdfnSFMw&usqp=CAU",
+    },
+    {
+      id: 3,
+      name: "Петя",
+      avatar: "https://i.imgur.com/JELFi5u.jpg",
+    },
+  ],
   friendsCount: "3",
-  isActiveTab: "1",
+  mediaResource: mediaResourcesData[0].name,
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -92,6 +99,9 @@ const profileReducer = (state = initialState, action) => {
     case IS_FETCHING: {
       return { ...state, isFetching: action.boolean };
     }
+    case SET_MEDIA_RESOURCE: {
+      return { ...state, mediaResource: action.value };
+    }
     default:
       return state;
   }
@@ -103,6 +113,10 @@ export const setUser = (userInfo) => ({ type: SET_USER, userInfo });
 export const isFetching = (boolean) => ({
   type: IS_FETCHING,
   boolean,
+});
+export const setMediaResource = (value) => ({
+  type: SET_MEDIA_RESOURCE,
+  value,
 });
 
 export const setProfile = (id) => async (dispatch) => {

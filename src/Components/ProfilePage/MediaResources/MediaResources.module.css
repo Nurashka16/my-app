@@ -1,9 +1,21 @@
-.tab {
-
-   display: flex;
-   flex-direction: row;
-   width: 100%;
+.mediaResources {
    height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
    background-color: white;
    border-radius: 20px;
+}
+.tab {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+.content {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   height: 100%;
 }
