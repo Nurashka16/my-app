@@ -1,31 +1,27 @@
-import React from "react";
+import React, { Children, cloneElement } from "react";
 import style from "./Tabs.module.css";
-import Tab from "./Tab.jsx";
-import {
-  Icon20GearOutline,
-  Icon16ChevronLeft,
-  Icon20ChevronRight,
-} from "@vkontakte/icons";
+import { Icon16ChevronLeft, Icon20ChevronRight } from "@vkontakte/icons";
 import IconButton from "../IconButton/IconButton.jsx";
 import { useState } from "react";
 import { useRef } from "react";
 import useOnClickScroll from "../useOnClickScroll.js";
 
-const Tabs = ({ children, list }) => {
+const ScrollIcon = ({ children, onClick, isOpacity, setIsFocusIcon }) => (
+  <div
+    onMouseEnter={(e) => setIsFocusIcon(true)}
+    onMouseLeave={(e) => setIsFocusIcon(false)}
+    style={{ opacity: isOpacity ? 1 : 0 }}
+    onClick={(e) => onClick()}
+    className={style.icon_scroll}
+  >
+    <IconButton> {children}</IconButton>
+  </div>
+);
+
+const Tabs = ({ children, value, onChange }) => {
   const ref = useRef();
   const [isOpacity, setIsOpacity] = useState(false);
   const [isFocusIcon, setIsFocusIcon] = useState(false);
-  const buttons = list.map((button) => {
-    return (
-      <Tab
-        id={button.id}
-        iconLeft={button.iconLeft}
-        iconRight={button.iconRight}
-      >
-        {button.name}
-      </Tab>
-    );
-  });
   const { scrollToStart, scrollToEnd, canScroll } = useOnClickScroll(ref);
 
   return (
@@ -39,38 +35,32 @@ const Tabs = ({ children, list }) => {
         }}
       >
         {canScroll.start && (
-          <div
-            onMouseEnter={(e) => setIsFocusIcon(true)}
-            onMouseLeave={(e) => setIsFocusIcon(false)}
-            style={{ opacity: isOpacity ? 1 : 0 }}
-            onClick={(e) => scrollToStart()}
-            className={style.icon_scroll}
+          <ScrollIcon
+            onClick={scrollToStart}
+            isOpacity={isOpacity}
+            setIsFocusIcon={setIsFocusIcon}
           >
-            <IconButton>
-              <Icon16ChevronLeft />
-            </IconButton>
-          </div>
+            <Icon16ChevronLeft />
+          </ScrollIcon>
         )}
         <div ref={ref} className={style.content}>
-          {buttons}
+          {Children.map(children, (tab, i) =>
+            cloneElement(tab, {
+              key: { i },
+              isActive: value === tab.props.value,
+              onClick: onChange,
+            })
+          )}
         </div>
         {canScroll.end && (
-          <div
-            onMouseEnter={(e) => setIsFocusIcon(true)}
-            onMouseLeave={(e) => setIsFocusIcon(false)}
-            onClick={(e) => scrollToEnd()}
-            style={{ opacity: isOpacity ? 1 : 0 }}
-            className={style.icon_scroll}
+          <ScrollIcon
+            onClick={scrollToEnd}
+            isOpacity={isOpacity}
+            setIsFocusIcon={setIsFocusIcon}
           >
-            <IconButton>
-              <Icon20ChevronRight width="16px" height="16px" />
-            </IconButton>
-          </div>
+            <Icon20ChevronRight width="16px" height="16px" />
+          </ScrollIcon>
         )}
-      </div>
-
-      <div className={style.setting}>
-        <Icon20GearOutline />
       </div>
     </div>
   );

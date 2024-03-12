@@ -72,6 +72,7 @@ let initialState = {
     avatar: "https://i.imgur.com/JELFi5u.jpg",
   }],
   friendsCount: "3",
+  isActiveTab: "1",
 };
 
 const profileReducer = (state = initialState, action) => {
