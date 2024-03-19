@@ -4,8 +4,30 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Field from "../../../../Common/Field/Field";
+import { signUp } from "../../../../../redux/auth-slice";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
+  const navigate = useNavigate();
+  const signUpDispatch = async (
+    firstName,
+    lastName,
+    email,
+    password,
+    avatar
+  ) => {
+    const signUpResult = await signUp(
+      firstName,
+      lastName,
+      email,
+      password,
+      avatar
+    );
+    console.log(signUpResult);
+    if (signUpResult.isSuccess) {
+      navigate("/");
+    }
+  };
   const valid = (name) =>
     yup
       .string()
@@ -16,7 +38,7 @@ const SignUp = (props) => {
     firstName: valid("firstName"),
     lastName: valid("lastName"),
     email: valid("email"),
-    password: valid("password")
+    password: valid("password"),
   });
 
   const {
@@ -26,7 +48,7 @@ const SignUp = (props) => {
     formState: { errors, isValid },
   } = useForm({ resolver: yupResolver(schema), mode: "onChange" });
   const onSubmit = (data) => {
-    props.signUp(data)
+    signUpDispatch(data);
     reset();
   };
   return (
@@ -103,16 +125,3 @@ const SignUp = (props) => {
 };
 
 export default SignUp;
-/*
-  return (
-    <div className={style.signUp}>
-      <form action="" className={style.textField}>
-        {list}
-      </form>
-      <div className={style.footer}>
-        <div className={style.btn__login} onClick={(e) => props.register()}>
-          Зарегистрироваться
-        </div>
-      </div>
-    </div>
-  );*/

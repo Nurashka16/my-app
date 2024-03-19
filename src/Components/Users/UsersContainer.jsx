@@ -1,6 +1,6 @@
 import { connect, useSelector } from "react-redux";
 import Preloader from "../Preloader/preloader";
-import { getUsers, setFollow } from "../../redux/users-reducer";
+import { getUsers, setFollow } from "../../redux/users/usersSlice";
 import React, { useEffect, useState } from "react";
 import Users from "./Users";
 
@@ -40,8 +40,9 @@ const UsersContainer = (props) => {
   const scrollHandler = (e) => {
     if (
       e.target.documentElement.scrollHeight -
-        (e.target.documentElement.scrollTop + window.innerHeight) < 100
-         && users.length < totalCount
+        (e.target.documentElement.scrollTop + window.innerHeight) <
+        100 &&
+      users.length < totalCount
     ) {
       setIsFetching(true);
     }

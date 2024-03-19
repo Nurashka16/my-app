@@ -6,7 +6,7 @@ import { Icon28SettingsOutline } from "@vkontakte/icons";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addPost } from "../../redux/profile-reducer";
+import { addPost } from "../../redux/profile-slice";
 import { useNavigate } from "react-router-dom";
 import FadeAnimation from "../Common/FadeAnimation/FadeAnimation";
 import Alert from "../Common/Alert/Alert";

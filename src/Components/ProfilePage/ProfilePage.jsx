@@ -7,26 +7,28 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CreatePost from "./CreatePost/CreatePost";
 import MediaResources from "./MediaResources/MediaResources";
+
 //нужно разделить данные для поста на 2, чтобы в owner/userProfile возвращались и свои посты
 
 const Profile = (props) => {
   const count = useSelector((state) => state.profilePage.friendsCount);
   const friends = useSelector((state) => state.profilePage.friends);
-  let posts = props.posts.map((post) => (
-    <Wall
-      name={props.ownerFullName}
-      key={post.id}
-      id={post.id}
-      text={post.text}
-      number={post.number}
-      like={post.like}
-      comments={post.comments}
-      share={post.share}
-      viewed={post.viewed}
-      date={post.date}
-      img={post.img}
-    />
-  ));
+  // const postsData = useSelector((state) => state.newsPage.posts);
+  // let posts = postsData.map((post) => (
+  //   <Wall
+  //     name={props.ownerFullName}
+  //     key={post.id}
+  //     id={post.id}
+  //     text={post.text}
+  //     number={post.number}
+  //     like={post.like}
+  //     comments={post.comments}
+  //     share={post.share}
+  //     viewed={post.viewed}
+  //     date={post.date}
+  //     img={post.img}
+  //   />
+  // ));
 
   // const ref = useRef(undefined);
   //   const offScroll = () => {
@@ -57,7 +59,7 @@ const Profile = (props) => {
       <Link to="/createPost" className={style.createPost}>
         <CreatePost />
       </Link>
-      <div className={style.content}>{posts}</div>
+      {/* <div className={style.content}>{posts}</div> */}
     </div>
   );
 };

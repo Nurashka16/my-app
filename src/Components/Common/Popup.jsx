@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import style from "../ProfilePage/Profile/Profile.module.css";
 import { cloneElement } from "react";
 import { useRef } from "react";
-import { useClickOutside } from "./clickOutside";
+// import { useClickOutside } from "./clickOutside";
+import { useClickOutside } from "./clickOutside.ts";
 
 const Popup = ({ children, burger }) => {
   const windowHeight = window.innerHeight;

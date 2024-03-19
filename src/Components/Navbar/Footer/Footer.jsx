@@ -1,11 +1,13 @@
 import React from "react";
 import style from "./Footer.module.css";
 import { useNavigate, Link } from "react-router-dom";
+import { clearData } from "../../../redux/auth-slice.js";
+import { useDispatch } from "react-redux";
 
-const Footer = (props) => {
+const Footer = () => {
   const navigate = useNavigate();
   const goBack = () => navigate("/auth");
-
+  const dispatch = useDispatch();
   return (
     <div>
       <div className={style.item}>
@@ -24,7 +26,11 @@ const Footer = (props) => {
         </Link>
       </div>
       <div className={style.item} onClick={goBack}>
-        <Link className={style.link} onClick={(e) => props.clearData()} to="/">
+        <Link
+          className={style.link}
+          onClick={(e) => dispatch(clearData())}
+          to="/"
+        >
           Выход
         </Link>
       </div>

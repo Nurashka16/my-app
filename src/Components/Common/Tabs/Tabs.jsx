@@ -4,7 +4,7 @@ import { Icon16ChevronLeft, Icon20ChevronRight } from "@vkontakte/icons";
 import IconButton from "../IconButton/IconButton.jsx";
 import { useState } from "react";
 import { useRef } from "react";
-import useOnClickScroll from "../useOnClickScroll.js";
+import useOnClickScroll from "../useOnClickScroll.ts";
 
 const ScrollIcon = ({ children, onClick, isOpacity, setIsFocusIcon }) => (
   <div

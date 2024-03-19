@@ -1,66 +1,50 @@
+import { createSlice } from "@reduxjs/toolkit";
 import AuthAPI from "../API/AuthAPI";
 
-const REGISTER_USER = "REGISTER_USER";
-const AUTH_USER = "AUTH_USER ";
-const CLEAR_DATA = "CLEAR_DATA";
-
-const initialState = {
-  owner: {
-    id: "",
-    email: "",
-    firstName: "",
-    lastName: "",
-    avatar: "",
-    token: "",
-    password: "",
+const authSlice = createSlice({
+  name: "auth",
+  initialState: {
+    owner: {
+      id: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      avatar: "",
+      token: "",
+      password: "",
+    },
+    isAuth: false,
   },
-  isAuth: false,
-};
-
-const authReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case REGISTER_USER: {
+  reducers: {
+    registerUser(state, action) {
+      console.log(action);
       return {
         ...state,
         ...action.data,
         isAuth: true,
         password: "",
       };
-    }
-
-    case AUTH_USER: {
+    },
+    authUser(state, action) {
       return {
         ...state,
         ...action.data,
         isAuth: true,
         password: "",
       };
-    }
-    case CLEAR_DATA: {
+    },
+    clearData(state) {
       {
-        return (state = { ...initialState });
+        return (state = { ...state }); //было initialState
       }
-    }
-    default:
-      return state;
-  }
-};
-export const registerUser = (data) => ({
-  type: REGISTER_USER,
-  data,
-});
-export const authUser = (data) => ({
-  type: AUTH_USER,
-  data,
-});
-export const clearData = () => ({
-  type: CLEAR_DATA,
+    },
+  },
 });
 
 export const signIn = (email, password) => (dispatch) => {
   return AuthAPI.signIn(email, password)
     .then((response) => {
-      dispatch(authUser(response));
+      dispatch(authSlice.authUser(response));
       return {
         isSuccess: true,
       };
@@ -75,7 +59,7 @@ export const signIn = (email, password) => (dispatch) => {
 export const signUp = (request) => async (dispatch) => {
   try {
     let data = await AuthAPI.signUp(request);
-    dispatch(registerUser(data));
+    dispatch(authSlice.registerUser(data));
     return {
       isSuccess: true,
     };
@@ -87,4 +71,5 @@ export const signUp = (request) => async (dispatch) => {
   }
 };
 
-export default authReducer;
+export default authSlice.reducer;
+export const { authUser, clearData, registerUser } = authSlice.actions;

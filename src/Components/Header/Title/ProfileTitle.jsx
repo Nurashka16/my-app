@@ -4,7 +4,7 @@ import { Icon28ServicesOutline, Icon28MoreHorizontal } from "@vkontakte/icons";
 import ButtonBack from "../../Common/ButtonBack/ButtonBack";
 import WrapWithoutFix from "../../Common/WrapWithoutFix/WrapWithoutFix";
 import { ServiceActions } from "../../ProfilePage/Interaction/ServiceActions";
-import { useClickOutside } from "../../Common/clickOutside";
+import { useClickOutside } from "../../Common/clickOutside.ts";
 import { useState } from "react";
 import ProfileActions from "../../ProfilePage/Interaction/ProfileActions";
 import { useRef } from "react";

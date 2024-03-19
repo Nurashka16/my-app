@@ -1,13 +1,15 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { addPost } from "./redux/profile-reducer.js";
+import { addPost } from "./redux/profile-slice.js";
 import RequireAuth from "./Components/Auth/RequireAuth/RequireAuth";
 import HomeAuth from "./Components/Auth/HomeAuth/HomeAuth.jsx";
 import AuthPageRouter from "./Components/Auth/AuthPageRouter/AuthPageRouter";
 import Layout from "./Components/Layout";
 
-const UsersPageContainer = lazy(() => import("./Components/Users/UsersContainer"));
+const UsersPageContainer = lazy(() =>
+  import("./Components/Users/UsersContainer")
+);
 
 const LowMusicsContainer = lazy(() =>
   import("./Components/Music/MusicsContainer")
@@ -25,7 +27,9 @@ const DialogPageContainer = lazy(() =>
   import("./Components/Mail/Dialog/DialogContainer")
 );
 const NoticePage = lazy(() => import("./Components/NoticePage/NoticePage"));
-const CreatePostPage = lazy(() => import("./Components/CreatePostPage/CreatePost"));
+const CreatePostPage = lazy(() =>
+  import("./Components/CreatePostPage/CreatePost")
+);
 
 const App = (props) => {
   return (
@@ -40,7 +44,10 @@ const App = (props) => {
           <Route path="/profile" element={<ProfilePageContainer />}>
             <Route path=":id" element={<ProfilePageContainer />} />
           </Route>
-          <Route path="/createPost" element={<CreatePostPage props={addPost} />} />
+          <Route
+            path="/createPost"
+            element={<CreatePostPage props={addPost} />}
+          />
           <Route path="/notice" element={<NoticePage />} />
           <Route path="/communities" element={<EmptyPage />} />
           <Route path="/photos" element={<EmptyPage />} />

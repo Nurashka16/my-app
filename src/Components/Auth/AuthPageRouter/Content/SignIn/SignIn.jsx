@@ -4,8 +4,19 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Field from "../../../../Common/Field/Field";
+import { signIn } from "../../../../../redux/auth-slice";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = (props) => {
+  const navigate = useNavigate();
+  // const email = useSelector((state) => state.auth.owner.email);
+  // const password = useSelector((state) => state.auth.owner.password);
+  const signInDispatch = async (email, password) => {
+    const signInResult = await signIn(email, password);
+    if (signInResult.isSuccess) {
+      navigate("/");
+    }
+  };
   const valid = (name) =>
     yup
       .string()
@@ -24,7 +35,7 @@ const SignIn = (props) => {
     formState: { errors, isValid },
   } = useForm({ resolver: yupResolver(schema), mode: "onChange" });
   const onSubmit = (data) => {
-    props.signIn(data.numberOrMail, data.password);
+    signInDispatch(data.numberOrMail, data.password);
     reset();
   };
   return (

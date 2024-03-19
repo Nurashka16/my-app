@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { Ref, RefObject, useState } from "react";
 
-const useOnClickScroll = (ref) => {
+const useOnClickScroll = (ref:RefObject<any>) => {
   const [canScrollStart, setCanScrollStart] = useState(false);
   const [canScrollEnd, setCanScrollEnd] = useState(true);
   const calculateScrollValue = () => {

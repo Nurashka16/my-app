@@ -6,9 +6,9 @@ import NewPost from "./NewPost";
 import Stories from "./Stories/Stories";
 
 const News = (props) => {
-  const posts = useSelector((state) => state.newsPage.posts);
+  const posts = useSelector((state) => state.news.posts);
   const ownerImg = useSelector((state) => state.authPage.avatar);
-  const stories = useSelector((state) => state.newsPage.stories);
+  const stories = useSelector((state) => state.news.stories);
   const walls = posts.map((post) => (
     <Wall
       name={post.communityName}

@@ -1,5 +1,5 @@
 import style from "./Navbar.module.css";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Footer from "./Footer/Footer.jsx";
 import Avatar from "../Common/Avatar/Avatar";
 
@@ -24,7 +24,7 @@ const Navbar = (props) => {
   return (
     <div className={style.container}>
       <nav className={style.nav}>{menu}</nav>
-      <Footer clearData={props.clearData} />
+      <Footer />
     </div>
   );
 };

@@ -1,8 +1,17 @@
 import { useParams } from "react-router-dom";
-import SignInContainer from "../../../Components/Auth/AuthPageRouter/Content/SignIn/SignInContainer";
-import SignUpContainer from "../../../Components/Auth/AuthPageRouter/Content/SignUp/SignUpContainer";
+import SignIn from "../../../Components/Auth/AuthPageRouter/Content/SignIn/SignIn.jsx";
+import SignUp from "../../../Components/Auth/AuthPageRouter/Content/SignUp/SignUp.jsx";
+import { ReactComponentElement, ReactElement } from "react";
 
-export function useAuthFactory() {
+// interface AuthFactory{
+//   description: {
+//     item1: string;
+//     item2: string;
+//   },
+//   component:ReactElement
+// }
+
+export const useAuthFactory = () => {
   const { block: blockName } = useParams();
   if (blockName == "signIn") {
     return {
@@ -19,7 +28,7 @@ export function useAuthFactory() {
         item1: "Ваш номер телефона будет использоваться",
         item2: "для входа в аккаунт",
       },
-      component: <SignUpContainer />,
+      component: <SignUp />,
     };
   }
-}
+};

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export const useClickOutside = () => {
-  const ref = useRef({});
+  const ref = useRef<HTMLDivElement>();
   const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
@@ -15,10 +15,10 @@ export const useClickOutside = () => {
       document.removeEventListener("mousedown", handler);
       document.addEventListener("scroll", handler);
     };
-  }, [isShow]);
+  }, [isShow])
 
-  const handler = (e) => {
-    if (!ref.current.contains(e.target)) {
+  const handler = (e:any) => {
+    if (!ref.current?.contains(e.target)) {
       setIsShow(false);
     }
   };
