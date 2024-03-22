@@ -4,9 +4,11 @@ import Wall from "./Wall/Wall";
 import { useSelector } from "react-redux";
 import NewPost from "./NewPost";
 import Stories from "./Stories/Stories";
+import { useTypedSelector } from "../../app/hooks/useTypedSelector";
 
 const News = (props) => {
-  const posts = useSelector((state) => state.news.posts);
+  // const posts = useSelector((state) => state.news.posts);
+  const posts = useTypedSelector((state)=> state.news.posts)
   const ownerImg = useSelector((state) => state.authPage.avatar);
   const stories = useSelector((state) => state.news.stories);
   const walls = posts.map((post) => (
