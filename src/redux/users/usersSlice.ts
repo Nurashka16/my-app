@@ -20,7 +20,7 @@ export const usersSlice = createSlice({
       state.users = setFollow(state.users, action.payload, true);
     },
     setUsers(state, action: PayloadAction<User[]>) {
-      state.users = action.payload;
+      state.users = action.payload; 
     },
   },
 });

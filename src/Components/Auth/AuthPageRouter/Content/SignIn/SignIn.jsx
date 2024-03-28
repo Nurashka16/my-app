@@ -4,13 +4,11 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Field from "../../../../Common/Field/Field";
-import { signIn } from "../../../../../redux/auth-slice";
+import { signIn } from "../../../../../redux/auth/auth-slice";
 import { useNavigate } from "react-router-dom";
 
-const SignIn = (props) => {
+const SignIn = () => {
   const navigate = useNavigate();
-  // const email = useSelector((state) => state.auth.owner.email);
-  // const password = useSelector((state) => state.auth.owner.password);
   const signInDispatch = async (email, password) => {
     const signInResult = await signIn(email, password);
     if (signInResult.isSuccess) {

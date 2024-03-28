@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Field from "../../../../Common/Field/Field";
-import { signUp } from "../../../../../redux/auth-slice";
+import { signUp } from "../../../../../redux/auth/auth-slice";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = (props) => {
@@ -23,7 +23,6 @@ const SignUp = (props) => {
       password,
       avatar
     );
-    console.log(signUpResult);
     if (signUpResult.isSuccess) {
       navigate("/");
     }
