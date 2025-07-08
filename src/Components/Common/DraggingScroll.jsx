@@ -6,8 +6,8 @@ const DraggingScroll = ({ children }) => {
   const [isDragging, setIsDragging] = useState(false);
   const ref = useRef();
   const func = (e) => {
-    if (isDragging == false) return;
-    ref.current.scrollLeft -= e.movementX;
+    // if (isDragging == false) return;
+    // ref.current.scrollLeft -= e.movementX;
   };
   return (
     <div className={style.stories}

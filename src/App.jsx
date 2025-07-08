@@ -1,7 +1,6 @@
 import "./App.css";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-import { addPost } from "./redux/profile-slice.js";
 import RequireAuth from "./Components/Auth/RequireAuth/RequireAuth";
 import HomeAuth from "./Components/Auth/HomeAuth/HomeAuth.jsx";
 import AuthPageRouter from "./Components/Auth/AuthPageRouter/AuthPageRouter";
@@ -46,7 +45,7 @@ const App = (props) => {
           </Route>
           <Route
             path="/createPost"
-            element={<CreatePostPage props={addPost} />}
+            element={<CreatePostPage />}
           />
           <Route path="/notice" element={<NoticePage />} />
           <Route path="/communities" element={<EmptyPage />} />

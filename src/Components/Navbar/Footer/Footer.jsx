@@ -1,7 +1,6 @@
 import React from "react";
 import style from "./Footer.module.css";
 import { useNavigate, Link } from "react-router-dom";
-import { clearData } from "../../../redux/auth-slice.js";
 import { useDispatch } from "react-redux";
 
 const Footer = () => {

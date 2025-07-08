@@ -1,5 +1,5 @@
 export const getStateIsAuth = (state) => {
-  return state.auth.owner.isAuth;
+  return state.auth.auth;
 };
 export const getStateOwnerAvatar = (state) => {
   return state.auth.owner.avatar;

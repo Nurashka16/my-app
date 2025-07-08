@@ -1,15 +1,7 @@
 import { useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import ProfilePage from "./ProfilePage";
-import { addPost, setProfile } from "../../redux/profile-slice";
 import { useEffect, useMemo } from "react";
-import {
-  getStateUserInfo,
-  getStateIsFetching,
-  getStateOwnerId,
-  getStateOwnerFullName,
-  getStateOwnerAvatar,
-} from "../Common/Selector";
 import Preloader from "../Preloader/preloader";
 
 const ProfileContainer = (props) => {

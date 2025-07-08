@@ -4,7 +4,6 @@ import Button from "../../../Common/Button";
 import Musics from "../Resource/Musics";
 import Typography from "../Resource/Typography";
 import { useSelector } from "react-redux";
-import mediaResourcesData from "../MediaResourcesData";
 
 const Content = ({ children }) => {
   const targetMediaResource = useSelector(

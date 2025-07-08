@@ -6,13 +6,12 @@ import { Icon28SettingsOutline } from "@vkontakte/icons";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addPost } from "../../redux/profile-slice";
 import { useNavigate } from "react-router-dom";
 import FadeAnimation from "../Common/FadeAnimation/FadeAnimation";
 import Alert from "../Common/Alert/Alert";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-
+//был addPost импорт
 //добавить бургер "видно всем", новую страницу таймер,добавление фото, аудиозаписей,
 //доп. бургер и расширение страницы
 
@@ -27,8 +26,9 @@ const CreatePost = (props) => {
   });
   const dispatch = useDispatch();
   const add = (value) => {
-    return addPost(value);
+    return props.addPost(value);
   };
+
   const {
     register,
     handleSubmit,
@@ -36,7 +36,7 @@ const CreatePost = (props) => {
     formState: { errors, isValid },
   } = useForm({ resolver: yupResolver(schema), mode: "onBlur" });
   const onSubmit = (data) => {
-    dispatch(addPost(data.text));
+    dispatch(props.addPost(data.text));
     reset();
     navigate("/profile/" + id);
   };

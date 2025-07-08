@@ -4,8 +4,6 @@ import style from "./Menu.module.css";
 import Tabs from "../../../Common/Tabs/Tabs";
 import Tab from "../../../Common/Tabs/Tab";
 import { useSelector } from "react-redux";
-import mediaResourcesData from "../MediaResourcesData";
-import { setMediaResource } from "../../../../redux/profile-slice";
 import { useDispatch } from "react-redux";
 
 const Menu = () => {

@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import Mail from "./Mail";
-import { getStateContacts } from "../Common/Selector";
+import style from './Mail.module.css'
 
 const MailContainer = (props) => {
   return (

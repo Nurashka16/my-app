@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { useParams } from "react-router-dom";
 import Dialog from "./Dialog";
-import {getStateLastDialog, getStateContacts, getStateUserInfo} from "../../Common/Selector";
 
 const DialogContainer = (props) => {
   const { id } = useParams();

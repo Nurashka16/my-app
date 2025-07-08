@@ -2,11 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Title from "./Title";
-import {
-  getStateOwnerId,
-  getStateOwnerFullName,
-  getStateContacts,
-} from "../../Common/Selector";
 
 const TitleContainer = (props) => {
   const dataUrl = useLocation();

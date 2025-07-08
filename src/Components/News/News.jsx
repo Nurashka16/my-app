@@ -4,7 +4,6 @@ import Wall from "./Wall/Wall";
 import { useSelector } from "react-redux";
 import NewPost from "./NewPost";
 import Stories from "./Stories/Stories";
-import { useTypedSelector } from "../../app/hooks/useTypedSelector";
 
 const News = (props) => {
   // const posts = useSelector((state) => state.news.posts);
